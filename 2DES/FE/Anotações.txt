@@ -1,0 +1,90 @@
+Comandos JavaScript:
+
+Ctrl+L limpa o console.
+comentários // e /*
+alert() ->> aparece caixa de diálogo
+console.log = system.out.println ->> aparece somente no console.
+
+
+"Caixas" no JavaScript
+const, var e let
+const: 
+var: usado no escopo global.
+let: usado no escopo local.
+
+Opcional o ; (Manter a padronização do código, ou usa ou não)
+
+
+
+O for e if seguem o mesmo padrão do JAVA, se for apenas uma instrução, não precisa abrir chaves.
+
+typeof() ->> função para retornar o tipo da variável/constante.
+
+input.type(bloqueia o tipo a ser lido)
+
+array.forEach()
+
+arrow function () => {} diminuir a sintaxe do código para deixar mais rápido. Executa assim que declara.
+
+Concatenar pode ser com o + porém o mais simples é usando crase e ${} ->> `O aluno ${nome} disse : "Oi"`
+O aluno fulando disse : "Oi"
+
+let data = new Date();
+data ->> retorna a data completa.
+data.getFullYear();
+data.getDay();
+data.getMonth();
+
+let num = 1.758432;
+num ->> retorna double
+num.toFixed(2); ->> retorna String.
+Number(); ->> converte em número
+
+"Fulando da Silva".split(" "); ->> transforma em vetor e separa por espaços
+
+let real = "R$ 30.50";
+real.indexOf("."); ->> retorna 5
+real.substring(3, real.indexOf(".")); ->> retorna '30'
+
+---------------------------------------------------
+21/07
+
+Objeto JASON
+Estrutura de dados que trabalha com sistema de chave e valor.
+começa e finaliza com chaves.
+Objeto aluno do tipo jason
+
+let aluno = {
+  nome:"Fulano",
+  matricula: 123,
+  status: true,
+  notas:[5, 7, 8]
+  dep: {
+	 materia:"matematica",
+	 semestre: 3; 
+  }
+}
+
+Acessar o vetor notas:
+aluno.nome
+aluno.notas.forEach
+  for(...)
+    aluno.notas[i]
+
+Vetor de objetos Jason
+[{...},{...},{...}]
+
+Árvore DOM (Data Objetc Model)
+<HTML> -> <head>
+|__--> <body> --> <h1>
+        |___--> <div> --> <img>
+                  |__--> <h2>
+
+Window --> location
+|  |__--> history
+|__--> document
+
+---------------------------------------------------
+22/07
+
+
