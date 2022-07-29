@@ -4,9 +4,12 @@
 automóvel ex: validarPlaca(placa) a função deve retornar um valor boolean, “true” se for uma
 placa válida e “false” se não for válida.
 OBS: dev validar tanto as placas antigas ex: ABC1212 como as novas ABC1B12 */
+var btPlaca = document.querySelector("#btPlaca");
 
+btPlaca.addEventListener("click", validarPlaca);
 
 function validarPlaca(placa) {
+    placa = document.querySelector("#placa");
     if(placa.length == 7) {
         if (isNaN(placa[0]) && isNaN(placa[1]) && isNaN(placa[2])) {
             if(isNaN(placa[3]) == false && (isNaN(placa[4]) == true || isNaN(placa[4]) == false) && isNaN(placa[5]) == false && isNaN(placa[6]) == false) {
