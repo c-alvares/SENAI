@@ -5,6 +5,7 @@ automóvel ex: validarPlaca(placa) a função deve retornar um valor boolean, �
 placa válida e “false” se não for válida.
 OBS: dev validar tanto as placas antigas ex: ABC1212 como as novas ABC1B12 */
 
+
 function validarPlaca(placa) {
     if(placa.length == 7) {
         if (isNaN(placa[0]) && isNaN(placa[1]) && isNaN(placa[2])) {

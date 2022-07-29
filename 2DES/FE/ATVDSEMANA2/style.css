@@ -1,0 +1,10 @@
+.bloco{
+    margin: 75px auto;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    text-align: center;
+      
+}
+
