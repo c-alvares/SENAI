@@ -8,11 +8,33 @@
     <title>Atividade</title>
 </head>
 <body>
-        <div class="bloco">
+        <div class="container">
             <h2>VALIDADOR DE PLACA</h2>
-            <p>Informe o número da placa:</p>
+            <p>Digite o número da placa:</p>
             <input type="text" placeholder="    CBA-1750 / ZXY-6W82" id="placa">
             <button id = "btPlaca">Validar</button>
+        </div>
+        <div class="container">
+            <h2>VALIDADOR DE CPF</h2>
+            <p>Digite o CPF:</p>
+            <input type="number" placeholder="      XXX.XXX.XXX-XX" id="rcbCPF">
+            <button id ="btPlaca">Validar</button>
+        </div>
+        <div class="container">
+            <h2>GERADOR DE TELEFONE</h2>
+            <p>Informe o DDD:</p>
+            <input type="number" id="rcbDDD">
+            <p>Quantidade de telefones a gerar:</p>
+            <input type="number" id="qtdTelefone">
+            <button id = "btGerarTelefone">Gerar</button>
+            <textarea id="outTelefone" cols="28" rows="auto"></textarea>
+        </div>
+        <div class="container">
+            <h2>GERADOR DE CPF</h2>
+            <p>Quantidade de CPFS a gerar:</p>
+            <input type="number" id="qtdCPF">
+            <button id = "btGerarCPF">Gerar</button>
+            <textarea id="outCPF" cols="28" rows="auto"></textarea>
         </div>
 </body>
 <script src="script.js"></script>
