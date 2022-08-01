@@ -6,8 +6,16 @@ placa válida e “false” se não for válida.
 OBS: dev validar tanto as placas antigas ex: ABC1212 como as novas ABC1B12 */
 var btPlaca = document.querySelector("#btPlaca");
 
-btPlaca.addEventListener("click", validarPlaca);
+btPlaca.addEventListener("click", ex1);
 
+function ex1() {
+    if (validarPlaca(placa)) {
+        retorno.innerHTML = "Placa Válida";
+    } else {
+        retorno.innerHTML = "Placa Inválida";
+    }
+}
+// https://www.w3schools.com/jsref/jsref_obj_regexp.asp
 function validarPlaca(placa) {
     placa = document.querySelector("#placa");
     if(placa.length == 7) {
@@ -25,8 +33,8 @@ function validarPlaca(placa) {
         }
     }
 }
-
- //validarPlaca("BCA1X34");
+placa.test()
+//  validarPlaca("BCA1X34");
 //--------------------------------------------------------------------------------------
 
 /* 2 – Crie uma função para validar se um CPF é válido, busque na internet quais são as regras
