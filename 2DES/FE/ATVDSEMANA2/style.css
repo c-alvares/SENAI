@@ -8,12 +8,19 @@ body {
 }
 .container {
     margin: 30px auto;
-    padding: 35px;
+    padding: 10px 25px;
     width: 350px;
     height: auto;
     /* border: 1px solid #000; */
-    border-radius: 20px;
+    border-radius: 20px;    
     background-color: #003f86;
     color: white;
 }
 
+button {
+    margin-bottom: 10px;
+}
+
+textarea {
+    margin: 10px;
+}
