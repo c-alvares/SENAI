@@ -1,40 +1,40 @@
+
+
 /* 1 - Crie uma função que valide se um valor passado como parâmetro é uma placa de
 automóvel ex: validarPlaca(placa) a função deve retornar um valor boolean, “true” se for uma
 placa válida e “false” se não for válida.
 OBS: dev validar tanto as placas antigas ex: ABC1212 como as novas ABC1B12 */
-var placa = document.querySelector("#inpPlaca");
-var validar = document.querySelector("#btPlaca");
+var btPlaca = document.querySelector("#btPlaca");
 
-validar.addEventListener("click", excValidarPlaca);
+btPlaca.addEventListener("click", ex1);
 
-function excValidarPlaca() {
-    if (validarPlaca(placa) == true) {
-        outPlaca.innerHTML = "Placa Válida";         
-    } else{
-        outPlaca.innerHTML = "Placa Inválida";
+function ex1() {
+    if (validarPlaca(placa)) {
+        retorno.innerHTML = "Placa Válida";
+    } else {
+        retorno.innerHTML = "Placa Inválida";
     }
 }
-
+// https://www.w3schools.com/jsref/jsref_obj_regexp.asp
 function validarPlaca(placa) {
-    if(placa.length !== 7) {
-        return false;
-    } else {
-        const placaAntiga = /^[a-zA-Z]{3}[0-9]{4}$/;
-        const placaNova = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{1}$/;
-        const placaMoto = /^[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{1}[0-9]{1}$/;
-
-        if (placaAntiga.test(placa)) {
-            return true;
-            console.log(true);
-        } else {
-            console.log(false);
+    placa = document.querySelector("#placa");
+    if(placa.length == 7) {
+        if (isNaN(placa[0]) && isNaN(placa[1]) && isNaN(placa[2])) {
+            if(isNaN(placa[3]) == false && (isNaN(placa[4]) == true || isNaN(placa[4]) == false) && isNaN(placa[5]) == false && isNaN(placa[6]) == false) {
+                //console.log("Placa válida");
+                return true;
+            } else {
+                //console.log("Placa inválida");
+                return false;
+            }
+        } else{
+            //console.log("Placa inválida");
             return false;
         }
-    } 
+    }
 }
-
-
-
+placa.test()
+//  validarPlaca("BCA1X34");
 //--------------------------------------------------------------------------------------
 
 /* 2 – Crie uma função para validar se um CPF é válido, busque na internet quais são as regras

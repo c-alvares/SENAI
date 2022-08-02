@@ -2,39 +2,25 @@
 automóvel ex: validarPlaca(placa) a função deve retornar um valor boolean, “true” se for uma
 placa válida e “false” se não for válida.
 OBS: dev validar tanto as placas antigas ex: ABC1212 como as novas ABC1B12 */
-var placa = document.querySelector("#inpPlaca");
-var validar = document.querySelector("#btPlaca");
 
-validar.addEventListener("click", excValidarPlaca);
-
-function excValidarPlaca() {
-    if (validarPlaca(placa) == true) {
-        outPlaca.innerHTML = "Placa Válida";         
-    } else{
-        outPlaca.innerHTML = "Placa Inválida";
+function validarPlaca(placa) {
+    if(placa.length == 7) {
+        if (isNaN(placa[0]) && isNaN(placa[1]) && isNaN(placa[2])) {
+            if(isNaN(placa[3]) == false && (isNaN(placa[4]) == true || isNaN(placa[4]) == false) && isNaN(placa[5]) == false && isNaN(placa[6]) == false) {
+                //console.log("Placa válida");
+                return true;
+            } else {
+                //console.log("Placa inválida");
+                return false;
+            }
+        } else{
+            //console.log("Placa inválida");
+            return false;
+        }
     }
 }
 
-function validarPlaca(placa) {
-    if(placa.length !== 7) {
-        return false;
-    } else {
-        const placaAntiga = /^[a-zA-Z]{3}[0-9]{4}$/;
-        const placaNova = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{1}$/;
-        const placaMoto = /^[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{1}[0-9]{1}$/;
-
-        if (placaAntiga.test(placa)) {
-            return true;
-            console.log(true);
-        } else {
-            console.log(false);
-            return false;
-        }
-    } 
-}
-
-
-
+ //validarPlaca("BCA1X34");
 //--------------------------------------------------------------------------------------
 
 /* 2 – Crie uma função para validar se um CPF é válido, busque na internet quais são as regras
@@ -42,14 +28,17 @@ para que um CPF seja validado. A função deve ser no mesmo modelo da função a
 validaCPF(cpf) e retornar verdadeiro ou falso. */
 
 function validarCPF(cpf) {
-    let multi1, multi2;
-    let digVerificador1, digVerificador2;
+    let multi1;
+    let multi2;
     let soma1 = 0;
     let soma2 = 0;
     let indice = 0;
     let index = 0;
- //Cálculo do primeiro digito    
+    let digVerificador1;
+    let digVerificador2;
+//Cálculo do primeiro digito    
     if(cpf.length == 11) {
+
         for(let i = 1; i <= 9; i++){
             multi1 = i * cpf[indice];
             soma1 += multi1;
@@ -89,7 +78,7 @@ function validarCPF(cpf) {
     
 }
 
-//validarCPF("13731949792");
+//validarCPF("03670795855");
 //--------------------------------------------------------------------------------------
 
 /* 3 – Crie uma função que gere telefones aleatórios, a função deve receber como parâmetro o
@@ -118,20 +107,19 @@ function gerarCPF(quantidade) {
     let cpf = [];
     let index = 0;
 
-    while(index != quantidade) {
+    while (index != quantidade) {
+    //for (let i = 0; i < quantidade; i++) {
         let cpfGerado = Math.floor(Math.random() * (99999999999 - 10000000000 + 1) + 10000000000).toString();
         // Necessário transformar em String pois a função validarCPF() não aceita número;
         if(validarCPF(cpfGerado)) {
             cpf.push(cpfGerado);
             // O método push() adiciona novos ítens AO FINAL de um array;
-            index++;
         }
-    }
-    //console.log(cpf);
-    return cpf; 
+        console.log(cpf);
+    } 
 }
 
- //gerarCPF(5);
+ gerarCPF(3);
 
 //--------------------------------------------------------------------------------------
 
