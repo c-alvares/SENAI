@@ -17,10 +17,20 @@ body {
     color: white;
 }
 
-button {
-    margin-bottom: 10px;
-}
-
 textarea {
     margin: 10px;
+}
+
+.caixaEntrada { 
+    display:flex;
+    justify-content: center;
+}
+
+/* .caixaEntrada input {
+    margin-right: 2%;
+} */
+
+.caixaEntrada input:nth-child(1) {
+    width: 15%;
+    margin-right: 2%;
 }

@@ -1,95 +1,82 @@
-
-
 /* 1 - Crie uma função que valide se um valor passado como parâmetro é uma placa de
 automóvel ex: validarPlaca(placa) a função deve retornar um valor boolean, “true” se for uma
 placa válida e “false” se não for válida.
 OBS: dev validar tanto as placas antigas ex: ABC1212 como as novas ABC1B12 */
-var btPlaca = document.querySelector("#btPlaca");
+var placa = document.querySelector("#inpPlaca");
+var validar = document.querySelector("#btPlaca");
+var confirmacao = document.querySelector("#outPlaca")
 
-btPlaca.addEventListener("click", ex1);
+validar.addEventListener("click", excValidarPlaca);
 
-function ex1() {
-    if (validarPlaca(placa)) {
-        retorno.innerHTML = "Placa Válida";
-    } else {
-        retorno.innerHTML = "Placa Inválida";
+function excValidarPlaca() {
+    if (validarPlaca(placa.value)) {
+        confirmacao.innerHTML = "Placa Válida";         
+    } else{
+        confirmacao.innerHTML = "Placa Inválida";
     }
 }
-// https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+
 function validarPlaca(placa) {
-    placa = document.querySelector("#placa");
     if(placa.length == 7) {
-        if (isNaN(placa[0]) && isNaN(placa[1]) && isNaN(placa[2])) {
-            if(isNaN(placa[3]) == false && (isNaN(placa[4]) == true || isNaN(placa[4]) == false) && isNaN(placa[5]) == false && isNaN(placa[6]) == false) {
-                //console.log("Placa válida");
-                return true;
-            } else {
-                //console.log("Placa inválida");
-                return false;
-            }
-        } else{
-            //console.log("Placa inválida");
-            return false;
-        }
+        let placaAntiga = /^[a-zA-Z]{3}[0-9]{4}$/;
+        let placaNova = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$/;
+        let placaMoto = /^[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{1}[0-9]{1}$/;
+
+        if (placaAntiga.test(placa) || placaNova.test(placa) || placaMoto.test(placa)) return true;    
     }
-}
-placa.test()
-//  validarPlaca("BCA1X34");
-//--------------------------------------------------------------------------------------
+    return false;
+} 
 
 /* 2 – Crie uma função para validar se um CPF é válido, busque na internet quais são as regras
 para que um CPF seja validado. A função deve ser no mesmo modelo da função anterior ex:
 validaCPF(cpf) e retornar verdadeiro ou falso. */
 
-function validarCPF(cpf) {
-    let multi1, multi2;
-    let digVerificador1, digVerificador2;
-    let soma1 = 0;
-    let soma2 = 0;
-    let indice = 0;
-    let index = 0;
- //Cálculo do primeiro digito    
-    if(cpf.length == 11) {
-        for(let i = 1; i <= 9; i++){
-            multi1 = i * cpf[indice];
-            soma1 += multi1;
-            indice++
-        }
-        if(soma1 % 11 == 10) {
-            digVerificador1 = 0;
-        } else{
-            digVerificador1 = soma1 % 11;
-        }
-        if(digVerificador1 != cpf[9]) {
-            //console.log("CPF Inválido");
-            return false;
-        } else{
-//Cálculo do segundo dígito
-            for(let i = 0; i <=9; i++){
-                multi2 = i * cpf[index];
-                soma2 += multi2;
-                index++
-            }
-            if(soma2 % 11 == 10) {
-                digVerificador2 = 0;
-            } else{
-                digVerificador2 = soma2 % 11;
-            }
-            if(digVerificador2 != cpf[10]) {
-                //console.log("CPF Inválido")
-                return false;
-            } else{
-                //console.log("CPF Válido")
-                return true;
-            }
-        }
-            
+var inpCpf = document.getElementById("rcbCpf");
+var outpCpf = document.getElementById("retornoCpf");
 
+function exValidarCPF() {
+    if (validarCPF(inpCpf.value)) {
+        outpCpf.innerHTML = "CPF Válido";
+    } else {
+        outpCpf.innerHTML = "CPF Inválido;"
     }
-    
 }
 
-//validarCPF("13731949792");
+
+function validarCPF(cpf) {
+
+    if(cpf.length != 11) return false;
+
+    if(cpf == "11111111111"|| 
+        cpf == "22222222222" ||
+        cpf == "33333333333" ||
+        cpf == "44444444444" ||
+        cpf == "55555555555" ||
+        cpf == "66666666666" ||
+        cpf == "77777777777" ||
+        cpf == "88888888888" ||
+        cpf == "99999999999" ||
+        cpf == "00000000000" 
+    ) return false;
+
+    let dig1 = 0, dig2 = 0;    
+    for(let i = 0; i < 9; i++){
+        dig1 += cpf[i] * (i+1);
+        dig2 += cpf[i] * i;
+    }
+    dig1 %= 11;
+    if(dig1 == 10) dig1 = 0;
+    if(dig1 != cpf[9]) return false;
+
+    dig2 += dig1 * 9;
+    dig2 %= 11;
+    if(dig2 % 11 == 10) dig2 = 0;
+    if(dig2 != cpf[10]) return false;
+    
+    return true;
+}
+
+
 //--------------------------------------------------------------------------------------
 
 /* 3 – Crie uma função que gere telefones aleatórios, a função deve receber como parâmetro o

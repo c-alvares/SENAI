@@ -1,0 +1,18 @@
+03/08
+
+DER é um MER desenhado.
+
+.xampp
+.start - apache e mysql
+.abrir pasta com vscode
+.abrir terminal com Ctrl + "
+.Selecionar o Command Prompt
+.cd \
+.cd xampps
+.cd mysql
+.cd binary
+.mysql -u root
+.create database pedidos charset=UTF8 collate utf8_general_ci;
+.show databases;
+.drop table nome_da_tabela;
+.exit
