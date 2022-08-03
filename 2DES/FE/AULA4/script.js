@@ -1,139 +1,134 @@
+var inpPlaca = document.querySelector("#placa");
+var retorno = document.querySelector("#retorno");
 
+var inpCpf = document.querySelector("#cpf");
+var retornoCpf = document.querySelector("#retornoCpf");
 
-/* 1 - Crie uma função que valide se um valor passado como parâmetro é uma placa de
-automóvel ex: validarPlaca(placa) a função deve retornar um valor boolean, “true” se for uma
-placa válida e “false” se não for válida.
-OBS: dev validar tanto as placas antigas ex: ABC1212 como as novas ABC1B12 */
-var btPlaca = document.querySelector("#btPlaca");
+var inpDdd = document.querySelector("#ddd");
+var inpQtd = document.getElementById("qtd");
+var textNumeros = document.querySelector("#numeros");
 
-btPlaca.addEventListener("click", ex1);
+var inpQtdCpfs = document.querySelector("#qtdCpf");
+var textCpfs = document.querySelector("#cpfs");
+
+function ex4() {
+    let qtd = inpQtdCpfs.value;
+
+    gerarCpfs(qtd).forEach(cpf => {
+        textCpfs.value += cpf + "\n";
+    })
+}
 
 function ex1() {
-    if (validarPlaca(placa)) {
+    if(validarPlaca(inpPlaca.value)) {
         retorno.innerHTML = "Placa Válida";
-    } else {
+    }else {
         retorno.innerHTML = "Placa Inválida";
     }
 }
-// https://www.w3schools.com/jsref/jsref_obj_regexp.asp
+
+function ex2() {
+    if(validarCpf(inpCpf.value)) {
+        retornoCpf.innerHTML = "CPF Válido";
+    }else {
+        retornoCpf.innerHTML = "CPF Inválido";
+    }
+}
+
 function validarPlaca(placa) {
-    placa = document.querySelector("#placa");
     if(placa.length == 7) {
-        if (isNaN(placa[0]) && isNaN(placa[1]) && isNaN(placa[2])) {
-            if(isNaN(placa[3]) == false && (isNaN(placa[4]) == true || isNaN(placa[4]) == false) && isNaN(placa[5]) == false && isNaN(placa[6]) == false) {
-                //console.log("Placa válida");
-                return true;
-            } else {
-                //console.log("Placa inválida");
-                return false;
-            }
-        } else{
-            //console.log("Placa inválida");
-            return false;
-        }
+        let modeloAntigo = /^[a-zA-Z]{3}[0-9]{4}$/;
+        let modeloNovo = /^[a-zA-Z]{3}[0-9]{1}[a-zA-Z]{1}[0-9]{2}$/;
+        let modeloMoto = /^[a-zA-Z]{3}[0-9]{2}[a-zA-Z]{1}[0-9]{1}$/;
+        
+        if(modeloAntigo.test(placa) || modeloNovo.test(placa) || modeloMoto.test(placa)) return true;
     }
-}
-placa.test()
-//  validarPlaca("BCA1X34");
-//--------------------------------------------------------------------------------------
 
-/* 2 – Crie uma função para validar se um CPF é válido, busque na internet quais são as regras
-para que um CPF seja validado. A função deve ser no mesmo modelo da função anterior ex:
-validaCPF(cpf) e retornar verdadeiro ou falso. */
-
-function validarCPF(cpf) {
-    let multi1, multi2;
-    let digVerificador1, digVerificador2;
-    let soma1 = 0;
-    let soma2 = 0;
-    let indice = 0;
-    let index = 0;
- //Cálculo do primeiro digito    
-    if(cpf.length == 11) {
-        for(let i = 1; i <= 9; i++){
-            multi1 = i * cpf[indice];
-            soma1 += multi1;
-            indice++
-        }
-        if(soma1 % 11 == 10) {
-            digVerificador1 = 0;
-        } else{
-            digVerificador1 = soma1 % 11;
-        }
-        if(digVerificador1 != cpf[9]) {
-            //console.log("CPF Inválido");
-            return false;
-        } else{
-//Cálculo do segundo dígito
-            for(let i = 0; i <=9; i++){
-                multi2 = i * cpf[index];
-                soma2 += multi2;
-                index++
-            }
-            if(soma2 % 11 == 10) {
-                digVerificador2 = 0;
-            } else{
-                digVerificador2 = soma2 % 11;
-            }
-            if(digVerificador2 != cpf[10]) {
-                //console.log("CPF Inválido")
-                return false;
-            } else{
-                //console.log("CPF Válido")
-                return true;
-            }
-        }
-            
-
-    }
-    
+    return false;
 }
 
-//validarCPF("13731949792");
-//--------------------------------------------------------------------------------------
 
-/* 3 – Crie uma função que gere telefones aleatórios, a função deve receber como parâmetro o
-número ddd e a quantidade de telefones e deve retornar um vetor com os números gerados.
-Ex: geraTelefones(19,3) e deve retornar ex: 19-98777-7898, 19-98777-7898, 19-94687-4568 */
+function validarCpf(cpf) {
+    if(cpf.length != 11) return false;
 
+    if(cpf == "11111111111"|| 
+        cpf == "22222222222" ||
+        cpf == "33333333333" ||
+        cpf == "44444444444" ||
+        cpf == "55555555555" ||
+        cpf == "66666666666" ||
+        cpf == "77777777777" ||
+        cpf == "88888888888" ||
+        cpf == "99999999999" ||
+        cpf == "00000000000" 
+     ) return false;
 
-function gerarTelefone(ddd, qtd) {
-    let telefone = []; 
-    for(let i = 0; i < qtd; i++) {
-        //Math.floor() ->> arredonda para o inteiro maior
-        //Math.random() * (max - min + 1) + min ->> gera número aleatório entre o máx e mín (inclusos)
-        let parte1 = Math.floor(Math.random() * (99999 - 70000 + 1)) + 70000;
-        let parte2 = Math.floor(Math.random() * (9999 - 7000 + 1)) + 7000;
-        telefone [i] = console.log(ddd + "-" + parte1 + "-" + parte2);
+    let d1 = 0, d2 = 0;
+    for(let i = 0; i <= 8; i++) {
+        d1 += cpf[i] * (i+1);
+        d2 += cpf[i] * i;
     }
-    return telefone;
+
+    d1 %= 11;
+    console.log(d1);
+    if(d1 == 10) d1 = 0;
+    if(d1 != cpf[9]) return false;
+
+    d2 += d1 * 9;
+    d2 %= 11;
+    if(d2 == 10) d2 = 0;
+    if(d2 != cpf[10]) return false;
+
+    return true;
 }
-//gerarTelefone(11, 10);
-//--------------------------------------------------------------------------------------
 
-/* 4 – Crie uma função que gere CPFs válidos aleatórios, deve receber como parâmetro quantos
-CPFs deve gerar e retornar um vetor com os CPFs gerados. */
 
-function gerarCPF(quantidade) {
-    let cpf = [];
-    let index = 0;
+function ex3() {
+    let ddd = inpDdd.value;
+    let qtd = inpQtd.value;
+    let numerosGerados = geraCelular(ddd, qtd);
 
-    while(index != quantidade) {
-        let cpfGerado = Math.floor(Math.random() * (99999999999 - 10000000000 + 1) + 10000000000).toString();
-        // Necessário transformar em String pois a função validarCPF() não aceita número;
-        if(validarCPF(cpfGerado)) {
-            cpf.push(cpfGerado);
-            // O método push() adiciona novos ítens AO FINAL de um array;
-            index++;
+    numerosGerados.forEach(numero => {
+        textNumeros.value += numero + "\n";
+    });
+}
+
+function geraCelular(ddd, qtd) {
+    let numeros = new Array();
+
+    for(let i = 0; i < qtd; i++)
+        //numeros.push(ddd + '-9' + (Math.floor(Math.random()*8999)+1000) + "-" + (Math.floor(Math.random()*8999)+1000));
+        //numeros.push(ddd + "-9" + Math.floor(Math.random()*8999+1000) + "-" + Math.floor(Math.random()*8999+1000));
+        numeros.push(ddd + "-9" + Math.floor(Math.random()*8999+1000) + "-" + Math.floor(Math.random()*9999).toString().padStart(4,'0'));
+
+    return numeros;
+}
+
+function gerarCpfs(qtd) {
+    let cpfs = new Array();
+
+    for(let i = 0; i < qtd; i++){
+        let temp = Math.floor(Math.random()*999999999).toString().padStart(9, "0");
+        let d1 = 0, d2 = 0;
+
+        for(let j = 0; j < 9; j++) {
+            d1 += temp[j] * (j+1);
+            d2 += temp[j] * j;
         }
+
+        d1 %= 11;
+        if(d1 == 10) d1 = 0;
+
+
+        d2 += d1 * 9;
+        d2 %= 11;
+        if(d2 == 10) d2 = 0;
+
+        temp += d1 + "" + d2;
+
+        cpfs.push(temp);
     }
-    //console.log(cpf);
-    return cpf; 
+        
+
+    return cpfs
 }
-
- //gerarCPF(5);
-
-//--------------------------------------------------------------------------------------
-
-/* 5 – Crie uma interface web (Página HTML) para testar as funções criadas, com campos de input
-para digitar placa de veículo, CPF, quantos Telefones e quantos CPFs deverão ser gerados. */
