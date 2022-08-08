@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.item-descricao{
+    width: 30vw;
+    height: 15vh;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+    padding: 0 15px;
+}
+
+.modelo {
+    visibility: hidden;
+    display: none;
+}
