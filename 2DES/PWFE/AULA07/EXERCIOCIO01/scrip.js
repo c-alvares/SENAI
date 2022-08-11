@@ -13,7 +13,32 @@ var cadastrado = [
     }
 ];
 
+var produtos = [
+    {
+        "imagem":"src=",
+        "nomeProduto":"marguerita",
+        "preco":"R$ ,00"
+    },
+    {
+        "imagem":"",
+        "nomeProduto":"",
+        "preco":"R$ ,00"
+    },
+    {
+        "imagem":"",
+        "nomeProduto":"",
+        "preco":"R$ ,00"
+    },
+    {
+        "imagem":"",
+        "nomeProduto":"",
+        "preco":"R$ ,00"
+    }    
+];
+
 var telaLogin = document.querySelector("#telaLogin");
+var opcaoPizza = document.querySelector("#paginaPizza");
+
 var achou = false;
 
 function logar() {
@@ -29,6 +54,27 @@ function logar() {
     })
     if (achou != true) {
         alert("Usuário não cadastrado ou senha incorreta");
-    } else console.log("Entrou")
+    } else {
+        window.location.href='./home.html'
+    }
 
 }
+
+function carregarPagina() {
+    produtos.forEach(pizza => {
+        let cardPizza = opcaoPizza.cloneNode(true);
+        
+        cardPizza.querySelector().innerHTML = pizza.
+        cardPizza.querySelector().innerHTML = pizza.nomeProduto;
+        cardPizza.querySelector().innerHTML = pizza.preco;
+    })
+}
+
+// var tecla = "";
+// var acao = "";
+
+// document.querySelector("#psd").addEventListener("keyup", (act) => {
+//     tecla += act.key;
+//     acao += "*";
+//     act.target.value = acao;
+// })
