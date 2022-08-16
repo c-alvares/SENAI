@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#telaLogin {
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#bLogar {
+    margin-top: 15px;
+    border-radius: 5px;
+    border: 1px groove;
+    width: 7vw;
+    box-shadow: 1px 1px 1px black;
+}
+
+/* .modelo {
+    display: none;
+    visibility: hidden;
+}*/
