@@ -10,24 +10,15 @@ var neighborhood = document.getElementById("bairro");
 var city = document.getElementById("cidade");
 var state = document.getElementById("estado");
 
-// function cadastrar() {    
-//     let userData = {
-//         "nome": ,
-//         "email": ,
-//         "senha": ,
-//         "repeteSenha": ,
-//         "telefone": ,
-//         "cep": {
-//             "logradouro": ,
-//             "complemento": ,
-//             "bairro": ,
-//             "cidade": ,
-//             "estado": 
-//         }
-//     }
-// }
 
 function buscaCep () {
-    
+    fetch("https://viacep.com.br/ws/" + zip.value + "/json/")
+    .then(response => { return response.json() })
+    .then(data => {
+        if(zip.value == data.cep) {
+        street.innerHTML = data.logradouro;    
+        }
+    })
+
 }
 // https://viacep.com.br/
