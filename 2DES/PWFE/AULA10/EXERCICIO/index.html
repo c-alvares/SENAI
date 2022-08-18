@@ -20,14 +20,14 @@
         <label>Senha <input type="text" id="senha"></label>
         <label>Repetir Senha <input type="text" id="repeteSenha"></label>
         <label>Telefone <input type="text" id="telefone"></label>
-        <label>CEP <input type="text" id="cep"></label>
+        <label>CEP <input type="text" id="caixaPostal" onblur="buscaCep()"></label>
         <label>Logradouro <input type="text" id="logradouro" disabled></label>
         <label>Complemento <input type="text" id="complemento"></label>
         <label>Bairro <input type="text" id="bairro" disabled></label>
         <label>Cidade <input type="text" id="cidade" disabled></label>
         <label>Estado <input type="text" id="estado" disabled></label>
     </form>
-    <button onclick="buscaCep()">Cadastrar</button>
+    <button>Cadastrar</button>
 </body>
 <script src="./script.js"></script>
 </html>
