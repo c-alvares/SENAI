@@ -1,0 +1,58 @@
+expo -V
+npm i -g expo-cli
+Para chamar o projeto mobile de proj-app.
+Criar uma pasta nova, abrir com terminal e inicia o projeto do expo. O expo cria uma outra pasta chamada proj-app. Dentro dela estará a estrutura de arquivos para trabalharmos.
+
+Criar projeto novo, ex Locadora:
+Uma pasta para o backend
+Uma pasta para o frontend
+Uma pasta para os scripts
+Uma pasta para o mobile
+
+Pasta Mobile
+AULA01 (dentro dela terá a estrutura)
+Abrir com visual code a pasta. Abrir o terminal cmd e digitar expo init nomedoprojeto
+
+To run your project, navigate to the directory and run one of the following npm commands.
+
+- cd AULA01
+- npm start # you can open iOS, Android, or web from here, or run them directly with the commands below.
+- npm run android
+- npm run ios # requires an iOS device or macOS for access to an iOS simulator
+- npm run web
+Project is already inside of a git repo, skipping git init.
+
+Baixar o android studio
+avm/virtual device manager
+create virtual device
+selecionar Pixel 2 XL
+
+Escolher versão do android. Avaliar através do "API level distribution chart" qual é o seu público alvo, se quer que o app tenha alcance para muitos ou poucos usuários. Na chart, aparece % de uso em suas respectivas versões.
+Clicar em next e em finish
+
+Caso dê problema, clique 
+no lápis(edit) e vá em emulated performance - Graphics: Software - GLES 2.0
+------------
+Para compilar o programa, através do terminal no visual code, necessário estar na pasta do projeto e dar o comando expo start
+------------
+npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
+-------------
+Importar Bibliotecas do react-native
+View é equivalente ao body mas pode ser usado mais de uma vez. Só é necessário que seja dentro da View Principal
+-------------
+recomendado desativar o autosave
+-------------
+O style é um objeto json
+Separação é por letra maiúscula
+
+Instalar Color Highlight
+-------------
+https://docs.expo.dev/
+https://reactnative.dev/
+-------------
+https://callstack.github.io/react-native-paper/index.html
+-------------
+https://wix.github.io/react-native-ui-lib/
+-------------
+https://github.com/callstack/react-native-paper
+-------------
