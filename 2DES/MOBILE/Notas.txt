@@ -1,3 +1,4 @@
+22/08
 expo -V
 npm i -g expo-cli
 Para chamar o projeto mobile de proj-app.
@@ -44,8 +45,6 @@ recomendado desativar o autosave
 -------------
 O style é um objeto json
 Separação é por letra maiúscula
-
-Instalar Color Highlight
 -------------
 https://docs.expo.dev/
 https://reactnative.dev/
@@ -56,3 +55,71 @@ https://wix.github.io/react-native-ui-lib/
 -------------
 https://github.com/callstack/react-native-paper
 -------------
+23/08
+expo start --web para rodar direto
+
+-------------
+
+return(
+    // <View style={style.container}>
+    //   <View style={style.primeira}>
+    //     <Text>Bem vindo, Fulano</Text>
+    //     <TextInput style={style.input} placeholder='E-mail'/>
+    //     <Button title='Cadastrar'/>
+    //     <TouchableOpacity style={style.btExclui}>
+    //       <Image style={{width: '32px', height: '32px'}} source={trashIcon}/>
+    //       <Text>Apagar Registro</Text>
+    //     </TouchableOpacity>
+    //     {
+    //       usuarios.map(usuario => {
+    //         return(
+    //           // <View>
+    //           //  <Text>{usuario.nome}</Text>
+    //           //  <Text>{usuario.matricula</Text>
+    //           //  </View>
+    //           //  <Text>{`${usuario.matricula} - ${usuario.nome}`}</Text>
+    //           <TouchableOpacity>
+    //             <Text>{`${usuario.matricula} - ${usuario.nome}`}</Text>
+    //           </TouchableOpacity> 
+    //         )
+    //       })
+    //     }
+    //   </View>
+    //   <View style={style.segunda}>
+    //     <Text>Minha segunda View</Text>
+    //     <Image style={style.imgAnimal} source={imgGatin} />
+    //     <Image style={style.imgAnimal} source={{uri:'https://conteudo.imguol.com.br/c/entretenimento/54/2020/04/28/cachorro-pug-1588098472110_v2_1x1.jpg'}} />
+    //   </View>
+    // </View>
+);
+---------------
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  primeira:{
+    flex: 1,
+    backgroundColor: '#F1D2E7'
+  },
+  segunda: {
+    flex: 1,
+    backgroundColor: '#E2F5C8',
+  },
+  imgAnimal: {
+    width: '200px',
+    height: '200px'
+  },
+  input: {
+    borderBottomWidth: '1px',
+    borderBottomColor: 'gray',
+    padding: '10px'
+  },
+  btExclui: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FCFFA6',
+    border: '2px solid #adffa6',
+    borderRadius: '10px'
+  }
