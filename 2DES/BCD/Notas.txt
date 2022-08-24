@@ -10,7 +10,7 @@ DER é um MER desenhado.
 .cd \
 .cd xampps
 .cd mysql
-.cd binary
+.cd bin
 .mysql -u root
 .create database pedidos charset=UTF8 collate utf8_general_ci;
 .show databases;
