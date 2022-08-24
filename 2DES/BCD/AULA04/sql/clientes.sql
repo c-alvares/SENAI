@@ -34,7 +34,7 @@ insert into clientes values(6,"Jurema de Souza Castro","2007-06-15","F",80);
 select * from clientes;
 
 -- Importação de arquivos CSV
-LOAD DATA INFILE 'D:/wellington/senai2022/2des/bcd/aula04/telefones.CSV'
+LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA04/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'

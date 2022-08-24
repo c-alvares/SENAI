@@ -35,30 +35,3 @@ describe horarios;
 describe mot_linhas;
 
 show tables;
-
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA04/sql/csv/onibus/motoristas.csv'
-INTO TABLE motoristas
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
-
-select * from telefones;
-
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA04/sql/csv/onibus/telefones.csv'
-INTO TABLE telefones
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
-
-select * from telefones;
-
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA04/sql/csv/onibus/telefones.csv'
-INTO TABLE telefones
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
-
-select * from telefones;

@@ -1,7 +1,5 @@
 03/08
 
-DER é um MER desenhado.
-
 .xampp
 .start - apache e mysql
 .abrir pasta com vscode
@@ -12,12 +10,11 @@ DER é um MER desenhado.
 .cd mysql
 .cd bin
 .mysql -u root
+--------------
 .create database pedidos charset=UTF8 collate utf8_general_ci;
 .show databases;
 .drop table nome_da_tabela;
 .exit
-
-Perguntar como acessar o database criado
 ----------
 Tipos de bancos de dados
 Não estruturado
@@ -41,39 +38,27 @@ Lógico
 ----------
 MER x DER
 MER - Modelo Endidade Relacionamento
-
 DER - Diagrama Endidade Relacionamento
+(DER é um MER desenhado)
 
 Modelo Conceitual (Próximo a solução, usuário)
-
 Modelo Lógico (Próximo a implementação, código)
-
 Etapas Manuais do desenvolvimento de banco de dados
-
 Modelo Conceitual
 Script SQL
 Modelo Lógico
 Etapas utilizando ferramentas Case
+-----------
+LOAD DATA INFILE 'D:/wellington/senai2022/2des/bcd/aula04/telefones.CSV' INTO TABLE telefones FIELDS TERMINATED BY ';' ENCLOSED BY '"' LINES TERMINATED BY '\r\n' IGNORE 1 ROWS;
 
-Modelo Conceitual
-Modelo Lógico
-Script SQL
-SQL (DDL - Linguagem de Definição de Dados)
-Create
-Describe
-Drop
-Alter
-SQL (DML - Linguagem de Manipulação de Dados)
-Isert
-Select
-Update
-Delete
-
-----------
-#SQL - DML e DQL
-
-Mais conceitos sobre DER Conceitual
-Objeto JSON para padronização de transferência de dados
-Importação e Exportação de Dados CSV, XLSx
-Consultas básicas DQL -SELECT
-
+Algumas funções do banco de dados
+Select nome da função;
+curdate();
+curtime();
+datediff();
+date_add();
+date_sub();
+max();
+min();
+avg();
+sum();
