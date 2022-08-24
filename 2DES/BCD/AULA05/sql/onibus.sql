@@ -36,16 +36,16 @@ describe mot_linhas;
 
 show tables;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA04/sql/csv/onibus/motoristas.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/onibus/motoristas.csv'
 INTO TABLE motoristas
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-select * from telefones;
+select * from motoristas;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA04/sql/csv/onibus/telefones.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/onibus/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -54,11 +54,29 @@ IGNORE 1 ROWS;
 
 select * from telefones;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA04/sql/csv/onibus/telefones.csv'
-INTO TABLE telefones
+LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Desktop/SENAI/2DES/BCD/AULA05/csv/onibus/linhas.csv'
+INTO TABLE linhas
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-select * from telefones;
+select * from linhas;
+
+LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/onibus/horarios.csv'
+INTO TABLE horarios
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from horarios;
+
+LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/onibus/mot_linhas.csv'
+INTO TABLE mot_linhas
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from mot_linhas;
