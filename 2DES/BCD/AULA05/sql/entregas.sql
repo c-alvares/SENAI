@@ -58,7 +58,9 @@ describe itens;
 
 show tables;
 
-LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/entregas/clientes.csv'
+-- Importação dos dados com LOAD DATA de arquivos CSV
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/entregas/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -67,7 +69,7 @@ IGNORE 1 ROWS;
 
 select * from clientes;
 
-LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/entregas/telefones.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/entregas/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -76,7 +78,7 @@ IGNORE 1 ROWS;
 
 select * from telefones;
 
-LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/entregas/entregadores.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/entregas/entregadores.csv'
 INTO TABLE entregadores
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -85,7 +87,7 @@ IGNORE 1 ROWS;
 
 select * from entregadores;
 
-LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/entregas/produtos.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/entregas/produtos.csv'
 INTO TABLE produtos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -94,7 +96,7 @@ IGNORE 1 ROWS;
 
 select * from produtos;
 
-LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/entregas/pedidos.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/entregas/pedidos.csv'
 INTO TABLE pedidos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -103,7 +105,7 @@ IGNORE 1 ROWS;
 
 select * from pedidos;
 
-LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/entregas/itens.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/entregas/itens.csv'
 INTO TABLE itens
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -111,3 +113,35 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
 select * from itens;
+
+-- DQL Junção de tabelas
+select * from clientes join telefones on clientes.id_cliente = telefone.id_cliente;
+select * from clientes c joint telefones t on c.id_cliente = t.id_cliente;
+
+select * from clientes c
+join telefones t
+on c.id_cliente = t.id_cliente;
+
+-- JOIN = INNER, LEFT, RIGHT
+
+insert into clientes values (null,"11122233311","Marcelo","13458777","1A","Fundos");
+-- Exemplo de Inner
+select * from clientes c
+inner join telefones t
+on c.id_cliente = t.id_cliente;
+-- Exemplo de Left
+select * from clientes c
+left join telefones t
+on c.id_cliente = t.id_cliente;
+-- Exemplo de Right
+select * from telefones t
+right join clientes c
+on c.id_cliente = t.id_cliente;
+
+-- Salvando a Consulta
+create view vw_clientes as
+select c.id_cliente, c.cpf, c.nome, c.cep, c.numero, c.complemento, t.numero as telefone from clientes c
+inner join telefones t
+on c.id_cliente = t.id_cliente;
+
+select * from vw_clientes;

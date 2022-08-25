@@ -36,7 +36,7 @@ insert into clientes values(6,"Jurema de Souza Castro","2007-06-15","F",80);
 select * from clientes;
 
 -- Importação de arquivos CSV
-LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/clientes/clientes.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/OneDrive/Área de Trabalho/SENAI/2DES/BCD/AULA05/csv/clientes/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -46,9 +46,12 @@ IGNORE 1 ROWS;
 select * from telefones;
 
 -- DQL - Data Query Language - Linguagem de Consulta de dados (Comandos Básicos)
-select * from clientes where id_cliente = 3;
-select * from clientes where nome = "Ana Oliveira Oliveira";
-select * from clientes where nome like "Ana%";
-select * from clientes where nome like "%Castro";
-select * from clientes where nome like "%Oliveira%";
-select * from clientes where peso > 90 AND nome like "%Oliveira%";
+
+-- select * from clientes where id_cliente = 3;
+-- select * from clientes where nome = "Ana Oliveira Oliveira";
+-- select * from clientes where nome like "Ana%";
+-- select * from clientes where nome like "%Castro";
+-- select * from clientes where nome like "%Oliveira%";
+-- select * from clientes where peso > 90 AND nome like "%Oliveira%";
+
+select * from clientes join telefones on clientes.id_cliente = telefones.id_cliente;

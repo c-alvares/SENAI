@@ -62,3 +62,6 @@ max();
 min();
 avg();
 sum();
+-----------
+Diferença entre Inner Join e Normalização:
+São processos contrários, em que o primeiro, os dados são agrupados/estabelicidos juntos e o segundo, separa/organiza os dados em tabelas.
