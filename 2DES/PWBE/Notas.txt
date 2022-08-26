@@ -9,12 +9,13 @@ Observe que é criado o arquivo package.json
 Instalar as dependências básicas para o projeto(express, cors, mysql, nodemon):
 Caso dê errado é só colocar o -g no final;
 Baixar o express;
--npm install express;
 Baixar o cors para consumo de api;
--npm i cors;
 Baixar o mysql;
+Baixar o nomedon:
+
+-npm install express;
+-npm i cors;
 -npm i mysql;
-Baixar o nomedon
 -npm install nodemon -g;
 (npm install nodemon -g, depois npm install nodemon, depois npm install para garantir)
 
@@ -23,14 +24,19 @@ colocar na pasta docs, o der, o script, o csv, etc;
 (Variável de Ambiente)
 Vamos instalar o banco agora. Abrir um novo terminal, acessar 
 C:\xampp\mysql\bin
+
 -mysql -u root;
-colar o script do banco no terminal
 
-criar o index.js e criar as constantes para chamar o express, cors e mysql;
+!!Caso precise voltar um diretório(pasta), digitar:  !!
+-cd ..
 
-criar a aplicação;
-criar conexão com o banco através da string de conexão por meio de um json;
-abrir a comunicação com o backend através de alguma porta acima de 1024
+.colar o script do banco no terminal
+
+.criar o index.js
+.criar as constantes para chamar o express, cors e mysql;
+.criar a aplicação;
+.criar conexão com o banco através da string de conexão por meio de um json;
+.abrir a comunicação com o backend através de alguma porta acima de 1024
 
 node index.js
 

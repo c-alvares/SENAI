@@ -5,9 +5,9 @@ const mysql = require("mysql");
 const app = express();
 
 const con = mysql.createConnection({
-    user: 'root',
-    host: 'localhost',
-    database: 'clientes'  
+    user : 'root',
+    host : 'localhost',
+    database : 'clientes'  
 });
 
 // get, post, put, delete
@@ -17,7 +17,7 @@ app.get('/clientes',(req,res) => {
     // res.json("Aoba! Wha 2 want");
     let string = "select * from vw_clientes";
     con.query(string,(err,result) =>{
-        if(err == null){
+        if(err == null) {
             res.json(result);
         }
     });
