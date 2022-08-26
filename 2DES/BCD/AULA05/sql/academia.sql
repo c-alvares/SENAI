@@ -47,18 +47,8 @@ describe fichas;
 
 show tables;
 
--- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/telefones.csv'
-LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/telefones.csv'
-INTO TABLE telefones
-FIELDS TERMINATED BY ';'
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS;
-
-select * from telefones;
-
--- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/alunos.csv'
-LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/alunos.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/alunos.csv'
+-- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/alunos.csv'
 INTO TABLE alunos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -67,18 +57,18 @@ IGNORE 1 ROWS;
 
 select * from alunos;
 
--- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/exercicios.csv'
-LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/exercicios.csv'
-INTO TABLE exercicios
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/telefones.csv'
+-- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/telefones.csv'
+INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-select * from exercicios;
+select * from telefones;
 
--- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/aparelhos.csv'
-LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/aparelhos.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/aparelhos.csv'
+-- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/aparelhos.csv'
 INTO TABLE aparelhos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -87,8 +77,18 @@ IGNORE 1 ROWS;
 
 select * from aparelhos;
 
--- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/fichas.csv'
-LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/fichas.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/exercicios.csv'
+-- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/exercicios.csv'
+INTO TABLE exercicios
+FIELDS TERMINATED BY ';'
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 ROWS;
+
+select * from exercicios;
+
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/fichas.csv'
+-- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/BCD/AULA05/csv/academia/fichas.csv'
 INTO TABLE fichas
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
