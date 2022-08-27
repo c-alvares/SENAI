@@ -1,7 +1,7 @@
 Criar nova pasta;
 Abrir com code;
 Xampp "startado" no apache e no mysql;
-abrir "shell"/terminal do code;
+abrir "shell"/terminal do code desta pasta;
 -npm init;
 são perguntados os parâmetros do projeto. Enter até o final;
 Digitar y + enter para finalizar;

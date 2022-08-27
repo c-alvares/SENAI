@@ -60,8 +60,8 @@ show tables;
 
 -- Importação dos dados com LOAD DATA de arquivos CSV
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/clientes.csv'
--- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/clientes.csv'
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/clientes.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/clientes.csv'
 INTO TABLE clientes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -70,8 +70,8 @@ IGNORE 1 ROWS;
 
 select * from clientes;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/telefones.csv'
--- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/telefones.csv'
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/telefones.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/telefones.csv'
 INTO TABLE telefones
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -80,8 +80,8 @@ IGNORE 1 ROWS;
 
 select * from telefones;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/entregadores.csv'
--- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/entregadores.csv'
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/entregadores.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/entregadores.csv'
 INTO TABLE entregadores
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -90,8 +90,8 @@ IGNORE 1 ROWS;
 
 select * from entregadores;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/produtos.csv'
--- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/produtos.csv'
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/produtos.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/produtos.csv'
 INTO TABLE produtos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -100,8 +100,8 @@ IGNORE 1 ROWS;
 
 select * from produtos;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/pedidos.csv'
--- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/pedidos.csv'
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/pedidos.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/pedidos.csv'
 INTO TABLE pedidos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -110,8 +110,8 @@ IGNORE 1 ROWS;
 
 select * from pedidos;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/itens.csv'
--- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/itens.csv'
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/itens.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA03/entregas/docs/itens.csv'
 INTO TABLE itens
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
