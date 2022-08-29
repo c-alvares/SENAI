@@ -1,0 +1,34 @@
+*{
+    margin: 0px;
+}
+
+body {
+    background: #ffb380
+}
+
+.cabecalho {
+    border: 1px solid white;
+    background: white;
+    display:flex;
+    flex-direction: row;
+    font-family: "Gotham-Medium",sans-serif;
+}
+
+.cabecalho img {
+    height: 5vh;
+    padding-right: 3vw;
+}
+
+.titulo {
+    position: relative;
+    top: 1vh;
+}
+
+.child {
+    position: relative;
+    top: 1.5vh;
+    left: 50vw;
+}
+.area-aluno {
+    border-radius: 15px;
+}

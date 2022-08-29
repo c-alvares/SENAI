@@ -96,3 +96,10 @@ LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
 select * from fichas;
+
+create view vw_dalunos as
+select a.id_aluno, a.nome, a.sexo, a.nascimento, a.peso, t.numero as telefones from alunos a
+inner join telefones t
+on a.id_aluno = t.id_aluno;
+
+select * from vw_dalunos;

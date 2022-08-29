@@ -4,6 +4,9 @@ const mysql = require("mysql");
 
 const app = express();
 
+app.use(cors());
+
+
 const databaseCon = mysql.createConnection({
     user : 'root',
     host : 'localhost',
@@ -51,6 +54,15 @@ app.get('/academia/fichas',(req,res) => {
     let string = "select * from fichas";
     databaseCon.query(string,(err,result) => {
         if (err == null) {
+            res.json(result);
+        } else res.json(err);
+    });
+});
+
+app.get('/academia/vw_dalunos/', (req,res) => {
+    let string = "select * from vw_dalunos";
+    databaseCon.query(string,(err,result) => {
+        if(err == null) {
             res.json(result);
         }
     });
