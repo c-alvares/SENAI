@@ -103,3 +103,10 @@ inner join telefones t
 on a.id_aluno = t.id_aluno;
 
 select * from vw_dalunos;
+
+create view vw_fexercicio as 
+select e.id_exercicio, e.grupo_muscular, e.id_aparelho, f.dia_semana, f.série as fichas from exercicios e
+inner join fichas f
+on e.exercicios = f.exercicios;
+
+select * from vw_fexercicio;

@@ -3,7 +3,7 @@
 }
 
 body {
-    background: #ffb380
+    background: #ffd780a9
 }
 
 .cabecalho {
@@ -28,7 +28,22 @@ body {
     position: relative;
     top: 1.5vh;
     left: 50vw;
+    margin: 1vw;
 }
 .area-aluno {
     border-radius: 15px;
 }
+
+/* #card {
+    width: 13vw;
+    height: 20vh;
+    margin: 3vw;
+    padding-top: 3vh;
+    border-radius: 25px;
+    display:flex;
+    flex-direction: column;
+    align-items: center; 
+    font-family: "Gotham-Medium",sans-serif;
+    background: #b2e5fd;
+    box-shadow: 3px 3px 3px gray ;
+} */
