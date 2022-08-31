@@ -123,3 +123,8 @@ return(
     border: '2px solid #adffa6',
     borderRadius: '10px'
   }
+----------
+31/08
+expo start --web para rodar direto
+Caso dê problema, utilizar o npm i --force
+função JS eval() tenta resolver a expressão dentro dos parâmetros, mesmo sendo String

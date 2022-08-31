@@ -23,7 +23,10 @@ app.get('/produtos', (req,res) => {
         }
     });
 });
+// busca pelo produto mandando o código pela url
 // http://localhost:3000/produtos/MO5214
+// capturamos essa estrutra no req.params
+// Os : indica que será buscado no req.params
 // req.params.cod
 app.get('/produtos/:cod', (req,res) => {
     let query = `SELECT * FROM produtos WHERE cod = '${req.params.cod}'`;
@@ -41,9 +44,7 @@ app.get('/produtos/:cod', (req,res) => {
 app.post('/produtos', (req, res) => {
     // req.query => http://localhost:3000/produtos/cod=abc1234&nome=teste
     // req.param => /produtos/:cod/:nome => https://localhost:3000/produtos/abc1234/teste
-
     // console.log(req.params);
-
     let query = `INSERT INTO produtos VALUES(DEFAULT, '${req.body.cod}', '${req.body.nome}', ${req.body.qntd}, ${req.body.preco})`;
 
     conDB.query(query,(err,result) => {
