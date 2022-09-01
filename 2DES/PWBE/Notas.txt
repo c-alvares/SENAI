@@ -45,5 +45,47 @@ create...
 + 
 https://localhost:5000
 erro 404 está respondendo na porta 5000
+------------------
+01/09
 
+Para abrir um projeto Node.js em andamento:
 
+1. Copiar a pasta do projeto;
+2. Procurar a documentação;
+3. Ajustar o Banco de Dados(start), rodar o script;
+4. Iniciar o ambiente(se for node, npm i -> nodemon);
+5. Testar via navegador / via insomnia(se tiver, importar os testes);
+
+*!* Quando for gerar documentação, é indicado exportar os testes do insomnia
+
+*!* Estrutura de dados:
+
+	[Vetor, Lista, (Fila, Pilha)]	
+
+	pilha - Funciona como um comportamento. Serve para simplificar uma lista. LIFO - Last In First Ouy
+	fila - Funciona como um comportamento. Serve para simplificar uma lista. FIFO First In First Out
+
+	lista - Em JS tudo é lista
+	
+    Comandos:
+	push() - adiciona
+	pop()  - tirar o último (usado em pilha)
+	shift() - tirar o primeiro (usado em fila)
+	slice(i,n) - tira da posição que quiser (usado em lista)
+
+Abstração é separar de um código enorme em códigos menores. Mesmo conceito da solução de problemas: 
+-Decompor; => Abstração
+-Encontrar Padrões;
+-Algoritmo.
+
+Metodologia Ágil é entregar todo dia algo novo para o cliente. É entregue o que dá para ele usar.
+
+Criar um frontend para consumir a lista; Transformando em uma tabela.
+
+ cod_clie nome cidade uf tel (com modal com os telefones)
+|	 |    |      |  |   |
+|	 |    |      |  |   |
+|	 |    |      |  |   |
+|	 |    |      |  |   |
+|	 |    |      |  |   |
+--------------------

@@ -46,11 +46,12 @@ export default function App() {
           <TouchableOpacity onPress={() => {setOpera(Number(valor1) / Number(valor2));}}>
             <Text style={style.oper}> / </Text>
           </TouchableOpacity>
-          <TouchableOpacity onPress={() => {setRes(opera);}}>
+          
+        </View>
+        <TouchableOpacity onPress={() => {setRes(opera);}}>
             <Text style={style.calc}> Calcular </Text>
           </TouchableOpacity>
           <Text style={style.res}>{res}</Text>
-        </View>
       </View>
     </View>
   )
@@ -63,15 +64,17 @@ const style = StyleSheet.create({
     alignItems: 'center'
   },
   inp: {
-    border: '5px solid',
+    border: '3px solid',
     backgroundColor: 'rgba(255, 255, 255, 0.9)',
     margin: '5px'
   },
   operad: {
-
+    display: 'flex',
+    flexDirection: 'row'
   },
   oper: {
     border: '5px solid',
+    width: '20px' 
   },
   calc: {
     border: '5px solid',
