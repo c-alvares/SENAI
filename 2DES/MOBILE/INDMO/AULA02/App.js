@@ -30,31 +30,58 @@ export default function App() {
       </View> */}
       
       {/* Exercício 02 */}
-      <View>
-        <TextInput placeholder="Primeiro Valor" value={valor1} onChangeText={(val) => {setValor1(val); }} />
-        <TextInput placeholder="Segundo Valor" value={valor2} onChangeText={(val) => {setValor2(val); }} />
-        <View>
+      <View style={style.container}>
+        <TextInput style={style.inp} placeholder="Primeiro Valor" value={valor1} onChangeText={(val) => {setValor1(val); }} />
+        <TextInput style={style.inp} placeholder="Segundo Valor" value={valor2} onChangeText={(val) => {setValor2(val); }} />
+        <View style={style.operad}>
           <TouchableOpacity onPress={() => {setOpera(Number(valor1) + Number(valor2));}}>
-            <Text> + </Text>
+            <Text style={style.oper}> + </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => {setOpera(Number(valor1) - Number(valor2));}}>
-            <Text> - </Text>
+            <Text style={style.oper}> - </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => {setOpera(Number(valor1) * Number(valor2));}}>
-            <Text> * </Text>
+            <Text style={style.oper}> * </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => {setOpera(Number(valor1) / Number(valor2));}}>
-            <Text> / </Text>
+            <Text style={style.oper}> / </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => {setRes(opera);}}>
-            <Text> Calcular </Text>
+            <Text style={style.calc}> Calcular </Text>
           </TouchableOpacity>
-          <Text>{res}</Text>
+          <Text style={style.res}>{res}</Text>
         </View>
       </View>
     </View>
   )
 }
 
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#dee2ff',
+    alignItems: 'center'
+  },
+  inp: {
+    border: '5px solid',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    margin: '5px'
+  },
+  operad: {
+
+  },
+  oper: {
+    border: '5px solid',
+  },
+  calc: {
+    border: '5px solid',
+    alignItems: 'center'
+  },
+  res: {
+    border: '5px solid',
+    width: '15vw',
+    height: '20vh'
+  }
+});
 // função JS eval() tenta resolver a expressão dentro dos parâmetros, mesmo sendo String
 
