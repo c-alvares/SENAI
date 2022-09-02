@@ -10,15 +10,18 @@
 <body onLoad="dadosClientes()">
     <table class="estrutura">
         <thead>
-            <th>Cod_Cli</th>
-            <th>Nome</th>
-            <th>Endereço</th>
-            <th>Bairro</th>
-            <th>Cidade</th>
-            <th>Estado</th>
-            <th>Telefones</th>
-            <th>Tipo</th>
-            <th>Número</th>
+            <tr>
+                <th colspan="7">Clientes</th>
+            </tr>
+            <tr>
+                <th>Cod_Cli</th>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Telefone</th>
+            </tr>
         </thead>
         <tbody>
             <tr id="first-line">
@@ -28,10 +31,34 @@
                 <td id="neighbour"></td>
                 <td id="city"></td>
                 <td id="state"></td>
-
+                <td id="number"></td>
             </tr>
         </tbody>
     </table>
+    <div class="modais">
+        <div id="modalPhone" style="display:none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Telefones</th>
+                        <th align="right"><button class="fechar" 
+                            onClick="modais.setAttribute('style','display:none;')">X</button></th>
+                    </tr>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Número</th>
+                    </tr>   
+                </thead>
+                <tbody id="tabelaPhone">
+                    <tr id="prime-line">
+                        <td id="type"></td>
+                        <td id="phone-number"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+    </div>
 </body>
-<script src="clientes.js"></script>>
+<script src="clientes.js"></script>
 </html>
+

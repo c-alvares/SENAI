@@ -10,7 +10,7 @@ const clientes = (lista) => { //criação de objeto
         delete e.telefone;
     });
 
-    //Criar uma nvoa lista sem os dados duplicados(Comparadando o próximo item com o anterior)
+    //Criar uma nova lista sem os dados duplicados(Comparadando o próximo item com o anterior)
     let liAux = []; //Lista auxiliar
     let lip = 0; //Último índice da liAux
     liAux.push(lista[lip]); //Acrescenta o primeiro item da lista na liAux
