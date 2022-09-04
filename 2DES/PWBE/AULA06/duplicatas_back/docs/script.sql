@@ -46,23 +46,23 @@ insert into clientes values(7,"José Aldo","Rua das Azaléias, 25 ","Santa Cruz"
 
 insert into telefones values
 (1,"telefone","(19)98798-7987"),
-(1,"celular","(19)98798-7987"),
+(1,"celular","(16)98798-7987"),
 (2,"telefone","(19)98798-8798"),
 (2,"celular","(19)98798-8798"),
 (3,"telefone","(19)95465-7459"),
-(3,"celular","(19)95465-7459"),
+(3,"celular","(16)95465-7459"),
 (3,"telefone","(19)65466-7897"),
-(3,"celular","(19)65466-7897"),
+(3,"celular","(19)75466-7897"),
 (4,"telefone","(19)98457-8779"),
-(4,"celular","(19)98457-8779"),
-(5,"telefone","(19)35465-8565"),
+(4,"celular","(11)98457-8779"),
+(5,"telefone","(12)35465-8565"),
 (5,"celular","(19)35465-8565"),
-(6,"telefone","(19)54654-4654"),
-(6,"celular","(19)54654-4654"),
-(6,"telefone","(19)65465-7877"),
-(6,"celular","(19)65465-7877"),
-(7,"telefone","(19)35464-4565"),
-(7,"celular","(19)35464-4565");
+(6,"telefone","(13)54654-4654"),
+(6,"celular","(14)54654-4654"),
+(6,"telefone","(12)65465-7877"),
+(6,"celular","(11)65465-7877"),
+(7,"telefone","(15)35464-4565"),
+(7,"celular","(18)35464-4565");
 
 insert into duplicatas values
 (NULL,1,curdate()-0,DATE_ADD(CURDATE(), INTERVAL 30 DAY),NULL,150,NULL),

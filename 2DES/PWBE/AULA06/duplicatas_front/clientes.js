@@ -1,8 +1,9 @@
 var urlClientes = `http://localhost:3000/duplicatas/clientes`;
 var clientes = [];
-const modais = document.querySelector("#modais");
+const modais = document.querySelector(".modais");
 const modalPhone = document.querySelector("#modalPhone");
-const telefones = document.querySelector("#tabelaPhone");
+const tabelaPhone = document.querySelector("#tabelaPhone");
+
 
 function dadosClientes() {
     fetch(urlClientes)
@@ -17,8 +18,9 @@ function dadosClientes() {
 
 function inserirDados() {
     let indice = 0;
-    clientes.forEach((client) => {
 
+    clientes.forEach((client) => {
+        
         let linha = document.querySelector('#first-line').cloneNode(true);
                 
         linha.querySelector('#cod-cli').innerHTML = client.cod_cli;
@@ -29,8 +31,8 @@ function inserirDados() {
         linha.querySelector('#state').innerHTML = client.uf;
         linha.querySelector('#number').innerHTML = `<img src='assets/fone.png' class='phone' onClick='showPhone(${indice})'>`
 
-        document.querySelector("tbody").appendChild(linha);
-        
+        document.querySelector('.corpo1').appendChild(linha);
+
         indice++;
     }) 
 };
@@ -39,14 +41,21 @@ function inserirDados() {
 function showPhone(indice) {
     modais.setAttribute("style","display:flex;");
     modalPhone.setAttribute("style","display:flex;");
-    telefones.innerHTML = "";
+    tabelaPhone.innerHTML = "";
 
     clientes[indice].telefones.forEach((e) => {
-        let linha = document.querySelector('#prime-line').cloneNode(true);
 
-        linha.querySelector('#type').innerHTML = e.tipo;
-        linha.querySelector('#phone-number').innerHTML = e.telefone;
+        let newTr = document.createElement("tr");
+        let type = document.createElement("td");
+        let number = document.createElement("td");
 
-        document.querySelector('#tabelaPhone').appendChild(linha);
+        type.innerHTML = e.tipo;
+        number.innerHTML = e.numero;
+        
+        newTr.appendChild(type);
+        newTr.appendChild(number);
+        
+        tabelaPhone.appendChild(newTr);
+
     })
 };

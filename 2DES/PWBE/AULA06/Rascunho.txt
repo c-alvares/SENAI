@@ -1,0 +1,174 @@
+JS
+var urlClientes = `http://localhost:3000/duplicatas/clientes`; // Armazenar a url
+var clientes = []; // Vetor para armazenar json vindo do DB
+const firstLine = document.querySelector("#first-line");
+const modais = document.querySelector(".modais"); // Recebe dados da div pais vindos do html
+const modalPhone = document.querySelector("#modalPhone"); // Recebe dados da div filha vindos do html
+const telefones = document.querySelector("#tabelaPhone"); // Recebe dados do tbody da 2ª table
+
+function dadosClientes() { // Função para carregar dados em "onLoad" no body;
+    fetch(urlClientes) // Consome os dados da api, enviando a request ao BD
+        .then((response) => { 
+            return response.json(); // Recebe a promise do BD em formato de json
+        })
+        .then((data) => {
+            clientes = data; // Armazena a promise vinda do BackEnd em um Array
+            inserirDados(); // Chama função para criar os elementos os quais receberam os dados do Array
+        });
+};
+
+function inserirDados() {
+    let indice = 0; // Variável auxiliar
+    clientes.forEach((client) => { // Para cada(forEach) elemento(client) do Array(clientes) executar(() => {});
+
+        let linha = document.querySelector('#first-line').cloneNode(true); // Clona o nó(tr) e seus filhos(td's)
+
+        linha.querySelector('#cod-cli').innerHTML = client.cod_cli; // Chama a tag filha através da variável(linha), acessa ela e define como receptora do elemento referido do objeto json
+        linha.querySelector('#name').innerHTML = client.nome;
+        linha.querySelector('#adress').innerHTML = client.endereco;
+        linha.querySelector('#neighbour').innerHTML = client.bairro;
+        linha.querySelector('#city').innerHTML = client.cidade;
+        linha.querySelector('#state').innerHTML = client.uf;
+        linha.querySelector('#number').innerHTML = `<img src='assets/fone.png' class='phone' onClick='showPhone(${indice})'>` // Insere na tag uma tag imagem com atributos src, class e onClick chama função tendo como parâmetro a variável auxiliar
+
+        document.querySelector("#first-line").appendChild(linha); // Insere como elemento filho(linha) a tag tbody
+
+        firstLine.setAttribute("class", "modais"); // Setar atributo classe a tag tr #first-line
+        
+        // indice++; // Para cada elemento percorrido do vetor, o indice é acrescido de mais um
+    }) 
+};
+
+
+// function showPhone(indice) { // Função para mostrar telefones
+//     modais.setAttribute("style","display:flex;"); // Aloca atributos ao objeto modais -> na tag classe modais
+//     modalPhone.setAttribute("style","display:flex;"); // Aloca atributos ao objeto modalPhone -> na tag id modalPhone 
+//     telefones.innerHTML = "";
+
+//     clientes[indice].telefones.forEach((e) => {
+//         let linha = document.querySelector('#prime-line').cloneNode(true);
+
+//         linha.querySelector('#type').innerHTML = e.tipo;
+//         linha.querySelector('#phone-number').innerHTML = e.numero;
+
+//         document.querySelector('#tabelaPhone').appendChild(linha);
+//     })
+// };
+
+HTML
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="clientes.css">
+</head>
+<body onLoad="dadosClientes()">
+    <table>
+        <thead>
+            <tr>
+                <th colspan="7">Clientes</th>
+            </tr>
+            <tr>
+                <th>Cod_Cli</th>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Bairro</th>
+                <th>Cidade</th>
+                <th>Estado</th>
+                <th>Telefone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="first-line">
+                <td id="cod-cli"></td>
+                <td id="name"></td>
+                <td id="adress"></td>
+                <td id="neighbour"></td>
+                <td id="city"></td>
+                <td id="state"></td>
+                <td id="number"></td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="modais">
+        <div id="modalPhone" style="display:none;">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Telefones</th>
+                        <th align="right"><button class="fechar" 
+                            onClick="modais.setAttribute('style','display:none;')"> X </button></th>
+                    </tr>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Número</th>
+                    </tr>   
+                </thead>
+                <tbody id="tabelaPhone">
+                    <tr id="prime-line">
+                        <td id="type"></td>
+                        <td id="phone-number"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>    
+    </div>
+</body>
+<script src="clientes.js"></script>
+</html>
+
+CSS
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+table {
+    border: 1px solid;
+}
+th {
+    border: 1px solid #e0ebeb;
+}
+td {
+    background: #e0ebeb;
+    border: 1px solid #ffe6e6;
+    text-align: center;
+}
+
+.phone {
+    cursor: pointer;
+}
+
+/* .modais {
+    background-color: rgba(0, 0,0, 0.5);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+} */
+
+#modalPhone {
+    position: relative;
+    top: 10vw;
+}
+
+.fechar {
+    cursor: pointer;
+    width: 25px;
+    font-weight: bold;
+    background-color: #ccc;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+

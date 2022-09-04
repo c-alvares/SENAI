@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="clientes.css">
 </head>
 <body onLoad="dadosClientes()">
-    <table class="estrutura">
+    <table>
         <thead>
             <tr>
                 <th colspan="7">Clientes</th>
@@ -23,7 +23,7 @@
                 <th>Telefone</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="corpo1">
             <tr id="first-line">
                 <td id="cod-cli"></td>
                 <td id="name"></td>
@@ -50,10 +50,7 @@
                     </tr>   
                 </thead>
                 <tbody id="tabelaPhone">
-                    <tr id="prime-line">
-                        <td id="type"></td>
-                        <td id="phone-number"></td>
-                    </tr>
+
                 </tbody>
             </table>
         </div>    
@@ -61,4 +58,3 @@
 </body>
 <script src="clientes.js"></script>
 </html>
-
