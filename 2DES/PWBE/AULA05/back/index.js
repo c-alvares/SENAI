@@ -1,18 +1,18 @@
-const express = require('express');
+const Express = require('express');
 const cors = require('cors');
 const mysql = require('mysql');
 
 const conDB = mysql.createConnection({
-    user : "root",
-    host : 'localhost',
-    database : 'lojinha'
+    "host": "localhost",
+    "user": "root",
+    "database": "lojinha"
 });
 
-const app = express();
-app.use(express.json()); //permitir que envia e receba estrutura json por padrão
+const app = Express();
+app.use(Express.json()); //permitir que envia e receba estrutura json por padrão
 app.use(cors());  //permitir a comunicação cruzada, envio e recebimento
 
-app.get('/produtos', (req,res) => {
+app.get('/produtos', (req, res) => {
     let query = "SELECT * FROM produtos";
 
     conDB.query(query,(err, result) => {
@@ -31,7 +31,7 @@ app.get('/produtos', (req,res) => {
 app.get('/produtos/:cod', (req,res) => {
     let query = `SELECT * FROM produtos WHERE cod = '${req.params.cod}'`;
 
-    conDB.query(query,(err,result) => {
+    conDB.query(query, (err, result) => {
         if(err == null) {
             res.status(200).json(result).end();
         }else {
@@ -47,7 +47,7 @@ app.post('/produtos', (req, res) => {
     // console.log(req.params);
     let query = `INSERT INTO produtos VALUES(DEFAULT, '${req.body.cod}', '${req.body.nome}', ${req.body.qntd}, ${req.body.preco})`;
 
-    conDB.query(query,(err,result) => {
+    conDB.query(query,(err, result) => {
         if(err === null) {
             res.status(201).json(req.body).end();
         }else {

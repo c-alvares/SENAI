@@ -1,4 +1,5 @@
 22/08
+Instalar o EXPO
 expo -V
 npm i -g expo-cli
 Para chamar o projeto mobile de proj-app.
@@ -12,7 +13,9 @@ Uma pasta para o mobile
 
 Pasta Mobile
 AULA01 (dentro dela terá a estrutura)
-Abrir com visual code a pasta. Abrir o terminal cmd e digitar expo init nomedoprojeto
+Abrir com visual code a pasta;
+Abrir o terminal cmd;
+Digitar expo init nomedoprojeto
 
 To run your project, navigate to the directory and run one of the following npm commands.
 
