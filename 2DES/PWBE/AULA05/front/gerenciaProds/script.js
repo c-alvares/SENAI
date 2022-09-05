@@ -40,8 +40,57 @@ fetch("http://localhost:3000/produtos")
 
 function fecharModalExcluir() {
     modalExcluir.classList.add("model");
-}
+};
 
 function fecharModalEditar() {
     modalEditar.classList.add("model");
+};
+
+function editarProduto() {
+    let produto = {
+        "cod":inputCodigo.value,
+        "nome":inputNome.value,
+        "qntd":inputQuantidade.value,
+        "preco":inputValor.value
+    }
+
+    fetch("http://localhost:3000/produto", {
+        "method":"PUT",
+        "headers": {
+            "Content-Type":"application/json"
+        },
+        "body":JSON.stringify(produto)
+    })
+    .then(res => { return res.json() })
+    .then(resp => {
+        if (resp.cod !== undefined) {
+            alert("Produto Alterado com Sucesso !");
+            window.location.reload();
+        }else {
+            alert("Falha ao salvar alterações !");
+        }
+    })
+}
+
+function excluirProduto() {
+    let data = {
+        "cod":document.querySelector("#cod").innerHTML
+    }
+
+    fetch("http://localhost:3000/produto", {
+        "method":"DELETE",
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "body":JSON.stringify(data)
+    })
+    .then(res => { return res.json() })
+    .then(resp => {
+        if (resp.cod !== undefined) {
+            alert("Produto Excluído com Sucesso!");
+            window.location.reload();
+        }else {
+            alert("Falha ao excluir produto!");
+        }
+    })
 }
