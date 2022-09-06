@@ -1,3 +1,4 @@
+/*
 const Express = require('express');
 const cors = require('cors');
 const mysql = require('mysql');
@@ -86,3 +87,4 @@ app.put("/produto", (req, res) => {
 app.listen(3000,() => {
     console.log("App ON");
 });
+*/
