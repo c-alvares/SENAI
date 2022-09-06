@@ -5,7 +5,7 @@ export default function App() {
   // const [value, setValue] = useState("");
   // const [value2, setValue2] = useState("");
 
-  const [opera, setOpera] = useState("");
+  const [opera, setOpera] = useState(""); //utilização de get & set
   const [res, setRes] = useState("");
 
   const [valor1, setValor1] = useState("");

@@ -1,21 +1,33 @@
 22/08
-Instalar o EXPO
-expo -V
-npm i -g expo-cli
-Para chamar o projeto mobile de proj-app.
-Criar uma pasta nova, abrir com terminal e inicia o projeto do expo. O expo cria uma outra pasta chamada proj-app. Dentro dela estará a estrutura de arquivos para trabalharmos.
 
-Criar projeto novo, ex Locadora:
-Uma pasta para o backend
-Uma pasta para o frontend
-Uma pasta para os scripts
-Uma pasta para o mobile
+1) Instalar o EXPO;
 
-Pasta Mobile
-AULA01 (dentro dela terá a estrutura)
-Abrir com visual code a pasta;
-Abrir o terminal cmd;
-Digitar expo init nomedoprojeto
+- expo -V
+- npm i -g expo-cli
+
+2) Para chamar o projeto mobile de proj-app.
+
+3) Criar uma pasta nova, abrir com terminal e inicia o projeto do expo;
+4) O expo cria uma outra pasta chamada proj-app; 
+5) Dentro dela estará a estrutura de arquivos para trabalharmos.
+
+6) Criar projeto novo, ex Locadora:
+
+. Uma pasta para o backend
+. Uma pasta para o frontend
+. Uma pasta para os scripts
+. Uma pasta para o mobile
+
+
+**VISUAL CODE > PASTA MOBILE**
+
+1) AULA01 (dentro dela terá a estrutura):
+
+. Abrir com visual code a pasta;
+. Abrir o terminal cmd;
+. Digitar expo init nomedoprojeto
+
+-- INFO DO LOG --
 
 To run your project, navigate to the directory and run one of the following npm commands.
 
@@ -25,29 +37,47 @@ To run your project, navigate to the directory and run one of the following npm 
 - npm run ios # requires an iOS device or macOS for access to an iOS simulator
 - npm run web
 Project is already inside of a git repo, skipping git init.
+---- ----
 
-Baixar o android studio
-avm/virtual device manager
-create virtual device
-selecionar Pixel 2 XL
 
-Escolher versão do android. Avaliar através do "API level distribution chart" qual é o seu público alvo, se quer que o app tenha alcance para muitos ou poucos usuários. Na chart, aparece % de uso em suas respectivas versões.
-Clicar em next e em finish
+**ANDROID STUDIO**
 
-Caso dê problema, clique 
-no lápis(edit) e vá em emulated performance - Graphics: Software - GLES 2.0
+1) Baixar o android studio
+2) avm/virtual device manager
+3) Create virtual device
+4) Selecionar Pixel 2 XL
+
+-- OBSERVAÇÃO --
+
+Escolher versão do android. Avaliar através do "API level distribution chart" qual é o seu público alvo, se quer que o app tenha alcance para muitos ou poucos usuários. Na chart, aparece % de uso em suas respectivas versões. Clicar em next e em finish
+
+!!ATENÇÃO!!
+
+Caso dê problema, clique no lápis(edit) e vá em emulated performance - Graphics: Software - GLES 2.0
 ------------
-Para compilar o programa, através do terminal no visual code, necessário estar na pasta do projeto e dar o comando expo start
+!! ATENÇÃO !!
+
+Para compilar o programa, através do terminal no visual code, necessário estar na pasta do projeto e dar o comando:
+ 
+- expo start OU
+- expo start --web para rodar direto
+- Caso dê problema, utilizar o npm i --force
+
 ------------
-npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
--------------
-Importar Bibliotecas do react-native
+- npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
+
+- Importar Bibliotecas do react-native
+
+-- OBSERVAÇÃO --
+
 View é equivalente ao body mas pode ser usado mais de uma vez. Só é necessário que seja dentro da View Principal
--------------
-recomendado desativar o autosave
--------------
+
+Recomendado desativar o autosave
+
 O style é um objeto json
+
 Separação é por letra maiúscula
+
 -------------
 https://docs.expo.dev/
 https://reactnative.dev/
@@ -58,10 +88,8 @@ https://wix.github.io/react-native-ui-lib/
 -------------
 https://github.com/callstack/react-native-paper
 -------------
-23/08
-expo start --web para rodar direto
 
--------------
+23/08
 
 return(
     // <View style={style.container}>
