@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livro Caixa</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onLoad="carregaCaixa()">
+    <div>
+        <h1>Livro Caixa</h1>
+        <hr>
+        <label>Filtro:
+            <select name="" id="filtro"></select>
+        </label>
+        <label>Novo Lançamento
+            <button id="lancar"> + </button>
+        </label>
+        <hr>
+    </div>
+    <table class="tabelaD"> 
+        <thead>
+           <tr>
+            <td colspan="5"><strong>Débitos</strong></td>
+           </tr>
+           <tr>
+            <td>N-Lançamento</td>
+            <td>Data</td>
+            <td>Descrição</td>
+            <td>Valor</td>
+            <td>Tipo</td>
+           </tr>
+        </thead>
+        <tbody id="tCorpo">
+            <tr id="tLinha">
+                <td id="nLancamento"></td>
+                <td id="hoje"></td>
+                <td id="descricao"></td>
+                <td id="valor"></td>
+                <td id="tipo"></td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <label><strong>Saldo acumulado: R$ 
+        <span id="saldoAcumulado"></span>
+    </strong></label>
+</body>
+<script src="./script.js"></script>
+</html>

@@ -4,7 +4,7 @@ USE livro_caixa;
 
 CREATE TABLE lancamentos (
     n_lancamento INTEGER NOT NULL UNIQUE PRIMARY KEY AUTO_INCREMENT,
-    data DATE NOT NULL,
+    day DATE NOT NULL,
     descricao VARCHAR(30) NOT NULL,
     valor FLOAT(5,2) NOT NULL,
     tipo VARCHAR(1)
@@ -14,7 +14,7 @@ DESCRIBE lancamentos;
 
 SHOW TABLES;
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA07/back_miyagi/docs/lancamentos.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA07/back_miyagi/docs/db/lancamentos.csv'
 -- LOAD DATA INFILE ''
 INTO TABLE lancamentos
 FIELDS TERMINATED BY ';'
