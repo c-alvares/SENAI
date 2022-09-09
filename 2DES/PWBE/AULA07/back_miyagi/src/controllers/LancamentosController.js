@@ -18,6 +18,18 @@ function listarLancamentos(req, res) {
     })
 };
 
+/* function listarDeb(req, res) {
+    let query = `SELECT * FROM lancamentos WHERE tipo = 'D'`;
+
+    connectionDB.query(query, (err, result) =>{
+        if(err == null) {
+            res.json(result).status(200).end();
+        }else {
+            res.json(err).status(400).end();
+        }
+    })
+}; */
+
 function cadastrarLancamento(req,res) {
     let query = `INSERT INTO lancamentos VALUES(DEFAULT, ${req.body.day}, '${req.body.descricao}', ${req.body.valor}, '${req.body.tipo}')`;
 

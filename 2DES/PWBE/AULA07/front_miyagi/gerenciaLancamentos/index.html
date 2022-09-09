@@ -7,7 +7,8 @@
     <title>Livro Caixa</title>
     <link rel="stylesheet" href="./style.css">
 </head>
-<body onLoad="carregaCaixa()">
+
+<body>
     <div>
         <h1>Livro Caixa</h1>
         <hr>
@@ -15,33 +16,58 @@
             <select name="" id="filtro"></select>
         </label>
         <label>Novo Lançamento
-            <button id="lancar"> + </button>
+            <button id="lancar" onclick="cadastro()"> + </button>
         </label>
         <hr>
     </div>
-    <table class="tabelaD"> 
-        <thead>
-           <tr>
-            <td colspan="5"><strong>Débitos</strong></td>
-           </tr>
-           <tr>
-            <td>N-Lançamento</td>
-            <td>Data</td>
-            <td>Descrição</td>
-            <td>Valor</td>
-            <td>Tipo</td>
-           </tr>
-        </thead>
-        <tbody id="tCorpo">
-            <tr id="tLinha">
-                <td id="nLancamento"></td>
-                <td id="hoje"></td>
-                <td id="descricao"></td>
-                <td id="valor"></td>
-                <td id="tipo"></td>
+    <div id="divisao">
+        <table class="tabelaD"> 
+            <thead>
+            <tr>
+                <td colspan="5"><strong>Débitos</strong></td>
             </tr>
-        </tbody>
-    </table>
+            <tr>
+                <td>N-Lançamento</td>
+                <td>Data</td>
+                <td>Descrição</td>
+                <td>Valor</td>
+                <td>Tipo</td>
+            </tr>
+            </thead>
+            <tbody id="tCorpo">
+                <tr id="tLinha">
+                    <td id="nLancamento"></td>
+                    <td id="hoje"></td>
+                    <td id="descricao"></td>
+                    <td id="valor"></td>
+                    <td id="tipo"></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="tabelaC"> 
+            <thead>
+            <tr>
+                <td colspan="5"><strong>Crédito</strong></td>
+            </tr>
+            <tr>
+                <td>N-Lançamento</td>
+                <td>Data</td>
+                <td>Descrição</td>
+                <td>Valor</td>
+                <td>Tipo</td>
+            </tr>
+            </thead>
+            <tbody id="taCorpo">
+                <tr id="taLinha">
+                    <td id="nuLancamento"></td>
+                    <td id="amanha"></td>
+                    <td id="descricoes"></td>
+                    <td id="valores"></td>
+                    <td id="tipos"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <hr>
     <label><strong>Saldo acumulado: R$ 
         <span id="saldoAcumulado"></span>

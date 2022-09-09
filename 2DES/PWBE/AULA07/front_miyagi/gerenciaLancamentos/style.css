@@ -1,4 +1,21 @@
+
+#divisao {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.tabelaD {
+    margin: 20px;
+}
+
+.tabelaC {
+    margin: 20px;
+}
+
 td {
     border: 1px solid;
     text-align: center;
+    width: 10vw;
 }
