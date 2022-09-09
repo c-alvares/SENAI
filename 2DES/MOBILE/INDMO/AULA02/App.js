@@ -31,6 +31,7 @@ export default function App() {
       
       {/* Exercício 02 */}
       <View style={style.container}>
+        <Text style={style.titulo}>CALCULADORA REACT NATIVE</Text>
         <TextInput style={style.inp} placeholder="Primeiro Valor" value={valor1} onChangeText={(val) => {setValor1(val); }} />
         <TextInput style={style.inp} placeholder="Segundo Valor" value={valor2} onChangeText={(val) => {setValor2(val); }} />
         <View style={style.operad}>
@@ -46,7 +47,6 @@ export default function App() {
           <TouchableOpacity onPress={() => {setOpera(Number(valor1) / Number(valor2));}}>
             <Text style={style.oper}> / </Text>
           </TouchableOpacity>
-          
         </View>
         <TouchableOpacity onPress={() => {setRes(opera);}}>
             <Text style={style.calc}> Calcular </Text>
@@ -61,7 +61,12 @@ const style = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#dee2ff',
-    alignItems: 'center'
+    alignItems: 'center',
+    border: '3px solid'
+  },
+  titulo: {
+    fontWeight: 'bold',
+    
   },
   inp: {
     border: '3px solid',
@@ -73,17 +78,25 @@ const style = StyleSheet.create({
     flexDirection: 'row'
   },
   oper: {
-    border: '5px solid',
-    width: '20px' 
+    border: '3px solid',
+    width: '20px',
+    margin: '5px',
+    backgroundColor: 'white',
+    fontWeight: 'bold'
   },
   calc: {
-    border: '5px solid',
-    alignItems: 'center'
+    border: '3px solid',
+    alignItems: 'center',
+    margin: '5px',
+    backgroundColor: 'white',
+    fontWeight: 'bold'
   },
   res: {
-    border: '5px solid',
-    width: '15vw',
-    height: '20vh'
+    border: '3px solid',
+    width: '17vw',
+    height: '5vh',
+    margin: '5px',
+    backgroundColor: 'white'
   }
 });
 // função JS eval() tenta resolver a expressão dentro dos parâmetros, mesmo sendo String
