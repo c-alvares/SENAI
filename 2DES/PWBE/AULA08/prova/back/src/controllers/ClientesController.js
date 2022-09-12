@@ -15,10 +15,22 @@ function listarClientes(req,res) {
         }else {
             res.json(err).status(400).end();
         }
-    })
-}
+    });
+};
+
+function cadastrarClientes(req, res) {
+    let query = `insert into usuarios values (default, '${req.body.nome}', '${req.body.endereco}', '${req.body.telefone}')`;
+
+    conDB.query(query, (err, result) => {
+        if(err == null) {
+            res.status(201).json(req.body).end();
+        }else {
+            res.status(400).json(err).end();
+        }
+    });
+};
 
 module.exports = {
     listarClientes,
-    // cadastrarClientes
-}
+    cadastrarClientes
+};

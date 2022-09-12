@@ -5,7 +5,7 @@ export default function App() {
 
   const [nome, setNome] = useState("");
   const [cargo, setCargo] = useState("");
-  var funcionario = [
+  /* var funcionario = [
     {
       "nome":"Cyro",
       "cargo":"usuário"
@@ -14,7 +14,7 @@ export default function App() {
       "nome":"Beatriz",
       "cargo":"Cliente"
     }
-  ];
+  ]; */
 
   return (
     <View style={style.container}>
