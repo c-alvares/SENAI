@@ -62,16 +62,17 @@ select * from usuarios;
 select * from filmes;
 select * from locacao;
 
+
+
 create view vw_fil_loc as 
 select l.codigo_cli, f.nome, l.data_locacao  from locacao l
 inner join filmes f 
 on l.codigo_filme = f.codigo_filme;
 
-select * from vw_fil_loc;
-
 create view vw_locados as
-select u.nome as "Nome do Cliente", u.telefone as "Telefone do Cliente", vw.nome as "Filme", vw.data_locacao as "Data de Locação" from usuarios u
+select u.nome as "Nome_do_Cliente", u.telefone as "Telefone_do_Cliente", vw.nome as "Filme", vw.data_locacao as "Data_de_Locação" from usuarios u
 inner join vw_fil_loc vw
 on vw.codigo_cli = u.codigo_cli; 
 
+select * from vw_fil_loc;
 select * from vw_locados;

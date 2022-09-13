@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body onLoad="dadosClientes()">
+    <navbar>
+        <a href="../gerenciaClientes/">Clientes</a>
+        <a href="../gerenciaLocacoes/">Devoluções</a>
+    </navbar>
+    <main>
+        <div>
+            <button id="btCadastrar"> Novo Cliente + </button>
+        </div>
+        <div>
+            <table>
+                <thead>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Telefone</th>
+                </thead>
+                <tbody class="corpoTabela">
+                </tbody>
+            </table>
+        </div>
+    </main>    
+</body>
+<script src="./script.js"></script>
+</html>

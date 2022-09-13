@@ -1,0 +1,14 @@
+@import url('../global/styles/estrutura.css');
+
+#devolver {
+    border: none;
+    background: none;
+}
+
+#devolver > img {
+    width: 2.5vw;
+}
+
+#devolver:hover {
+    cursor: pointer;
+}
