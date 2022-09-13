@@ -6,9 +6,10 @@
 }
 
 #devolver > img {
-    width: 2.5vw;
+    width: 25px;
 }
 
 #devolver:hover {
     cursor: pointer;
 }
+

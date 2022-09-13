@@ -1,5 +1,5 @@
-var urlListar = `http://localhost:3000/usuarios`;
-var urlCadastrar = `http://localhost:3000/usuarios/cadastrar`;
+const urlListar = `http://localhost:3000/usuarios`;
+const urlCadastrar = `http://localhost:3000/usuarios/cadastrar`;
 var usuarios = [];
 
 const btCadastrar = document.querySelector("#btCadastrar");

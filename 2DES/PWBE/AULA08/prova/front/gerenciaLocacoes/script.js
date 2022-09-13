@@ -1,4 +1,4 @@
-var urlListar = `http://localhost:3000/vw_locados`;
+const urlListar = `http://localhost:3000/vw_locados`;
 var locacoes = [];
 
 const corpoTabela = document.querySelector(".corpoTabela");
@@ -32,11 +32,11 @@ function inserirDadosL() {
         nome.innerHTML = locacao.Nome_do_Cliente;
         telefone.innerHTML = locacao.Telefone_do_Cliente;
         filme.innerHTML = locacao.Filme;
-        data.innerHTML = locacao.Data_de_Locação;
+        data.innerHTML = locacao.Data_de_Locação.split("T")[0];
         // multa.innerHTML = locacao.
         // devolver.innerHTML = locacao.
         
-        btImagem.setAttribute("src", "./assets/devolver.png");
+        btImagem.setAttribute("src", "./assets/return.svg");
         btDevolver.setAttribute("id", "devolver");
 
 

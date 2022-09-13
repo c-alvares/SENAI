@@ -1,0 +1,7 @@
+.corpoTabela tr:nth-child(odd) {
+    background-color: #fff
+}
+
+.corpoTabela tr:nth-child(even) {
+    background-color: #ddd;
+}
