@@ -21,7 +21,7 @@
         <hr>
     </div>
     <div id="divisao">
-        <table class="tabelaD"> 
+        <table class="tabelaDeb"> 
             <thead>
             <tr>
                 <td colspan="5"><strong>Débitos</strong></td>
@@ -34,8 +34,8 @@
                 <td>Tipo</td>
             </tr>
             </thead>
-            <tbody id="tCorpo">
-                <tr id="tLinha">
+            <tbody id="Corpo" class="corpoTabela">
+                <tr id="Linha">
                     <td id="nLancamento"></td>
                     <td id="hoje"></td>
                     <td id="descricao"></td>
@@ -44,7 +44,7 @@
                 </tr>
             </tbody>
         </table>
-        <table class="tabelaC"> 
+        <table class="tabelaCred"> 
             <thead>
             <tr>
                 <td colspan="5"><strong>Crédito</strong></td>
@@ -57,8 +57,8 @@
                 <td>Tipo</td>
             </tr>
             </thead>
-            <tbody id="taCorpo">
-                <tr id="taLinha">
+            <tbody id="body" class="corpoTabela">
+                <tr id="row">
                     <td id="nuLancamento"></td>
                     <td id="amanha"></td>
                     <td id="descricoes"></td>
@@ -72,6 +72,14 @@
     <label><strong>Saldo acumulado: R$ 
         <span id="saldoAcumulado"></span>
     </strong></label>
+    <div id="caixaCadastro">
+        <h3>Criar Novo Lançamento</h3>
+        <button> X </button>
+    </div>
+    <hr>
+    <Label>Descrição:<input type="text"></Label>
+    <Label>Tipo:<input type=""></input></Label>
+    <Label>Valor:<input type=""></input></Label>
 </body>
 <script src="./script.js"></script>
 </html>

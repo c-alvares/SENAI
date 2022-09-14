@@ -6,16 +6,22 @@
 
 }
 
-.tabelaD {
+.tabelaDeb {
     margin: 20px;
 }
 
-.tabelaC {
+.tabelaCred {
     margin: 20px;
 }
 
 td {
-    border: 1px solid;
     text-align: center;
-    width: 10vw;
+}
+
+.corpoTabela tr:nth-child(odd) {
+    background-color: #fff
+}
+
+.corpoTabela tr:nth-child(even) {
+    background-color: #ddd;
 }

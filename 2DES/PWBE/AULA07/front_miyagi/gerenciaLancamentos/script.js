@@ -1,6 +1,4 @@
-const tabelaD = document.querySelector("#tabelaD");
-// const tCorpo = document.querySelector("#tCorpo");
-// const tLinha = document.querySelector("#tLinha");
+const tabelaDeb = document.querySelector("#tabelaDeb");
 const nLancamento = document.querySelector("#nLancamento");
 const hoje = document.querySelector("#hoje");
 const descricao = document.querySelector("#descricao");
@@ -14,7 +12,7 @@ fetch("http://localhost:3000/lancamentos")
   .then((lancamentos) => {
     lancamentos.forEach((lancamento) => {
       if (lancamento.tipo == "D") {
-        let linha = document.querySelector("#tLinha").cloneNode(true);
+        let linha = document.querySelector("#Linha").cloneNode(true);
 
         let colunas = linha.querySelectorAll("td");
         colunas[0].innerHTML = lancamento.n_lancamento;
@@ -23,9 +21,9 @@ fetch("http://localhost:3000/lancamentos")
         colunas[3].innerHTML = lancamento.valor;
         colunas[4].innerHTML = lancamento.tipo;
 
-        document.querySelector("#tCorpo").appendChild(linha);
+        document.querySelector("#Corpo").appendChild(linha);
       } else {
-        let lina = document.querySelector("#taLinha").cloneNode(true);
+        let lina = document.querySelector("#row").cloneNode(true);
 
         let col = lina.querySelectorAll("td");
         lina.querySelector("#nuLancamento").innerHTML = lancamento.n_lancamento;
@@ -34,7 +32,7 @@ fetch("http://localhost:3000/lancamentos")
         lina.querySelector("#valores").innerHTML = lancamento.valor;
         lina.querySelector("#tipos").innerHTML = lancamento.tipo;
 
-        document.querySelector("#taCorpo").appendChild(lina);
+        document.querySelector("#body").appendChild(lina);
       }
     });
   });
