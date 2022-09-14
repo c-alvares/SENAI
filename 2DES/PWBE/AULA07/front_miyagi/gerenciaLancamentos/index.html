@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body onLoad="carregarDados()">
     <div>
         <h1>Livro Caixa</h1>
         <hr>
@@ -16,70 +16,86 @@
             <select name="" id="filtro"></select>
         </label>
         <label>Novo Lançamento
-            <button id="lancar" onclick="cadastro()"> + </button>
+            <button id="lancar" onclick="abrirModalCadastro()"> + </button>
         </label>
         <hr>
     </div>
     <div id="divisao">
-        <table class="tabelaDeb"> 
-            <thead>
-            <tr>
-                <td colspan="5"><strong>Débitos</strong></td>
-            </tr>
-            <tr>
-                <td>N-Lançamento</td>
-                <td>Data</td>
-                <td>Descrição</td>
-                <td>Valor</td>
-                <td>Tipo</td>
-            </tr>
-            </thead>
-            <tbody id="Corpo" class="corpoTabela">
-                <tr id="Linha">
-                    <td id="nLancamento"></td>
-                    <td id="hoje"></td>
-                    <td id="descricao"></td>
-                    <td id="valor"></td>
-                    <td id="tipo"></td>
+        <div id="divDeb">
+            <table class="tabelaDeb"> 
+                <thead>
+                <tr>
+                    <td colspan="5"><strong>Débitos</strong></td>
                 </tr>
-            </tbody>
-        </table>
-        <table class="tabelaCred"> 
-            <thead>
-            <tr>
-                <td colspan="5"><strong>Crédito</strong></td>
-            </tr>
-            <tr>
-                <td>N-Lançamento</td>
-                <td>Data</td>
-                <td>Descrição</td>
-                <td>Valor</td>
-                <td>Tipo</td>
-            </tr>
-            </thead>
-            <tbody id="body" class="corpoTabela">
-                <tr id="row">
-                    <td id="nuLancamento"></td>
-                    <td id="amanha"></td>
-                    <td id="descricoes"></td>
-                    <td id="valores"></td>
-                    <td id="tipos"></td>
+                <tr>
+                    <th>N-Lançamento</th>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
                 </tr>
-            </tbody>
-        </table>
+                </thead>
+                <tbody id="corpo" class="corpoTabela">
+                    <tr id="linha">
+                        <td id="nLancamento"></td>
+                        <td id="hoje"></td>
+                        <td id="descricao"></td>
+                        <td id="valor"></td>
+                        <td id="tipo"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="divCred">
+            <table class="tabelaCred"> 
+                <thead>
+                <tr>
+                    <td colspan="5"><strong>Crédito</strong></td>
+                </tr>
+                <tr>
+                    <th>N-Lançamento</th>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Tipo</th>
+                </tr>
+                </thead>
+                <tbody id="body" class="corpoTabela">
+                    <tr id="row">
+                        <td id="nuLancamento"></td>
+                        <td id="amanha"></td>
+                        <td id="descricoes"></td>
+                        <td id="valores"></td>
+                        <td id="tipos"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <hr>
     <label><strong>Saldo acumulado: R$ 
         <span id="saldoAcumulado"></span>
     </strong></label>
-    <div id="caixaCadastro">
-        <h3>Criar Novo Lançamento</h3>
-        <button> X </button>
+    <!-- Janela de Cadastro -->
+    <div id="telaCadastro" class="modais model">
+        <div id="caixaCadastro" class="caixa">
+            <div class="cabecalho">
+                <h3>Criar Novo Lançamento</h3>
+                <button class="fechar" onclick="fecharModalCadastro()">X</button>
+            </div>
+            <hr>
+            <div class="inputs">
+                <Label>Descrição:<input type="text" id="descricao" class="largura"></Label>
+                <Label>Tipo:<select id="tipo" class="largura"></select></Label>
+                <Label>Valor:<input type="number" id="valor" class="largura"></input></Label>
+            </div>
+            <hr>
+            <div class="btnEnviar">
+                <strong>*</strong>
+                <button id="enviar" onClick="cadastrar()">Enviar</button>
+            </div>
+        </div>
     </div>
-    <hr>
-    <Label>Descrição:<input type="text"></Label>
-    <Label>Tipo:<input type=""></input></Label>
-    <Label>Valor:<input type=""></input></Label>
 </body>
 <script src="./script.js"></script>
 </html>

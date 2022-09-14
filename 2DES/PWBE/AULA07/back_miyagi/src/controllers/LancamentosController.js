@@ -20,7 +20,7 @@ function listarLancamentos(req, res) {
 
 
 function cadastrarLancamento(req,res) {
-    let query = `INSERT INTO lancamentos VALUES(DEFAULT, ${req.body.day}, '${req.body.descricao}', ${req.body.valor}, '${req.body.tipo}')`;
+    let query = `INSERT INTO lancamentos VALUES(DEFAULT, curdate(), '${req.body.descricao}', ${req.body.valor}, '${req.body.tipo}')`;
 
     connectionDB.query(query, (err, result) => {
         if(err == null) {

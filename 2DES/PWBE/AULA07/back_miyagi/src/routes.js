@@ -5,7 +5,7 @@ const router = express.Router();
 const LancamentosController = require("./controllers/LancamentosController");
 
 router.get("/lancamentos", LancamentosController.listarLancamentos);
-router.post("/lancamentos", LancamentosController.cadastrarLancamento);
+router.post("/lancamentos/cadastrar", LancamentosController.cadastrarLancamento);
 
 
 module.exports = router;

@@ -14,8 +14,8 @@ DESCRIBE lancamentos;
 
 SHOW TABLES;
 
--- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA07/back_miyagi/docs/db/lancamentos.csv'
-LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA07/back_miyagi/docs/db/lancamentos.csv'
+LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/2DES/PWBE/AULA07/back_miyagi/docs/db/lancamentos.csv'
+-- LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/2DES/PWBE/AULA07/back_miyagi/docs/db/lancamentos.csv'
 INTO TABLE lancamentos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
