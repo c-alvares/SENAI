@@ -1,21 +1,21 @@
-const produtos = document.querySelector('.produtos');
-const produto = document.querySelector('.produto');
-const modal = document.querySelector('.modal');
+const produtos = document.querySelector(".produtos");
+const produto = document.querySelector(".produto");
+const modal = document.querySelector(".modal");
 
-fetch('http://localhost:3000/produtos')
-.then(resp => { return resp.json()})
+fetch("http://localhost:3000/produtos")
+.then(resp => {return resp.json()})
 .then(produtos => {
-        produtos.forEach(produto => {
-            duplicarProduto(produto);
-        })
+    produtos.forEach(produto => {
+        duplicarProduto(produto);
     })
+});
 
 function cadastrar() {
     let cod = document.querySelector("#cod").value;
     let nome = document.querySelector("#nnome").value;
     let qntd = document.querySelector("#qntd").value;
     let preco = document.querySelector("#ppreco").value;
-
+    
     let data = JSON.stringify({
         "cod": cod,
         "nome": nome,
@@ -30,24 +30,24 @@ function cadastrar() {
         },
         "body": data
     })
-    .then(resp => {return resp.json()})
-    .then(data => {
+    .then(resp=> {return resp.json()})
+    .then(data => { 
         duplicarProduto(data); 
         showModal();
     })
 }
 
 function showModal() {
-    modal.classList.toggle('model');
+    modal.classList.toggle("model");
 }
 
 function duplicarProduto(info) {
-    let nPROD = produto.cloneNode(true);
+    let nProd = produto.cloneNode(true);
 
-    nPROD.classList.remove('model');
+    nProd.classList.remove("model");
 
-    nPROD.querySelector('#nome').innerHTML = info.nome;
-    nPROD.querySelector('#preco').innerHTML = "R$ " + info.preco;
+    nProd.querySelector("#nome").innerHTML = info.nome;
+    nProd.querySelector("#preco").innerHTML = "R$ " + info.preco;
 
-    produtos.appendChild(nPROD);
+    produtos.appendChild(nProd);
 }

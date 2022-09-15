@@ -22,7 +22,6 @@ ul {
 ul > li {
     margin: 15px;
     font-weight: bold;
-    text-decoration: none;
 }
 
 main {
@@ -108,11 +107,10 @@ input {
 }
 
 .cadastrar:hover {
-    color: #fff;
+    color:  #fff;
     background-color: #2fd659;
 }
 
 .cadastrar > img {
-    margin-left: 10px;;
-
+    margin-left: 10px;
 }
