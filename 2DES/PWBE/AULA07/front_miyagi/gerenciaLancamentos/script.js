@@ -1,16 +1,15 @@
 const tabelaDeb = document.querySelector("#tabelaDeb");
-const urlListar = "http://localhost:3000/lancamentos";
-const urlCadastrar = "http://localhost:3000/lancamentos/cadastrar";
+const url = "http://localhost:3000/lancamentos";
 
 var lancados = [];
-var descricao = document.querySelector("#descricao");
-var tipo = document.querySelector("#tipo");
-var valor = document.querySelector("#valor");
-var enviar = document.querySelector("#enviar")
+const descrito = document.querySelector("#descricao");
+const tipo = document.querySelector("#tipo");
+const valor = document.querySelector("#valor");
+const enviar = document.querySelector("#enviar");
 
 
 function carregarDados() {
-  fetch(urlListar)
+  fetch(url)
     .then((res) => {
       return res.json();
     })
@@ -18,7 +17,7 @@ function carregarDados() {
       lancados = lancamentos;
       listar();
       });
-};
+}
 
 function listar() {
 
@@ -53,8 +52,15 @@ function listar() {
   })
 }
 
+
+
 function abrirModalCadastro() {
   document.querySelector("#telaCadastro").setAttribute("class", "modais");
+
+  descrito.value = "";
+  valor.value = "";
+  tipo.value = "";
+
 }
 
 function fecharModalCadastro() {
@@ -62,5 +68,28 @@ function fecharModalCadastro() {
 }
 
 function cadastrar() {
-  
+  let servico = {
+    "descricao": descrito.value,
+    "valor": valor.value,
+    "tipo": tipo.value, 
+  };
+
+  fetch(url, {
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": JSON.stringify(servico)
+  })
+  .then(res => {return res.json()})
+  .then(resp => {
+    if(resp.descricao !== undefined) {
+      alert("Lançamento cadastrado com sucesso.");
+      window.location.reload();
+    }else {
+      alert("Falha ao cadastrar novo lancaçamento");
+    }
+  })
 }
+
+  

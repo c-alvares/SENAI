@@ -9,6 +9,13 @@
     justify-content: space-around;
 }
 
+.header {
+    margin: 10px;
+}
+
+#lancar {
+    padding: 0px 10px;
+}
 
 .tabelaDeb {
     margin: 20px;
@@ -21,7 +28,6 @@
 td {
     text-align: center;
 }
-
 
 .corpoTabela tr:nth-child(odd) {
     background-color: #fff

@@ -9,17 +9,19 @@
 </head>
 
 <body onLoad="carregarDados()">
-    <div>
+    <div class="header">
         <h1>Livro Caixa</h1>
-        <hr>
-        <label>Filtro:
-            <select name="" id="filtro"></select>
+    </div>
+    <hr>
+    <div class="header">
+        <label id="filtro">Filtro: 
+            <input id='d' onblur="filtrar()" type='text' placeholder="Data">
         </label>
         <label>Novo Lançamento
             <button id="lancar" onclick="abrirModalCadastro()"> + </button>
-        </label>
-        <hr>
+        </label>  
     </div>
+    <hr>
     <div id="divisao">
         <div id="divDeb">
             <table class="tabelaDeb"> 
@@ -86,7 +88,12 @@
             <hr>
             <div class="inputs">
                 <Label>Descrição:<input type="text" id="descricao" class="largura"></Label>
-                <Label>Tipo:<select id="tipo" class="largura"></select></Label>
+                <Label>Tipo:
+                    <select id="tipo" class="largura">
+                        <option value="D">Saída</option>
+                        <option value="C">Entrada</option>
+                    </select>
+                </Label>
                 <Label>Valor:<input type="number" id="valor" class="largura"></input></Label>
             </div>
             <hr>

@@ -16,7 +16,7 @@ function listarLancamentos(req, res) {
             res.json(err).status(400).end();
         }
     })
-};
+}
 
 
 function cadastrarLancamento(req,res) {
@@ -29,9 +29,22 @@ function cadastrarLancamento(req,res) {
             res.status(400).json(err).end();     
         }
     });
-};
+}
+
+function filtrarData(req, res) {
+    let query = `SELECT * FROM lancamentos WHERE = '${req.params.day}'`;
+
+    connectionDB.query(query, (err, result) =>{
+        if(err == null){
+            res.json(result).status(200).end();
+        }else {
+            res.json(err).status(400).end();
+        }
+    });
+}
 
 module.exports = {
     listarLancamentos,
-    cadastrarLancamento
+    cadastrarLancamento,
+    filtrarData
 };
