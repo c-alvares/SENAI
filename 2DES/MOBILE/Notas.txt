@@ -154,8 +154,44 @@ return(
     border: '2px solid #adffa6',
     borderRadius: '10px'
   }
-----------
+---------------
 31/08
 expo start --web para rodar direto
 Caso dê problema, utilizar o npm i --force
 função JS eval() tenta resolver a expressão dentro dos parâmetros, mesmo sendo String
+---------------
+16/09
+---------------
+React Navigation
+---------------
+Se o yarn não for reconhecido, utilizar:
+
+npm i -g yarn
+
+Depois, instalar as seguintes dependências
+
+- yarn add @react-navigation/native
+
+- yarn add react-native-screens react-native-safe-area-context
+
+Criar pasta src
+Criar pasta pages
+Criar pasta Home
+Criar arquivo index.js
+
+No App.js, colar:
+
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+
+export default function App() {
+  return (
+    <NavigationContainer>{/* Rest of your app code */}</NavigationContainer>
+  );
+}
+
+Instalar a dependência:
+- yarn add @react-navigation/native-stack
+
+https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
+https://reactnavigation.org/docs/getting-started/
