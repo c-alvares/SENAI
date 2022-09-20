@@ -1,0 +1,35 @@
+Criar um banco de dados para registro e controle de empréstimos conforme regras de negócio estabelecidas
+
+
+Regras de negócio:
+
+1) É necessário uma entidade Clientes para armazenar os dados de contato do cliente
+
+2) Uma entidade Empréstimo para registrar os empréstimos feitos pelos clientes
+
+3) Cada empréstimo é pago em parcelas, então é necessário uma entidade parcelas que faça relação com o empréstimo e o cliente.
+
+4) A entidade parcelas deve possuir as datas de vencimento, pagamento, valor previsto e valor recebido:
+    . A data de pagamento e o valor recebido quando nulos significam que: "Esta parcela ainda não foi paga".
+
+5) Utilizando gatilhos e/ou procedimentos armazenados automatize a geração de parcelas através do campo total de parcelas na entidade empréstimo.
+
+6) Crie um relatório que mostre quanto dinheiro já foi emprestado e quanto dinheiro já foi recebido.
+
+7) Os dados para teste estão neste repositório em formato "CSV"
+
+8) Também neste diretório encontra-se o DER(Diagrama de Entidade e Relacionamentos) deste desafio
+
+9) Crie o script SQL de criação e importação dos dados "CSV"
+
+10) Crie o Gatilho e os Relatórios/Consultas ou Views que respondam as seguintes questões:
+
+11) Quanto já foi emprestado?
+
+12) Quanto já foi recebido?
+
+13) Quanto existe a receber?
+
+14) Qual o lucro bruto esperado?
+
+15) Para responder estas questões, altere os dados do seu Banco de dados de forma que todas as parcelas com vencimento aterior a hoje já foram pagas.
