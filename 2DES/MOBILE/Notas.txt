@@ -23,9 +23,9 @@
 
 1) AULA01 (dentro dela terá a estrutura):
 
-. Abrir com visual code a pasta;
-. Abrir o terminal cmd;
-. Digitar expo init nomedoprojeto
+- Abrir com visual code a pasta;
+- Abrir o terminal cmd;
+- expo init nomedoprojeto
 
 -- INFO DO LOG --
 
@@ -158,6 +158,7 @@ return(
 31/08
 expo start --web para rodar direto
 Caso dê problema, utilizar o npm i --force
+
 função JS eval() tenta resolver a expressão dentro dos parâmetros, mesmo sendo String
 ---------------
 16/09
