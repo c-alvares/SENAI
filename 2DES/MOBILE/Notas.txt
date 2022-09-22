@@ -191,8 +191,17 @@ export default function App() {
   );
 }
 
-Instalar a dependência:
+Installation​
+- yarn add @react-navigation/native
+
+Installing dependencies into a bare React Native project​
+- yarn add react-native-screens react-native-safe-area-context
+
+Installing the native stack navigator library​
 - yarn add @react-navigation/native-stack
 
-https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
 https://reactnavigation.org/docs/getting-started/
+https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
+
+
+

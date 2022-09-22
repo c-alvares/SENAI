@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native';
+import { View, Text, Image} from 'react-native';
 
 export default function Contato({ route }) {
     var {contato} = route.params;
@@ -7,12 +7,19 @@ export default function Contato({ route }) {
         <View>
             <Image
                 source={{
-                    uri: contato.imagem,
+                    uri: contato.imagem
                 }}                
-                style={{ width: 200, height: 200 }}
+                style={{ width: 390, height: 211 }}
             />
             <Text>Endereço: {contato.endereco}</Text>
             <Text>Telefone: {contato.telefone}</Text>
         </View>
     )
 }
+
+// const styles = StyleSheet.create({
+//     container: {
+//         flex: 1,
+//         backgroundColor: '#fff',     
+//       },
+// });
