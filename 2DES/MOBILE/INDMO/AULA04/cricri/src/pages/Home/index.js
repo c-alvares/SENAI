@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
-export default function Home({route}) {
-    const [lista, setLista] = useState([
+export default function Home({ navigation }) {
+    const lista = [
         {
             "nome":"barzin",
             "nota":"*****",
@@ -14,7 +13,7 @@ export default function Home({route}) {
         },
         {
             "nome":"buteco",
-            "note":"****",
+            "nota":"****",
             "contato":{
                 "imagem":"https://fastly.4sqi.net/img/general/600x600/70826730_vB67rWinGR4OPj68Ywry8l1tFSobhCX8myxHf6O9Iv0.jpg",
                 "endereco":"Rua Delfos nº 148",
@@ -23,7 +22,7 @@ export default function Home({route}) {
         },
         {
             "nome":"podrão",
-            "note":"***",
+            "nota":"***",
             "contato":{
                 "imagem":"https://fastly.4sqi.net/img/general/600x600/70826730_vB67rWinGR4OPj68Ywry8l1tFSobhCX8myxHf6O9Iv0.jpg",
                 "endereco":"Rua Delfos nº 148",
@@ -32,14 +31,14 @@ export default function Home({route}) {
         },
         {
             "nome":"alanchonete",
-            "note":"****",
+            "nota":"****",
             "contato":{
                 "imagem":"https://fastly.4sqi.net/img/general/600x600/70826730_vB67rWinGR4OPj68Ywry8l1tFSobhCX8myxHf6O9Iv0.jpg",
                 "endereco":"Rua Delfos nº 148",
                 "telefone":"(19) 98241-9874"
             }
         }
-    ])
+    ];
 
 
     return (
@@ -49,7 +48,7 @@ export default function Home({route}) {
                     return(
                         <TouchableOpacity onPress={() => {navigation.navigate("Contato", { "contato":list.contato} )}}>
                             <Text>{list.nome}</Text>
-                            <Text>R$ {list.nota}</Text>
+                            <Text>{list.nota}</Text>
                         </TouchableOpacity>
                     )
                 })

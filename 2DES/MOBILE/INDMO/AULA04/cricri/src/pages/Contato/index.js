@@ -11,8 +11,8 @@ export default function Contato({ route }) {
                 }}                
                 style={{ width: 200, height: 200 }}
             />
-            <Tex>Endereço: {contato.endereco}</Tex>
-            <Tex>Telefone: {contato.telefone}</Tex>
+            <Text>Endereço: {contato.endereco}</Text>
+            <Text>Telefone: {contato.telefone}</Text>
         </View>
     )
 }
