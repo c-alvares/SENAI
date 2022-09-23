@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import InfoDeContato from '../../components/InfoDeContato/index';
 
 export default function Home({ navigation }) {
     const lista = [
@@ -38,18 +39,22 @@ export default function Home({ navigation }) {
                 "telefone":"(19) 98241-9874"
             }
         }
-    ];
+    ]
 
+    const nav = () => {
+        navigation.navigate("Contato, { "contato":list.contato })
+    }
 
     return (
         <View style={styles.container}>
             {
-                lista.map((list, indice) => {
+                lista.map((list) => {
                     return(
                         <View>
-                            <TouchableOpacity style={styles.button} onPress={() => {navigation.navigate("Contato", { "contato":list.contato} )}}>
+                            <InfoDeContato name="Contato" onPress={nav} />
+                            {/* <TouchableOpacity style={styles.button} key={indice} onPress={() => {navigation.navigate("Contato", { "contato":list.contato} )}}>
                                 <Text style={styles.nomes}>{list.nome}</Text>                            
-                            </TouchableOpacity>
+                            </TouchableOpacity> */}
                             <Image source={{ uri: list.nota }} style={styles.nota} />
                         </View>
                     )
