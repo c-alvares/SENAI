@@ -647,7 +647,9 @@ select * from Itens_Pedido;
 -- Mostrar todas as tabelas no fim do script
 show tables;
 
+-- 
 -- EXERCÍCIOS
+-- 
 
 -- Qual o telefone do cliente "Cesar Augusto Pascali Rago"?
 select telefone from Telefones where cliente_id = (select Cliente_id from Clientes where nome = "Cesar Augusto Pascali Rago");
@@ -693,8 +695,9 @@ select * from Clientes where nome like "Cesar%";
 
 select * from Pedidos where cliente_id like "12";
 -- Último pedido = 2022-09-15 13:10:10 / Valor = R$ 354.71 / Pedido_id = 22
-select * from Itens_Pedido where pedido_id like "22";
+select * from Itens_Pedido where pedido_id = "22";
 -- Quantidade = 11 / Sabores = 4
+select sum(quantidade) as "Quantas pizzas",count(quantidade) as Quantos_sabores from itens_pedido where pedido_id = 22;
 
 
 -- Crie uma view da tabela Itens_pedido que mostre também o nome de cada pizza em ordem de pedido_id, coloque o nome de "vw_itens"
@@ -745,3 +748,7 @@ inner join pizzas z
 on z.pizza_id = i.pizza_id;
 
 select * from vw_pedidos order by pedido_id DESC;
+
+-- Podemos utilizar a estrutura de criação da view para consultar alguma informação
+-- select pedidos p inner joint itens_pedido i on i.pedido_id = p.pedido_id;
+-- Caso seja necessário uma consulta constante, a informação seja relevante, é só acrescentar ao comandos a criação da view
