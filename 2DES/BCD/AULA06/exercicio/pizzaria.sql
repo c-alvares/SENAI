@@ -752,3 +752,35 @@ select * from vw_pedidos order by pedido_id DESC;
 -- Podemos utilizar a estrutura de criação da view para consultar alguma informação
 -- select pedidos p inner joint itens_pedido i on i.pedido_id = p.pedido_id;
 -- Caso seja necessário uma consulta constante, a informação seja relevante, é só acrescentar ao comandos a criação da view
+
+
+-- Utilizar o BD Pizzaria da aula 06
+use pizzaria;
+drop table dados_cli;
+-- Criar uma tabela a apartir de outra
+create table dados_cli
+select nome, logradouro, bairro
+from clientes;
+
+show tables;
+select * from dados_cli;
+describe dados_cli;
+
+--  Alterar a tabela de dados_cli adicionando uma coluna CPF
+alter table dados_cli add cpf varchar(15);
+alter table dados_cli drop cpf;
+-- alter table dados_cli cpf varchar(15) after cliente_id;
+alter table dados_cli add cpf varchar(15) first;
+
+select * from dados_cli;
+
+-- Criar um índice para uma tabela
+create index i_nome on dados_cli(nome);
+
+-- Se precisar exportar dados de uma consulta
+select nome from dados_cli into outfile 'd:/nomes.txt';
+
+-- Alterar os CPFs de NULL para CPFs Válidos
+update dados_cli set cpf = "" where nome = "";
+
+-- Criar um índice para tabela com CPF
