@@ -1,6 +1,5 @@
 Criar um banco de dados para registro e controle de empréstimos conforme regras de negócio estabelecidas
 
-
 Regras de negócio:
 
 1) É necessário uma entidade Clientes para armazenar os dados de contato do cliente

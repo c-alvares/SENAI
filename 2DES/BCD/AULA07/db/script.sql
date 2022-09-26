@@ -34,7 +34,7 @@ CREATE TABLE emprestimos (
     n_parcelas INTEGER NOT NULL,
     taxa_juros DECIMAL(2,1) NOT NULL,
     impostos DECIMAL(6,2) NOT NULL,
-    montante DECIMAL(8,2) NOT NULL,
+    montante FLOAT(20,2) NOT NULL,
     FOREIGN KEY (cpf) REFERENCES clientes(cpf) ON DELETE CASCADE
 );
 
@@ -78,29 +78,29 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 1;
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 2;
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 3;
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 4;
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 5;
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 6;
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 7;
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 8;
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 9;
-UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id = 10;
+UPDATE emprestimos SET montante = (SELECT SUM(capital*(pow((1+taxa_juros),n_parcelas))+impostos)) WHERE id != 0;
 
 SELECT * FROM clientes;
 SELECT * FROM telefones;
 SELECT * FROM emprestimos;
+SELECT * FROM parcelas;
 
-
+-- DROP TRIGGER IF EXISTS geraParcela;
+-- CREATE TRIGGER geraParcela AFTER INSERT ON emprestimos
+--     FOR EACH ROW BEGIN
+--         INSERT INTO emprestimos VALUES
+--             (DEFAULT,DATE_ADD(SELECT data FROM emprestimos ),NULL,)
 
 -- INSERT INTO parcelas VALUES 
 -- (DEFAULT,DATE_ADD(CURDATE(),INTERVAL 10 MONTH,NULL,));
 
 -- SELECT * FROM parcelas;
 
--- DROP TRIGGER IF EXISTS gera_parcela;
--- CREATE TRIGGER calc_montante AFTER INSERT ON emprestimos
---     FOR EACH ROW BEGIN
---         INSERT INTO emprestimos VALUES
+
+DROP TRIGGER IF EXISTS geraParcela;
+CREATE TRIGGER 
+    geraParcela AFTER INSERT ON emprestimos FOR EACH ROW 
+BEGIN
+    INSERT INTO parcelas VALUES (DEFAULT,curdate(),NULL,10, 200, val_recebido - valor)
+END;
+

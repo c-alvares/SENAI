@@ -745,5 +745,3 @@ inner join pizzas z
 on z.pizza_id = i.pizza_id;
 
 select * from vw_pedidos order by pedido_id DESC;
-
-
