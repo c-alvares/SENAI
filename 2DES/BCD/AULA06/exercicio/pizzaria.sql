@@ -887,77 +887,41 @@ update dados_cli set cpf="33710576822" where nome = "Viviane Mello Bonadia dos S
 update dados_cli set cpf="05045619950" where nome = "Walter Paulo Costenaro";
 update dados_cli set cpf="00201026821" where nome = "Wellington Fabio de Oliveira M";
 
-------------------------
--- Exercícios
--- Crie a procedure set_total_pedido() e cadastre os seguintes pedidos:
+-- Exercícios --
 
--- "Thamires de Campos Luz" quer uma pizza Vienense
-select * from clientes where nome = "Thamires de Campos Luz";
--- 96 Thamires de Campos Luz
-select * from pizzas where nome = "Vienense";
--- 41 Vienense 29.09
-insert into pedidos values (default, 96, curdate(), curtime(), null);
+-- Crie a procedure set_total_pedido() ou trigger e cadastre os seguintes pedidos:
 
-select * from pedidos order by pedido_id desc limit 1;
--- pedido_id = 27
-insert into itens_pedido values (27,41,1,29.09);
+-- TIPOS DE INSERÇÃO:
+-- 	1) Manual 
 
--- Inserção manual
 -- update pedidos 
 -- set valor = (select sum(quantidade * valor) from itens_pedido where pedido_id = 27)
 -- where pedido_id = 27;
---------------------------------------------------
--- "Everton Jose de Souza" que duas Toscana
-select * from clientes where nome = "Everton Jose de Souza";
--- 105 Everton Jose de Souza
-select * from pizzas where nome = "Toscana";
--- 39 Toscana 29.41
-insert into pedidos values (default,105,curdate(),curtime(),null);
 
-select * from pedidos order by pedido_id desc limit 1;
--- pedido_id = 28
-
-insert into itens_pedido values (28,39,2,29.41);
---------------------------------------------------
--- "Silvia Roberta de Jesus Garcia" que uma Canadense e 2 Cubanas
-select * from clientes where nome = "Silvia Roberta de Jesus Garcia"
--- 93 Silvia Roberta de Jesus Garcia
-select * from pizzas where nome = "Canadense";
--- 11 Canadense 31.33
-select * from pizzas where nome = "Cubana";
--- 14 Cubana 30.85
-insert into pedidos values (default,93,curdate(),curtime(),null);
-
-select * from pedidos order by pedido_id desc limit 1;
--- pedido_id = 29
-insert into itens_pedido values 
-(29,11,1,31.33),
-(29,14,2,30.85);
-
--- Inserção por Storage Procedure
-drop procedure set_total_pedido;
-delimiter //
-create procedure set_total_pedido(id int)
-begin
-	update pedidos
-	set valor = (select sum(quantidade * valor) from itens_pedido where pedido_id = id)
-	where pedido_id = id;
-end//
-delimiter ;
+-- 2) Storage Procedure - Procedimento Armazenado que atualize o total do pedido pela chamada(call)
+-- drop procedure set_total_pedido;
+-- delimiter //
+-- create procedure set_total_pedido(id int)
+-- begin
+-- 	update pedidos
+-- 	set valor = (select sum(quantidade * valor) from itens_pedido where pedido_id = id)
+-- 	where pedido_id = id;
+-- end//
+-- delimiter ;
 
 -- Chamada do Procedure
-call set_total_pedido(27);
-call set_total_pedido(28);
-call set_total_pedido(29);
+-- call set_total_pedido(27);
+-- call set_total_pedido(28);
+-- call set_total_pedido(29);
 
---------------------
--- Gatilhos - Trigger
+-- 3) Gatilhos - Trigger que atualize o total do pedido
 -- Gatilhos e procedimentos são semelhantes o que muda é como são executados
 -- Procedimentos é necessário chamá-los (CALL)
 -- Gatilhos são automáticos, antes ou depois de um DML (insert, update, delete)
 
 -- Exemplo de Trigger
-dorp trigger if exists update_total_pedido;
+-- Quando o trigger possui apenas um comando não é necessário utilizar delimitador ou begin/end
+drop trigger if exists update_total_pedido;
 delimiter //
 create trigger update_total_pedido
 after insert on itens_pedido
@@ -966,3 +930,45 @@ begin
 	update pedidos
 	set valor = (select sum(quantidade * valor) from itens_pedido where pedido_id = new.pedido_id)
 	where pedido_id = new.pedido_id;
+end//
+delimiter ;
+
+-- FAZER COM OS SEGUINTES CASOS:
+
+-- "Thamires de Campos Luz" quer uma pizza Vienense
+select * from clientes where nome = "Thamires de Campos Luz"; -- 96 Thamires de Campos Luz
+select * from pizzas where nome = "Vienense"; -- 41 Vienense 29.09
+
+insert into pedidos values (default, 96, curdate(), curtime(), null);
+select * from pedidos order by pedido_id desc limit 1; -- pedido_id = 27
+
+insert into itens_pedido values (27,41,1,29.09);
+
+select * from pedidos;
+
+
+-- "Everton Jose de Souza" que duas Toscana
+select * from clientes where nome = "Everton Jose de Souza"; -- 105 Everton Jose de Souza
+select * from pizzas where nome = "Toscana"; -- 39 Toscana 29.41
+
+insert into pedidos values (default,105,curdate(),curtime(),null);
+select * from pedidos order by pedido_id desc limit 1; -- pedido_id = 28
+
+insert into itens_pedido values (28,39,2,29.41);
+
+select * from pedidos;
+
+
+-- "Silvia Roberta de Jesus Garcia" que uma Canadense e 2 Cubanas
+select * from clientes where nome = "Silvia Roberta de Jesus Garcia" -- cliente_id = 93
+select * from pizzas where nome = "Canadense";  -- pizza_id = 11 valor = 31.33
+select * from pizzas where nome = "Cubana"; -- pizza_id = 14 valor = 30.85
+
+insert into pedidos values (default,93,curdate(),curtime(),null);
+select * from pedidos order by pedido_id desc limit 1; -- pedido_id = 29
+
+insert into itens_pedido values 
+(29,11,1,31.33),
+(29,14,2,30.85);
+
+select * from pedidos;
