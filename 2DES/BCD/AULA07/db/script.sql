@@ -34,7 +34,7 @@ CREATE TABLE emprestimos (
     n_parcelas INTEGER NOT NULL,
     taxa_juros DECIMAL(2,1) NOT NULL,
     impostos DECIMAL(6,2) NOT NULL,
-    montante FLOAT(20,2) NOT NULL,
+    montante DECIMAL(8,2) NOT NULL,
     FOREIGN KEY (cpf) REFERENCES clientes(cpf) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -47,7 +47,7 @@ CREATE TABLE parcelas (
     valor DECIMAL(8,2) NOT NULL,
     val_recebido DECIMAL(8,2) NOT NULL,
     diferenca DECIMAL(8,2) NOT NULL,
-    FOREIGN KEY (id) REFERENCES emprestimos(id) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (id) REFERENCES emprestimos(id)
 );
 
 DESCRIBE parcelas;
