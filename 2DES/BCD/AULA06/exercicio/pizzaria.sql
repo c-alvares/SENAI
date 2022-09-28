@@ -932,6 +932,7 @@ begin
 	where pedido_id = new.pedido_id;
 end//
 delimiter ;
+show triggers; -- Mostra todos os Triggers do banco
 
 -- FAZER COM OS SEGUINTES CASOS:
 
@@ -972,3 +973,63 @@ insert into itens_pedido values
 (29,14,2,30.85);
 
 select * from pedidos;
+
+-- Crie uma procedure que receba como parâmetros cliente_id, pizza_id e quantidade e gere um pedido com um item, coloque o nome de "new_pedido_1item()"
+drop procedure if exists new_pedido_um_item;
+delimiter //
+create procedure new_pedido_1item(cli_id int,piz_id int, qntd int)
+begin
+	insert into itens_pedido values (null,piz_id,qntd,(select valor from pizzas where pizza_id = piz_id) * qntd );
+	insert into pedidos values (default,cli_id,curdate(),curtime(),((select valor from pizzas where pizza_id = piz_id) * qntd ));
+	update itens_pedido set pedido_id = (select pedido_id from pedidos order by pedido_id desc limit 1);
+end //
+delimiter ;
+
+call new_pedido_1item(11,34,2);
+select * from pedidos order by pedido_id desc limit 1; 
+select * from itens_pedido order by pedido_id desc limit 1; 
+
+-- Correção
+-- Primeiro foi criado o Procedure e depois a view
+
+create view vw_pedidos_itens as
+select p.pedido_id, c.nome, p.data, p.hora, pz.nome as pizza, i.quantidade, i.valor, p.valor as total
+from pedidos p inner join clientes c on p.cliente_id = c.cliente_id
+inner join itens_pedido i on p.pedido_id = i.pedido_id
+inner join pizzas pz on i.pizza_id = pz.pizza_id;
+
+drop procedure if exists new_pedido_1item;
+delimiter //
+create procedure new_pedido_1item(idc int,idp int,qtd int)
+begin
+	insert into pedidos value(default, idc, curdate(), curtime(), null);
+	set @preco = (select valor from pizzas where pizza_id = idp);
+	insert into itens_pedido value(last_insert_id(),idp,qtd,@preco);
+	select * from vw_pedidos_itens where pedido_id = last_insert_id();
+end //
+delimiter ;
+call new_pedido_1item(13,17,4);
+
+-- Com tratamento de erros e condicionais (IF ELSE)
+drop procedure if exists new_pedido_1item_tc;
+delimiter //
+create procedure new_pedido_1item_tc(idc int,idp int,qtd int)
+begin
+	declare erro_sql tinyint default false;
+	declare continue handler for sqlexception set erro_sql = true;
+	insert into pedidos value(default, idc, curdate(), curtime(), null);
+	set @preco = (select valor from pizzas where pizza_id = idp);
+	insert into itens_pedido value(last_insert_id(),idp,qtd,@preco);
+	IF erro_sql = false THEN
+		select * from vw_pedidos_itens where pedido_id = last_insert_id();
+		select 'Pedido cadastrado com sucesso' as 'Sucesso';
+	ELSE
+		select 'Erro ao inserir pedido' as 'Erro';
+	END IF;
+end //
+delimiter ;
+
+call new_pedido_1item_tc(200,3,1);
+call new_pedido_1item_tc(20,7,2);
+
+
