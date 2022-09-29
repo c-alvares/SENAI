@@ -35,7 +35,10 @@ export default function Compromissos({ navigation }) {
             {
                 data.map((item, index) => {
                     return(
-                        
+                        <TouchableOpacity styles={styles.item} key={index} onPress={() => navigation.navigate()}>
+                            <Text style={styles.title}>{item.nome}</Text>
+                            <Text>{item.horario}</Text>
+                        </TouchableOpacity>
                     )
                 })
             }

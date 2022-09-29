@@ -1031,5 +1031,3 @@ delimiter ;
 
 call new_pedido_1item_tc(200,3,1);
 call new_pedido_1item_tc(20,7,2);
-
-

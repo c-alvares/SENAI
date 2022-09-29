@@ -1,8 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Compromissos from './pages/Compromissos/compromissos.js';
-import Descricao from './pages/Descricao/descricao.js';
+import Compromissos from './src/pages/Compromissos/compromissos';
+import Descricao from './src/pages/Descricao/descricao.js';
 
 const Stack = createNativeStackNavigator();
 

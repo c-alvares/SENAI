@@ -2,14 +2,14 @@
 //Criar um componente para o botão da tela descricao.
 
 //Cores Utilizadas
-#3A3A3A
-#53693C
-#FFFFFF
+// #3A3A3A
+// #53693C
+// #FFFFFF
 
 //Os dados utilizados não podem ser alterados ou reordenados.
 
 //Base Tela Compromissos
-const data = [
+const data1 = [
     {
         "id":1,
         "tipo":2,
@@ -37,7 +37,7 @@ const data = [
 ]
 
 //Base Tela Descricao
-const data = [
+const data2 = [
     {
         "id_compromisso": 1,
         "descricao":"- Entrega da Atividade.\n- Matéria Nova.",
