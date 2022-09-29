@@ -172,7 +172,6 @@ npm i -g yarn
 Depois, instalar as seguintes dependências
 
 - yarn add @react-navigation/native
-
 - yarn add react-native-screens react-native-safe-area-context
 
 Criar pasta src
@@ -202,6 +201,17 @@ Installing the native stack navigator library​
 
 https://reactnavigation.org/docs/getting-started/
 https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
+-------------
+29/09
+
+npm i -g yarn
+yarn install
+yarn add global expo-cli
+expo init <nomedoprojeto>
+npx expo install react-native-web@~0.18.7 react-dom@18.0.0 @expo/webpack-config@^0.17.0
+yarn add @react-navigation/native
+yarn add react-native-screens react-native-safe-area-context
+yarn add @react-navigation/native-stack
 
 
 
