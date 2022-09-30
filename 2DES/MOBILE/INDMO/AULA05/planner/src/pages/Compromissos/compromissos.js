@@ -1,7 +1,10 @@
 import { ScrollView, View, Text, TouchableOpacity} from 'react-native';
+import CardCompromisso from '../../components/CardCompromisso/CardCompromisso';
+
+import styles from './styles.js';
 
 export default function Compromissos({ navigation }) {
-    const data = [
+    const data1 = [
         {
             "id":1,
             "tipo":2,
@@ -28,21 +31,18 @@ export default function Compromissos({ navigation }) {
         },
     ]
 
-
-
     return (
-        <ScrollView styles={styles.container}>
+        <View>
+            <ScrollView styles={styles.container}>
             {
-                data.map((item, index) => {
+                data1.map((item) => {
                     return(
-                        <TouchableOpacity styles={styles.item} key={index} onPress={() => navigation.navigate()}>
-                            <Text style={styles.title}>{item.nome}</Text>
-                            <Text>{item.horario}</Text>
-                        </TouchableOpacity>
+
                     )
                 })
             }
 
-        </ScrollView>
+            </ScrollView>
+        </View>
     )
 }
