@@ -35,9 +35,9 @@ export default function Compromissos({ navigation }) {
         <View>
             <ScrollView styles={styles.container}>
             {
-                data1.map((item) => {
+                data1.map((card) => {
                     return(
-
+                        <CardCompromisso title={card.nome} desc={card.horario} onPress={() => {navigation.navigate("Descricao")}}/>
                     )
                 })
             }
