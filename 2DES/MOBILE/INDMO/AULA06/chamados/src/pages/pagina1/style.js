@@ -22,4 +22,5 @@ export default StyleSheet.create({
         borderBottomColor: '#7242F5'
         
     }
+
 })

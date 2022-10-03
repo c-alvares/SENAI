@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { View, TextInput, Image } from 'react-native';
 import ButtonLogin from '../../components/buttonLogin/ButtonLogin';
 
+
 import styles from './style';
 
 export default function Login({ navigation }) {
 
-    const [ email, setEmail ] = useState();
-    const [ senha, setSenha ] = useState();
+    const [ email, setEmail ] = useState("");
+    const [ senha, setSenha ] = useState("");
 
     const users = [
         {
@@ -23,24 +24,26 @@ export default function Login({ navigation }) {
     ]
 
     const logar = () => {
+        let flag = false
+
         users.forEach(user => {
             if(email == user.email && senha == user.senha) {
                 navigation.navigate('Home', {'info': user.id})
-            }else {
-                console.log('Login ou senha incorreto')
+                flag = true;
             }
-        })
+        });        
+        if(!flag) console.log('Login ou senha incorreto')
     }
 
     return (
         <View style={styles.container}>
             <Image style={styles.logo} source={require('../../../assets/logo.png')}/>
             <View>
-                <TextInput style={styles.box} placeholder="E-Mail" value={email} placeholderTextColor="grey" onchangeText={(val1) => {setEmail(val1)}}/>
-
-                <TextInput style={styles.box} placeholder="Senha" value={senha} placeholderTextColor="grey" onChangeText={(val2) => {setSenha(val2)}}/>
+                <TextInput style={styles.box} value={email} onChangeText={(val1) => {setEmail(val1)}} placeholder="E-Mail" placeholderTextColor="grey" />
+                <TextInput style={styles.box} value={senha} onChangeText={(val2) => {setSenha(val2)}} placeholder="Senha" placeholderTextColor="grey"  />
                 <ButtonLogin value="Login" onPress={logar}/>
             </View>
         </View>
     );
 }
+
