@@ -214,4 +214,10 @@ yarn add react-native-screens react-native-safe-area-context
 yarn add @react-navigation/native-stack
 
 
+-------------
+03/10
+expo init storage
+https://react-native-async-storage.github.io/async-storage/docs/install
+yarn add @react-native-async-storage/async-storage
 
+nome cargo e salário. Salvar como JSON

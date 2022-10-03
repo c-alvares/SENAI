@@ -39,8 +39,8 @@ export default function Login({ navigation }) {
         <View style={styles.container}>
             <Image style={styles.logo} source={require('../../../assets/logo.png')}/>
             <View>
-                <TextInput style={styles.box} value={email} onChangeText={(val1) => {setEmail(val1)}} placeholder="E-Mail" placeholderTextColor="grey" />
-                <TextInput style={styles.box} value={senha} onChangeText={(val2) => {setSenha(val2)}} placeholder="Senha" placeholderTextColor="grey"  />
+                <TextInput style={styles.box} onChangeText={(val1) => {setEmail(val1)}} placeholder="E-Mail" placeholderTextColor="grey" />
+                <TextInput style={styles.box} securetyTextInput={true} onChangeText={(val2) => {setSenha(val2)}} placeholder="Senha" placeholderTextColor="grey"  />
                 <ButtonLogin value="Login" onPress={logar}/>
             </View>
         </View>
