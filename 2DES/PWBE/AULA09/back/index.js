@@ -1,5 +1,5 @@
-const express = require('express');
-const cors = require('cors');
+const express = require('express'); //
+const cors = require('cors'); //Biblioteca de segurança, responsável pela abertura das portas
 
 const itens = require('./src/routes/itens');
 
