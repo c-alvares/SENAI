@@ -9,6 +9,7 @@ const Solicitacao = require("../controllers/SolicitacaoController");
 router.get("/solicitacoes/vw_solicitacoes", Solicitacao.listarSolicitacoes);
 router.post("/solicitacoes/solicita_um_item", Solicitacao.criarSolicitacao);
 
+router.post("/solicitacoes/funcionarios", Solicitacao.cadastrarFuncionario);
 router.get("/solicitacoes/funcionarios", Solicitacao.listarFuncionarios);
 
 module.exports = router;
