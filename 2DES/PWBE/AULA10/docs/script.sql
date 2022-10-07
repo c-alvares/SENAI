@@ -124,3 +124,9 @@ end //
 delimiter ;
 
 call solicita_um_item(1055,1000,100,125,1,10);
+
+-- SELECT p.Nome_produto, d.Nome_Depto FROM Produtos p
+-- INNER JOIN Itens_Solicitacao i on p.Cod_Produto = i.Cod_Produto
+-- INNER JOIN Solicitacoes s on s.Num_Sol = i.Num_Sol
+-- INNER JOIN Departamentos d on d.Cod_Depto = s.Cod_Depto
+-- WHERE p.Nome_produto = "";

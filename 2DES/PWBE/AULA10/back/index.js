@@ -3,7 +3,7 @@ const express = require('express');
 // "Firewall" responsável por liberar as portas
 const cors = require('cors');
 // Rota a ser utilizada
-const solicitacao = require('./src/routes/solicitacoes');
+const solicitacao = require('./src/routes/rotas');
 
 const app = express();
 app.use(express.json());
