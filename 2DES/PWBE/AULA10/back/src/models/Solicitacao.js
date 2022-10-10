@@ -40,7 +40,7 @@ const toReadFunc = () => {
     return "SELECT * FROM Funcionarios";
 }
 const getEmployee = (model) => {
-    return `SELECT * FROM Funcionarios WHERE Nome_Func = '${model.Nome_Func}'`;
+    return `SELECT * FROM Funcionarios WHERE Nome_Func LIKE '%${model.Nome_Func}%'`;
 }
 
 // const getEmployee = (model) => {

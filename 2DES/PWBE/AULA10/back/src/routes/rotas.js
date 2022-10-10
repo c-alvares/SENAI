@@ -12,7 +12,7 @@ const Produto = require("../controllers/produtoController");
 // Solicitacao.listarSolicitacoes faz a comunicação com o controller que fará as ações que se deseja no DB
 router.post("/solicitacoes/funcionarios", Funcionario.cadastrarFuncionario);
 router.get("/solicitacoes/funcionarios", Funcionario.listarFuncionarios);
-router.get("solicitacoes/funcionarios/:Nome_Func", Funcionario.buscarFuncionario);
+router.get("/solicitacoes/funcionarios/:Nome_Func", Funcionario.buscarFuncionario);
 
 router.get("/solicitacoes/Departamentos", Departamento.listarDepartamento);
 router.post("/solicitacoes/Departamentos", Departamento.cadastrarDepartamento);
