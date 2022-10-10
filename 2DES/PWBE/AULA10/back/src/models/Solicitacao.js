@@ -1,10 +1,11 @@
-// Aqui é realizada os comandos a serem executados no DB
+// Aqui são criados os comandos à serem executados no DB
 const toReadAll = () => {
     return "SELECT * FROM vw_solicitacoes";
 }
 const toCreate = (model) => {
     return `CALL solicita_um_item(${model.n_sol}, ${model.depto}, ${model.func}, ${model.prod}, ${model.qtd}, ${model.total})`;
 }
+
 
 const toReadDepartment = (model) => {
     return "SELECT * FROM Departamentos";
@@ -15,6 +16,7 @@ const newDepartment = (model) => {
 const deleteDepartment = (model) => {
     return `DELETE FROM Departamentos WHERE Cod_Depto = '${model.Cod_Depto}'`;
 }
+
 
 const toReadProduct = (model) => {
     return "SELECT * FROM Produtos";
@@ -30,13 +32,20 @@ const newProduct = (model) => {
     return `INSERT INTO Produtos VALUES(${model.Cod_Produto}, '${model.Nome_produto}')`;
 }
 
+
 const toCreateFunc = (model) => {
     return `INSERT INTO Funcionarios VALUES(${model.Cod_Func}, '${model.Nome_Func}', '${model.Sexo}', '${model.Cidade}', '${model.Estado}')`;
 }
 const toReadFunc = () => {
     return "SELECT * FROM Funcionarios";
 }
+const getEmployee = (model) => {
+    return `SELECT * FROM Funcionarios WHERE Nome_Func = '${model.Nome_Func}'`;
+}
 
+// const getEmployee = (model) => {
+//     return `DELETE FROM Funcionarios WHERE Cod_Func = '${model.Cod_Func}'`;
+// }
 
 module.exports = {
     toReadAll,
@@ -49,4 +58,5 @@ module.exports = {
     newProduct,
     toCreateFunc,
     toReadFunc,
+    getEmployee,
 }

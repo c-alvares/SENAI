@@ -1,15 +1,6 @@
 const Solicitacao = require('../models/Solicitacao');
 const con = require('../models/solicitacaoDAO');
 
-const listarFuncionarios = (req, res) => {
-    con.query(Solicitacao.toReadFunc(req.body), (err, result) => {
-        if (err == null)
-            res.json(result).end();
-        else
-            res.json(500).end();
-    })
-}
-
 const cadastrarFuncionario = (req, res) => {
     con.query(Solicitacao.toCreateFunc(req.body), (err, result) => {
         if (err == null)
@@ -25,7 +16,28 @@ const cadastrarFuncionario = (req, res) => {
     })
 }
 
+const listarFuncionarios = (req, res) => {
+    con.query(Solicitacao.toReadFunc(req.body), (err, result) => {
+        if (err == null)
+            res.json(result).end();
+        else
+            res.json(500).end();
+    })
+}
+
+const buscarFuncionario = (req,res) => {
+    con.query(Solicitacao.getEmployee(req.params), (err, result) => {
+        if (err == null)
+            res.json(result).end();
+        else
+            res.json(500).end();
+    })
+}
+
+
+
 module.exports = {
     listarFuncionarios,
+    buscarFuncionario,
     cadastrarFuncionario,
 }
