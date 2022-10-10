@@ -12,7 +12,11 @@ export default function App() {
 
   const salvar = async () => {
     try {
-      let dataJson = { nome, cargo, salario };
+      let dataJson = { 
+        'nome':nome, 
+        'cargo':cargo, 
+        'salario':salario 
+      };
 
       await AsyncStorage.setItem("data", info);
       await AsyncStorage.setItem("form", JSON.stringify(dataJson))
@@ -32,7 +36,19 @@ export default function App() {
       let data = await AsyncStorage.getItem("data");
       let dataJson = await AsyncStorage.getItem("form")
       let ds = dataJson != null ? JSON.parse(dataJson) : "Não Encontrado";
-      setLida(data);
+      setLida(
+        <View>
+          <Text>
+            Nome: {ds.nome}
+          </Text>
+          <Text>
+            Cargo: {ds.cargo}
+          </Text>
+          <Text>
+            Salário: R$ {ds.salario}
+          </Text>
+        </View>
+      );
 
       console.log(ds);
 
