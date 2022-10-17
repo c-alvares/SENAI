@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import Menu from './src/screens/menu/menu.js';
-// import Carrinho from './src/screens/carrinho/carrinho.js';
+import Carrinho from './src/screens/carrinho/carrinho.js';
 
 const Stack = createNativeStackNavigator();
 

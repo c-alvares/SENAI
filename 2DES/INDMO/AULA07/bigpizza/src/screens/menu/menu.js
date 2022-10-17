@@ -1,8 +1,10 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { View, ScrollView } from 'react-native';
 import PizzaCard from '../../components/pizzaCard/index';
+import BtnCarrinho from '../../components/btnCarrinho/index'
+import styles from '../../styles/style.js';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function App() {
 
@@ -31,9 +33,10 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <ScrollView style={styles.roll}>
-        <PizzaCard value={PizzaCard}/>
-      </ScrollView>
+      {/* <ScrollView style={styles.roll}> */}
+        <PizzaCard/>
+      {/* </ScrollView> */}
+      <BtnCarrinho value={carrinho} />
     </View>
   )
 }

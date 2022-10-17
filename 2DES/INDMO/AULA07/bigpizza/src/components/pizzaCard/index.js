@@ -1,5 +1,5 @@
 import {Text, Image, View, TouchableOpacity } from "react-native";
-import styles from '../../style/index.js';
+import styles from '../../styles/style.js';
 export default function PizzaCard() {
     const { value1, value2 } = props;
 
