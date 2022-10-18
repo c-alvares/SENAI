@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesProdutos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Produtos</title>
+</head>
+<body onLoad="carregarDados()">
+    <header>
+        <a id="home" href="../home/home.html">Home</a>
+        <a id="produtos" href="../produtos/produtos.html">Produtos</a>
+        <p id="username">User Name</p>
+        <img id="avatar" src="../../docs/assets/avatar.png" alt="avatar">
+    </header>
+    <main>
+        <button id="btnCadastrar">Cadastrar</button>
+        <div id="card">
+            <img id="figura" src="../../docs/assets/" alt="figura">
+            <p id="ident"></p>
+            <p id="ni"></p>
+            <p id="aquisicao"></p>
+            <p id="denominacao"></p>
+            <p id="valor"></p>
+            <img id="apagar" onclick="apagar()" src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="apagar">
+        </div>
+    </main>
+</body>
+<script src="./scriptProdutos.js"></script>
+</html>
