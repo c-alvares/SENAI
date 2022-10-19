@@ -17,15 +17,28 @@
     </header>
     <main>
         <button id="btnCadastrar">Cadastrar</button>
-        <div id="card">
-            <img id="figura" src="../../docs/assets/" alt="figura">
-            <p id="ident"></p>
-            <p id="ni"></p>
-            <p id="aquisicao"></p>
-            <p id="denominacao"></p>
-            <p id="valor"></p>
-            <img id="apagar" onclick="apagar()" src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="apagar">
-        </div>
+        <table id="card">
+            <thead>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </thead>
+            <tbody>
+                <tr class="corpo model">
+                    <img id="figura" src="../../docs/assets/" alt="figura">
+                    <td id="ident"></td>
+                    <td id="ni"></td>
+                    <td id="aquisicao"></td>
+                    <td id="denominacao"></td>
+                    <td id="valor"></td>
+                    <td><button onclick="apagar()"><img id="apagar" src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="apagar"></button></td>
+                </tr>
+            </tbody>    
+        </table>
     </main>
 </body>
 <script src="./scriptProdutos.js"></script>

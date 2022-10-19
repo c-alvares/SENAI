@@ -1,24 +1,24 @@
-const url = 'https://patrimoniomongo.herokuapp.com/read/';
+const url = "https://patrimoniomongo.herokuapp.com/read/";
 
 function carregarDados() {
-    const options = {method: 'GET'};
 
-    fetch( url, options )
-    .then( response => response.json())
-    .then( response => {
-        response.forEach(cardin => {
-            console.log(cardin)
-            
-            let card = document.querySelector(".card").cloneNode(true)
+    fetch( url )
+    .then( response => { return response.json() })
+    .then( patrimonio => {
+        console.log(patrimonio)
+        patrimonio.items.forEach( item => {
+              
+            let card = document.querySelector(".corpo").cloneNode(true);
+            card.classList.remove('model');
 
-            card.querySelector("#figura").innerHTML = cardin.img
-            card.querySelector("#ident").innerHTML = cardin.id
-            card.querySelector("#ni").innerHTML = cardin.ni
-            card.querySelector("#aquisicao").innerHTML = cardin.aquisicao
-            card.querySelector("#denominacao").innerHTML = cardin.denominacao
-            card.querySelector("#valor").innerHTML = cardin.valor
+            card.querySelector("#figura").src = '../../docs/assets/' + item.img;
+            card.querySelector("#ident").innerHTML = item.id;
+            card.querySelector("#ni").innerHTML = item.ni;
+            card.querySelector("#aquisicao").innerHTML = item.aquisicao;
+            card.querySelector("#denominacao").innerHTML = item.denominacao;
+            card.querySelector("#valor").innerHTML = item.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
             
-            document.querySelector("#card").appendChild(card)
+            document.querySelector("tbody").appendChild(card);
         })
     })
     .catch( err => console.error(err))
