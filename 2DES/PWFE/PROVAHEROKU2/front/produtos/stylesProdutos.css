@@ -1,0 +1,273 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    position: relative;
+    width: 1440px;
+    height: 1024px;
+
+    background: #0182B0;
+}
+
+header {
+    position: absolute;
+    width: 1440px;
+    height: 100px;
+    left: 0px;
+    top: 0px;
+
+    background: #04558A;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+#home {
+    position: absolute;
+    width: 49px;
+    height: 24px;
+    left: 15px;
+    top: 38px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+
+    color: #FFFFFF;
+}
+
+#produtos {
+    position: absolute;
+    width: 75px;
+    height: 24px;
+    left: 79px;
+    top: 38px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+
+    color: #FFFFFF;
+}
+
+#username {
+    position: absolute;
+    width: 90px;
+    height: 24px;
+    left: 1250px;
+    top: 38px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #FFFFFF;
+}
+
+#avatar {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 1355px;
+    top: 15px;
+    border-radius: 100%;
+}
+
+main {
+    position: absolute;
+    width: 1440px;
+    height: 924px;
+    left: 0px;
+    top: 100px;
+}
+#btnCadastrar {
+    box-sizing: border-box;
+
+    /* Auto layout */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 10px;
+    
+    position: absolute;
+    width: 154px;
+    height: 54px;
+    left: 49px;
+    top: 59px;
+    
+    border: 3px solid #F8C304;
+    border-radius: 7px;
+    background: #0182B0;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    color: #F8C304;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+#card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    gap: 85px;
+    
+    position: absolute;
+    width: 1440px;
+    height: 120px;
+    left: 0px;
+    top: 180px;
+}
+
+#figura {
+    width: 80px;
+    height: 87.65px;
+    
+    background: url(servidor.png);
+    border-radius: 10px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#ident {
+    width: 232px;
+    height: 24px;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+#ni {
+    width: 41px;
+    height: 24px;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+#aquisicao {
+    width: 90px;
+    height: 24px;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+#denominacao{
+    width: 265px;
+    height: 24px;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 4;
+    flex-grow: 0;
+}
+#valor {
+    width: 92px;
+    height: 24px;
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    
+    
+    color: #FFFFFF;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 5;
+    flex-grow: 0;    
+}
+
+#apagar{ 
+    width: 32px;
+    height: 32px;
+    
+    background: url(remove.png);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 6;
+    flex-grow: 0;
+}

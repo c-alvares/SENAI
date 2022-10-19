@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./stylesProdutos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Produtos</title>
+</head>
+<body onLoad="carregarDados()">
+    <header>
+        <a id="home" href="../home/home.html">Home</a>
+        <a id="produtos" href="../produtos/produtos.html">Produtos</a>
+        <p id="username">User Name</p>
+        <img id="avatar" src="../../docs/assets/avatar.png" alt="avatar">
+    </header>
+    <main>
+        <button id="btnCadastrar">Cadastrar</button>
+        <div id="card">
+            <img id="figura" src="../../docs/assets/servidor.png" alt="figura">
+            <p id="ident">634e86b7a4482c9c2627094d</p>
+            <p id="ni">10038</p>
+            <p id="aquisicao">2009-10-06T00:00:00.000Z</p>
+            <p id="denominacao">SERVIDOR EDUCACIONAL ITAUTEC Agora</p>
+            <p id="valor">2501.08</p>
+            <span><img id="apagar" onclick="apagar()" src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="apagar"></span>
+        </div>
+    </main>
+</body>
+<script src="./scriptProdutos.js"></script>
+</html>
