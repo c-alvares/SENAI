@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text } from "react-native";
 import { RadioButton } from "react-native-paper";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { store } from "../utils/storage";
 
 import styles from "../styles/style.js";
 
@@ -9,16 +9,11 @@ import ButtonPrevious from "../components/buttonPrevious/index";
 import ButtonFinish from "../components/buttonFinish/index";
 
 export default function Quest5({ navigation }) {
-  const [checked, setChecked] = React.useState("primeiro");
-  const store5 = async (checked) => {
-    try {
-      await AsyncStorage.setItem('@token5', checked);
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  const [checked5, setChecked] = React.useState("primeiro");
+  
 
   const finalizar = (() => {
+    store('q5', checked5)
     navigation.navigate('Result')
   });
   const voltar = (() => {
@@ -35,7 +30,7 @@ export default function Quest5({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="first"
-            status={checked === "first" ? "checked" : "unchecked"}
+            status={checked5 === "first" ? "checked" : "unchecked"}
             onPress={() => setChecked("first")}
           />
           <Text>Natal</Text>
@@ -43,7 +38,7 @@ export default function Quest5({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="second"
-            status={checked === "second" ? "checked" : "unchecked"}
+            status={checked5 === "second" ? "checked" : "unchecked"}
             onPress={() => setChecked("second")}
           />
           <Text>Ano Novo</Text>
@@ -51,7 +46,7 @@ export default function Quest5({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="third"
-            status={checked === "third" ? "checked" : "unchecked"}
+            status={checked5 === "third" ? "checked" : "unchecked"}
             onPress={() => setChecked("third")}
           />
           <Text>Páscoa</Text>
@@ -59,7 +54,7 @@ export default function Quest5({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="forth"
-            status={checked === "forth" ? "checked" : "unchecked"}
+            status={checked5 === "forth" ? "checked" : "unchecked"}
             onPress={() => setChecked("forth")}
           />
           <Text>Você é maluco é ?</Text>

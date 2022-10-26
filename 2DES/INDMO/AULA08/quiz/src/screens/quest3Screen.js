@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text } from "react-native";
 import { RadioButton } from "react-native-paper";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { store } from "../utils/storage";
 
 import styles from "../styles/style.js";
 
@@ -9,16 +9,10 @@ import ButtonPrevious from "../components/buttonPrevious/index";
 import ButtonNext from "../components/buttonNext/index";
 
 export default function Quest3({ navigation }) {
-  const [chhecked, setChhecked] = React.useState("primeiro");
-  const store3 = async (checked) => {
-    try {
-      await AsyncStorage.setItem("@token3", checked);
-    } catch (e) {
-        console.log(e);
-    }
-  }
-
+  const [checked3, setchecked] = React.useState("primeiro");
+  
   const avancar = (() => {
+    store('q3', checked3)
     navigation.navigate('Quest4')
   });
   const voltar = (() => {
@@ -35,40 +29,40 @@ export default function Quest3({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="first"
-            status={chhecked === "first" ? "chhecked" : "unchhecked"}
-            onPress={() => setChhecked("first")}
+            status={checked3 === "first" ? "checked" : "unchecked"}
+            onPress={() => setchecked("first")}
           />
           <Text>Biscoito</Text>
         </View>
         <View style={styles.alternativas}>
           <RadioButton
             value="second"
-            status={chhecked === "second" ? "chhecked" : "unchhecked"}
-            onPress={() => setChhecked("second")}
+            status={checked3 === "second" ? "checked" : "unchecked"}
+            onPress={() => setchecked("second")}
           />
           <Text>Bolacha</Text>
         </View>
         <View style={styles.alternativas}>
           <RadioButton
             value="third"
-            status={chhecked === "third" ? "chhecked" : "unchhecked"}
-            onPress={() => setChhecked("third")}
+            status={checked3 === "third" ? "checked" : "unchecked"}
+            onPress={() => setchecked("third")}
           />
           <Text>Cookie</Text>
         </View>
         <View style={styles.alternativas}>
           <RadioButton
             value="forth"
-            status={chhecked === "forth" ? "chhecked" : "unchhecked"}
-            onPress={() => setChhecked("forth")}
+            status={checked3 === "forth" ? "checked" : "unchecked"}
+            onPress={() => setchecked("forth")}
           />
           <Text>Biscuit</Text>
         </View>
         <View style={styles.alternativas}>
           <RadioButton
             value="fifth"
-            status={chhecked === "fifth" ? "chhecked" : "unchhecked"}
-            onPress={() => setChhecked("fifth")}
+            status={checked3 === "fifth" ? "checked" : "unchecked"}
+            onPress={() => setchecked("fifth")}
           />
           <Text>Robson Teixeira</Text>
         </View>

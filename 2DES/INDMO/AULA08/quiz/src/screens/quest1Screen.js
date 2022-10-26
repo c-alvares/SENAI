@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text } from "react-native";
 import { RadioButton } from "react-native-paper";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import { store } from "../utils/storage";
 
 import styles from "../styles/style.js";
 
@@ -9,18 +9,12 @@ import ButtonNext from "../components/buttonNext/index";
 
 export default function Quest1({ navigation }) {
 
-  const [checked, setChecked] = React.useState(" ");
+  const [checked1, setChecked] = React.useState(" ");
 
-  const storeQ1 = async (chave,checked) => {
-    try {
-      await AsyncStorage.setItem(chave, checked);
-    } catch (e) {
-      console.log(e); 
-    }
-  };
 
   const avancar = (() => {
-    navigation.navigate('Quest2')
+    store('q1', checked1);
+    navigation.navigate('Quest2');
   });
 
   return (
@@ -33,7 +27,7 @@ export default function Quest1({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="first"
-            status={checked === "first" ? "checked" : "unchecked"}
+            status={checked1 === "first" ? "checked" : "unchecked"}
             onPress={() => setChecked("first")}
           />
           <Text>Arroz por cima e feijão por baixo</Text>
@@ -41,7 +35,7 @@ export default function Quest1({ navigation }) {
         <View style={styles.alternativas}> 
           <RadioButton
             value="second"
-            status={checked === "second" ? "checked" : "unchecked"}
+            status={checked1 === "second" ? "checked" : "unchecked"}
             onPress={() => setChecked("second")}
           />
           <Text>Feijão por cima e arroz por baixo</Text>
@@ -49,7 +43,7 @@ export default function Quest1({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="third"
-            status={checked === "third" ? "checked" : "unchecked"}
+            status={checked1 === "third" ? "checked" : "unchecked"}
             onPress={() => setChecked("third")}
           />
           <Text>Arroz de um lado e feijão do outro</Text>
@@ -57,7 +51,7 @@ export default function Quest1({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="forth"
-            status={checked === "forth" ? "checked" : "unchecked"}
+            status={checked1 === "forth" ? "checked" : "unchecked"}
             onPress={() => setChecked("forth")}
           />
           <Text>Feijão e arroz misturados com farofa</Text>

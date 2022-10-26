@@ -1,7 +1,7 @@
 import * as React from "react";
 import { View, Text } from "react-native";
 import { RadioButton } from "react-native-paper";
-import AsyncStorage from "@react-native-async-storage/async-storage";
+import {store} from "../utils/storage";
 
 import styles from "../styles/style.js";
 
@@ -9,18 +9,15 @@ import ButtonPrevious from "../components/buttonPrevious/index";
 import ButtonNext from "../components/buttonNext/index";
 
 export default function Quest2({ navigation }) {
-  const [checked, setChecked] = React.useState("primeiro");
-  const storeQ2 = async (checked) => {
-    try {
-      await AsyncStorage.setItem("@token2", checked);
-    } catch (e) {
-      console.log(e);
-    }
-  }
+
+  const [checked2, setChecked] = React.useState(" ");
+
 
   const avancar = (() => {
-    navigation.navigate('Quest3')
+    store('q2', checked2);
+    navigation.navigate('Quest3');
   });
+
   const voltar = (() => {
     navigation.navigate('Quest1')
   });
@@ -35,7 +32,7 @@ export default function Quest2({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="first"
-            status={checked === "first" ? "checked" : "unchecked"}
+            status={checked2 === "first" ? "checked" : "unchecked"}
             onPress={() => setChecked("first")}
           />
           <Text>Pela ponta</Text>
@@ -43,7 +40,7 @@ export default function Quest2({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="second"
-            status={checked === "second" ? "checked" : "unchecked"}
+            status={checked2 === "second" ? "checked" : "unchecked"}
             onPress={() => setChecked("second")}
           />
           <Text>Pela base</Text>
@@ -51,7 +48,7 @@ export default function Quest2({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="third"
-            status={checked === "third" ? "checked" : "unchecked"}
+            status={checked2 === "third" ? "checked" : "unchecked"}
             onPress={() => setChecked("third")}
           />
           <Text>Pela lateral</Text>
@@ -59,7 +56,7 @@ export default function Quest2({ navigation }) {
         <View style={styles.alternativas}>
           <RadioButton
             value="forth"
-            status={checked === "forth" ? "checked" : "unchecked"}
+            status={checked2 === "forth" ? "checked" : "unchecked"}
             onPress={() => setChecked("forth")}
           />
           <Text>Enfiar tudo na boca</Text>
