@@ -9,15 +9,21 @@ import ButtonPrevious from "../components/buttonPrevious/index";
 import ButtonFinish from "../components/buttonFinish/index";
 
 export default function Quest5({ navigation }) {
-  const [chhecked5, setChhecked5] = React.useState("primeiro");
-  const store5 = async (checked5) => {
+  const [checked, setChecked] = React.useState("primeiro");
+  const store5 = async (checked) => {
     try {
-      await AsyncStorage.setItem('@token5', checked5);
+      await AsyncStorage.setItem('@token5', checked);
     } catch (e) {
-        console.log(e);
+      console.log(e);
     }
   }
 
+  const finalizar = (() => {
+    navigation.navigate('Result')
+  });
+  const voltar = (() => {
+    navigation.navigate('Quest4')
+  });
 
   return (
     <View style={styles.container}>
@@ -25,30 +31,44 @@ export default function Quest5({ navigation }) {
       <Text>
         Em qual refeição familiar comemorativa se deve colocar passas no arroz?
       </Text>
-      <RadioButton
-        value="first"
-        status={chhecked5 === "first" ? "chhecked5" : "unchhecked5"}
-        onPress={() => setChhecked5("first")}
-      />
-      <Text>Natal</Text>
-      <RadioButton
-        value="second"
-        status={chhecked5 === "second" ? "chhecked5" : "unchhecked5"}
-        onPress={() => setChhecked5("second")}
-      />
-      <Text>Ano Novo</Text>
-      <RadioButton
-        value="third"
-        status={chhecked5 === "third" ? "chhecked5" : "unchhecked5"}
-        onPress={() => setChhecked5("third")}
-      />
-      <Text>Páscoa</Text>
-      <RadioButton
-        value="forth"
-        status={chhecked5 === "forth" ? "chhecked5" : "unchhecked5"}
-        onPress={() => setChhecked5("forth")}
-      />
-      <Text>Você é maluco é ?</Text>
-    </View>
+      <View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="first"
+            status={checked === "first" ? "checked" : "unchecked"}
+            onPress={() => setChecked("first")}
+          />
+          <Text>Natal</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="second"
+            status={checked === "second" ? "checked" : "unchecked"}
+            onPress={() => setChecked("second")}
+          />
+          <Text>Ano Novo</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="third"
+            status={checked === "third" ? "checked" : "unchecked"}
+            onPress={() => setChecked("third")}
+          />
+          <Text>Páscoa</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="forth"
+            status={checked === "forth" ? "checked" : "unchecked"}
+            onPress={() => setChecked("forth")}
+          />
+          <Text>Você é maluco é ?</Text>
+        </View>
+      </View>
+      <View style={styles.navegacao}>
+        <ButtonPrevious onPress={voltar} />
+        <ButtonFinish onPress={finalizar} />
+      </View>
+    </View >
   );
 }

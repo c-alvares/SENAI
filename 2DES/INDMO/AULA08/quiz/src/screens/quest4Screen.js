@@ -9,14 +9,21 @@ import ButtonPrevious from "../components/buttonPrevious/index";
 import ButtonNext from "../components/buttonNext/index";
 
 export default function Quest4({ navigation }) {
-  const [chhecked4, setChhecked4] = React.useState("primeiro");
-  const store4 = async (checked4) => {
+  const [chhecked, setChhecked] = React.useState("primeiro");
+  const store4 = async (checked) => {
     try {
-      await AsyncStorage.setItem('@token4', checked4);
+      await AsyncStorage.setItem('@token4', checked);
     }catch (e) {
       console.log(e);
     }
   }
+
+  const avancar = (() => {
+    navigation.navigate('Quest5')
+  });
+  const voltar = (() => {
+    navigation.navigate('Quest3')
+  });
 
   return (
     <View style={styles.container}>
@@ -24,30 +31,44 @@ export default function Quest4({ navigation }) {
       <Text>
         Qual melhor maneira de comer camarão?
       </Text>
-      <RadioButton
-        value="first"
-        status={chhecked4 === "first" ? "chhecked4" : "unchhecked4"}
-        onPress={() => setChhecked4("first")}
-      />
-      <Text>A milanesa</Text>
-      <RadioButton
-        value="second"
-        status={chhecked4 === "second" ? "chhecked4" : "unchhecked4"}
-        onPress={() => setChhecked4("second")}
-      />
-      <Text>Salteado na manteiga</Text>
-      <RadioButton
-        value="third"
-        status={chhecked4 === "third" ? "chhecked4" : "unchhecked4"}
-        onPress={() => setChhecked4("third")}
-      />
-      <Text>Na moranga</Text>
-      <RadioButton
-        value="forth"
-        status={chhecked4 === "forth" ? "chhecked4" : "unchhecked4"}
-        onPress={() => setChhecked4("forth")}
-      />
-      <Text>Com tudo e mais um pouco</Text>
+      <View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="first"
+            status={chhecked === "first" ? "chhecked" : "unchhecked"}
+            onPress={() => setChhecked("first")}
+          />
+          <Text>A milanesa</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="second"
+            status={chhecked === "second" ? "chhecked" : "unchhecked"}
+            onPress={() => setChhecked("second")}
+          />
+          <Text>Salteado na manteiga</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="third"
+            status={chhecked === "third" ? "chhecked" : "unchhecked"}
+            onPress={() => setChhecked("third")}
+          />
+          <Text>Na moranga</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="forth"
+            status={chhecked === "forth" ? "chhecked" : "unchhecked"}
+            onPress={() => setChhecked("forth")}
+          />
+          <Text>Com tudo e mais um pouco</Text>
+        </View>
+      </View>
+      <View style={styles.navegacao}>
+        <ButtonPrevious onPress={voltar} />
+        <ButtonNext onPress={avancar} />
+      </View>
     </View>
   );
 }

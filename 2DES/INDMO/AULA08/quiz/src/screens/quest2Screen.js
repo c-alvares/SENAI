@@ -9,14 +9,21 @@ import ButtonPrevious from "../components/buttonPrevious/index";
 import ButtonNext from "../components/buttonNext/index";
 
 export default function Quest2({ navigation }) {
-  const [checked2, setChecked2] = React.useState("primeiro");
-  const storeQ2 = async (checked2) => {
+  const [checked, setChecked] = React.useState("primeiro");
+  const storeQ2 = async (checked) => {
     try {
-      await AsyncStorage.setItem("@token2", checked2);
+      await AsyncStorage.setItem("@token2", checked);
     } catch (e) {
       console.log(e);
     }
   }
+
+  const avancar = (() => {
+    navigation.navigate('Quest3')
+  });
+  const voltar = (() => {
+    navigation.navigate('Quest1')
+  });
 
   return (
     <View style={styles.container}>
@@ -24,30 +31,44 @@ export default function Quest2({ navigation }) {
       <Text>
         Qual a maneira correta de comer a coxinha?
       </Text>
-      <RadioButton
-        value="first"
-        status={checked2 === "first" ? "checked2" : "unchecked2"}
-        onPress={() => setChecked2("first")}
-      />
-      <Text>Pela ponta</Text>
-      <RadioButton
-        value="second"
-        status={checked2 === "second" ? "checked2" : "unchecked2"}
-        onPress={() => setChecked2("second")}
-      />
-      <Text>Pela base</Text>
-      <RadioButton
-        value="third"
-        status={checked2 === "third" ? "checked2" : "unchecked2"}
-        onPress={() => setChecked2("third")}
-      />
-      <Text>Pela lateral</Text>
-      <RadioButton
-        value="forth"
-        status={checked2 === "forth" ? "checked2" : "unchecked2"}
-        onPress={() => setChecked2("forth")}
-      />
-      <Text>Enfiar tudo na boca</Text>
+      <View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="first"
+            status={checked === "first" ? "checked" : "unchecked"}
+            onPress={() => setChecked("first")}
+          />
+          <Text>Pela ponta</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="second"
+            status={checked === "second" ? "checked" : "unchecked"}
+            onPress={() => setChecked("second")}
+          />
+          <Text>Pela base</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="third"
+            status={checked === "third" ? "checked" : "unchecked"}
+            onPress={() => setChecked("third")}
+          />
+          <Text>Pela lateral</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="forth"
+            status={checked === "forth" ? "checked" : "unchecked"}
+            onPress={() => setChecked("forth")}
+          />
+          <Text>Enfiar tudo na boca</Text>
+        </View>
+      </View>
+      <View style={styles.navegacao}>
+        <ButtonPrevious onPress={voltar} />
+        <ButtonNext onPress={avancar} />
+      </View>
     </View>
   );
 }

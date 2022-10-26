@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+      <Stack.Navigator initialRouteName="Quest1">
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Quest1" component={Quest1} />
         <Stack.Screen name="Quest2" component={Quest2} />

@@ -9,51 +9,74 @@ import ButtonPrevious from "../components/buttonPrevious/index";
 import ButtonNext from "../components/buttonNext/index";
 
 export default function Quest3({ navigation }) {
-  const [chhecked3, setChhecked3] = React.useState("primeiro");
-  const store3 = async (checked3) => {
+  const [chhecked, setChhecked] = React.useState("primeiro");
+  const store3 = async (checked) => {
     try {
-      await AsyncStorage.setItem("@token3", checked3);
+      await AsyncStorage.setItem("@token3", checked);
     } catch (e) {
         console.log(e);
     }
   }
 
+  const avancar = (() => {
+    navigation.navigate('Quest4')
+  });
+  const voltar = (() => {
+    navigation.navigate('Quest2')
+  });
+
   return (
     <View style={styles.container}>
-      <Text>Pergunta 3</Text>
+      <Text>Pergunta </Text>
       <Text>
         Como se deve chamar a massa doce assada duas vezes?
       </Text>
-      <RadioButton
-        value="first"
-        status={chhecked3 === "first" ? "chhecked3" : "unchhecked3"}
-        onPress={() => setChhecked3("first")}
-      />
-      <Text>Biscoito</Text>
-      <RadioButton
-        value="second"
-        status={chhecked3 === "second" ? "chhecked3" : "unchhecked3"}
-        onPress={() => setChhecked3("second")}
-      />
-      <Text>Bolacha</Text>
-      <RadioButton
-        value="third"
-        status={chhecked3 === "third" ? "chhecked3" : "unchhecked3"}
-        onPress={() => setChhecked3("third")}
-      />
-      <Text>Cookie</Text>
-      <RadioButton
-        value="forth"
-        status={chhecked3 === "forth" ? "chhecked3" : "unchhecked3"}
-        onPress={() => setChhecked3("forth")}
-      />
-      <Text>Biscuit</Text>
-      <RadioButton
-        value="fifth"
-        status={chhecked3 === "fifth" ? "chhecked3" : "unchhecked3"}
-        onPress={() => setChhecked3("fifth")}
-      />
-      <Text>Robson Teixeira</Text>
+      <View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="first"
+            status={chhecked === "first" ? "chhecked" : "unchhecked"}
+            onPress={() => setChhecked("first")}
+          />
+          <Text>Biscoito</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="second"
+            status={chhecked === "second" ? "chhecked" : "unchhecked"}
+            onPress={() => setChhecked("second")}
+          />
+          <Text>Bolacha</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="third"
+            status={chhecked === "third" ? "chhecked" : "unchhecked"}
+            onPress={() => setChhecked("third")}
+          />
+          <Text>Cookie</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="forth"
+            status={chhecked === "forth" ? "chhecked" : "unchhecked"}
+            onPress={() => setChhecked("forth")}
+          />
+          <Text>Biscuit</Text>
+        </View>
+        <View style={styles.alternativas}>
+          <RadioButton
+            value="fifth"
+            status={chhecked === "fifth" ? "chhecked" : "unchhecked"}
+            onPress={() => setChhecked("fifth")}
+          />
+          <Text>Robson Teixeira</Text>
+        </View>
+      </View>
+      <View style={styles.navegacao}>
+        <ButtonPrevious onPress={voltar} />
+        <ButtonNext onPress={avancar} />
+      </View>
     </View>
   );
 }
