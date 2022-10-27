@@ -5,17 +5,16 @@ import { store } from "../utils/storage";
 
 import styles from "../styles/style.js";
 
+import RadioBtn from "../components/radioButton/index";
 import ButtonNext from "../components/buttonNext/index";
 
 export default function Quest1({ navigation }) {
-
   const [checked1, setChecked] = React.useState(" ");
 
-
-  const avancar = (() => {
-    store('q1', checked1);
-    navigation.navigate('Quest2');
-  });
+  const avancar = () => {
+    store("q1", checked1);
+    navigation.navigate("Quest2");
+  };
 
   return (
     <View style={styles.container}>
@@ -25,18 +24,20 @@ export default function Quest1({ navigation }) {
       </Text>
       <View>
         <View style={styles.alternativas}>
-          <RadioButton
+          <RadioBtn
             value="first"
             status={checked1 === "first" ? "checked" : "unchecked"}
             onPress={() => setChecked("first")}
           />
           <Text>Arroz por cima e feijão por baixo</Text>
         </View>
-        <View style={styles.alternativas}> 
+        <View style={styles.alternativas}>
           <RadioButton
             value="second"
             status={checked1 === "second" ? "checked" : "unchecked"}
-            onPress={() => setChecked("second")}
+            onPress={() => {
+              setChecked("second");
+            }}
           />
           <Text>Feijão por cima e arroz por baixo</Text>
         </View>
