@@ -91,5 +91,19 @@ Criar um frontend para consumir a lista; Transformando em uma tabela.
 --------------------
 05/09
 --------------------
-06/09
+01/11
+Designer Patterns e MVC são coisas distintas.
+Patterns: 
+	1. Factory Method
+Pode ser usado para "fabricar" objetos.
+C++, C#, Java
+classe > instancia > fabricação do objeto através da palavra "new"
 
+Em linguagens como JavaScript, algumas etapas são puladas.
+{} Objeto JSON
+Classe é a estrutura do objeto. "A" é a instância, a declaração. Ao atribuir um valor, você cria o objeto.
+Factory é equivalente ao model
+Builder
+É uma boa prática em JS declarar um objeto com const, pois seu tipo não poderá ser alterado
+
+	2. Class Adapter
