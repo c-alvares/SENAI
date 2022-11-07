@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Commissioner';
+};
+
+body {
+    font-size: 16px;
+    display: flex;
+}
+
+header {
+    background-image: url(./images/image-hero-desktop.jpg);
+    background-repeat: no-repeat;
+}
+
+main {
+    width: 50vw;
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    padding: 30px;
+}
+
+.top-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.back {
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background-color: hsl(176, 50%, 47%);
+    width: 115px;
+    height: 35px;
+}
+
+.bookmark {
+    border-radius: 50px;
+    border: none;
+    color: gray;
+    background-color: lightgray;
+    width: 115px;
+    height: 35px;
+}
+
+.container-objective {
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    align-items: center;
+}
+
+.container-objective > input {
+    width: 80%;
+}
+
+.objective {
+    display: flex;   
+    margin: 0px;
+    padding: 20px
+}
+
+.objective > div {
+    margin: 0px 5px;
+    padding: 10px;
+    border-right: 1px solid lightgray;
+}
+.objective > div:nth-child(3) {
+    border-right: none;
+}
+
+.card {
+    border: 1px solid lightgray;
+    border-radius: 7px;
+    margin: 15px;
+    padding: 20px
+}
+
+.card > a{
+    color: hsl(176, 50%, 47%);
+    text-decoration: none;
+}
+
+.cardFoot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.reward {
+    border-radius: 50px;
+    border: none;
+    color: white;
+    background-color: hsl(176, 50%, 47%);
+    width: 115px;
+    height: 35px;
+}
