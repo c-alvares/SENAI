@@ -85,6 +85,9 @@ Window --> location
 |__--> document
 
 ---------------------------------------------------
-22/07
-
-
+Criação de Snippets
+Ctrl + Shift + p
+Digitar snippets
+Selecionar "Snippets: Configurar Snippets de Usuário"
+New Global Snippets File
+Enter

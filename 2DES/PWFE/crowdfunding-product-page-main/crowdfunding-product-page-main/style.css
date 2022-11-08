@@ -8,11 +8,16 @@
 body {
     font-size: 16px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
     background-image: url(./images/image-hero-desktop.jpg);
     background-repeat: no-repeat;
+    width: 1440px;
+    height: 400px;
+    
 }
 
 main {
@@ -20,9 +25,13 @@ main {
     border: 1px solid lightgray;
     border-radius: 7px;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
 }
 
-.top-button {
+
+
+.top-buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -46,14 +55,12 @@ main {
     height: 35px;
 }
 
-.container-objective {
+
+
+.card2 {
     border: 1px solid lightgray;
     border-radius: 7px;
     align-items: center;
-}
-
-.container-objective > input {
-    width: 80%;
 }
 
 .objective {
@@ -71,6 +78,23 @@ main {
     border-right: none;
 }
 
+progress {
+    width: 80%;
+    margin: 0px 20px 20px 20px;
+    height: 7px;
+    border-radius: 7px;
+  }
+progress::-webkit-progress-bar {
+    background-color: rgba(244, 243, 243, 0.801);
+    border-radius: 7px;
+  }
+progress::-webkit-progress-value {
+    background-color: hsl(176, 50%, 47%);
+    border-radius: 7px;
+  }
+
+
+
 .card {
     border: 1px solid lightgray;
     border-radius: 7px;
@@ -78,7 +102,7 @@ main {
     padding: 20px
 }
 
-.card > a{
+.cardHead > a {
     color: hsl(176, 50%, 47%);
     text-decoration: none;
 }
