@@ -1,6 +1,9 @@
-DROP DATABASE IF EXISTS saude;
-CREATE DATABASE saude CHARSET=UTF8 COLLATE UTF8_GENERAL_CI;
-USE saude;
+
+
+-- https://github.com/wellifabio/senai2022/tree/master/2des/pwbe/aula15
+-- https://www.w3schools.com/sql/sql_examples.aspDROP DATABASE IF EXISTS dentista;
+CREATE DATABASE dentista CHARSET=UTF8 COLLATE UTF8_GENERAL_CI;
+USE dentista;
 
 -- DDL
 CREATE TABLE profissionais (
@@ -25,7 +28,7 @@ DESCRIBE consultas;
 CREATE TABLE tratamentos (
     id INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
     id_consulta INTEGER NOT NULL,
-    tratamento VARCHAR(20) NOT NULL,
+    tratamento VARCHAR(25) NOT NULL,
     valor DECIMAL(7,2) NOT NULL,
     CONSTRAINT fk_tratamentos FOREIGN KEY (id_consulta) REFERENCES consultas(id)
 );
@@ -54,5 +57,26 @@ INSERT INTO consultas VALUES
 
 SELECT * FROM consultas;
 
--- https://github.com/wellifabio/senai2022/tree/master/2des/pwbe/aula15
--- https://www.w3schools.com/sql/sql_examples.asp
+INSERT INTO tratamentos VALUES
+(default, 1, "Carie", 100.00),
+(default, 1, "Limpeza", 50.00),
+(default, 2, "Canal", 500.00),
+(default, 2, "Limpeza", 50.00),
+(default, 3, "Prótese", 1000.00),
+(default, 4, "Prótese", 1000.00),
+(default, 5, "Correção Óssea", 1500.00),
+(default, 5, "Limpeza", 50.00),
+(default, 6, "Extração", 300.00),
+(default, 6, "Implante", 2000.00),
+(default, 7, "Limpeza", 50.00),
+(default, 8, "Limpeza", 50.00),
+(default, 9, "Limpeza", 50.00);
+
+SELECT * FROM tratamentos;
+
+CREATE VIEW vw_dentistas AS
+SELECT p.id, p.nome, p.especialidade, c.id as id_consulta, c.paciente, c.data, c.horario, t.id as id_tratamento, t.tratamento, t.valor
+FROM profissionais p INNER JOIN consultas c ON p.Id = c.id_profissional
+INNER JOIN tratamentos t ON c.id = t.id_consulta;
+
+SELECT * FROM vw_dentistas;
