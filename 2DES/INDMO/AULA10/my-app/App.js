@@ -1,11 +1,23 @@
 import { useState, useEffect } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
 
 export default function App() {
-  const [pokemon, setPokemon] = useState()
+  const [pkm, setPkm] = useState(null);
+  const [pikachu, setPikachu] = useState();
+
+  const [pokemon, setPokemon] = useState();
   // const [pub, setPub] = useState([]);
   // const [posts, setPosts] = useState([]);
+
+
+  const buscarPokemon = (pkm) => {
+    fetch(`https://pokeapi.co/api/v2/pokemon/${pkm}`)
+    .then(resp => { return resp.json() })
+    .then(pokeball => {
+      setPikachu(pokeball);
+      // console.log(pokeball.sprites.front_default)
+    })
+  };
 
 
   useEffect(() => {
@@ -30,11 +42,23 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <TextInput onChangeText={(v)=> { setPkm(v) }} style={styles.busca}></TextInput>
+      <Button onPress={ () => { buscarPokemon(pkm) }} title="Buscar" style={styles.btn}/>
+      {
+        (pikachu !== undefined) ?
+          <View>
+            <Image style={styles.img}   source={{uri: pikachu.sprites.front_default}} />
+            <Text style={styles.nome}>{pikachu.name}</Text>
+          </View>
+          :
+          <View><Image style={styles.img} source={{uri: "https://miro.medium.com/max/1400/1*CsJ05WEGfunYMLGfsT2sXA.gif"}} /></View>
+      }
+
       {
         (pokemon !== undefined)
         ?
         <View>
-          <Text>{pokemon.name}</Text>
+          <Text style={styles.nome}>{pokemon.name}</Text>
           <Image style={styles.img} source={{uri: pokemon.sprites.front_default}} />
         </View>
         :
@@ -74,9 +98,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  busca:{
+    border: '1px solid',
+  },
+  btn: {
+    margin: "0.5em",
+  },
+  nome: {
+    alignItems: 'center',
+    margin: '0.5em',
+  },
   img: {
-    width: "50vw",
-    height: "50vw"
-  }
+    width: "25vw",
+    height: "25vw",
+  },
+
 
 });
