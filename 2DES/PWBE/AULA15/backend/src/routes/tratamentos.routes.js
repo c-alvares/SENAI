@@ -4,8 +4,8 @@ const router = express.Router();
 const Tratamento = require("../controllers/tratamentos.controller");
 
 router.post("/tratamentos/create/", Tratamento.create);
-router.get("/tratamentos/read", Tratamento.read);
-router.put("/tratamentos/update", Tratamento.update);
-router.delete("/tratamentos/delete", Tratamento.delete);
+router.get("/tratamentos/read", Tratamento.readAll);
+router.put("/tratamentos/update", Tratamento.updateItem);
+router.delete("/tratamentos/delete", Tratamento.deleteItem);
 
 module.exports = router;

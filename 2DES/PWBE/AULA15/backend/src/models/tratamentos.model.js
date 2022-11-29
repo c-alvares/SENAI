@@ -1,5 +1,5 @@
 const criar = (model) => {
-    return `INSERT INTO tratamentos VALUES ('${model.placa}','${model.modelo}','${model.cor}','${model.cpf}')`;
+    return `INSERT INTO tratamentos VALUES (DEFAULT, ${model.id_consulta},'${model.tratamento}',${model.valor})`;
 }
 
 const ler = () => {
@@ -8,15 +8,13 @@ const ler = () => {
 
 const atualizar = (model) => {
     return `UPDATE tratamentos SET 
-                placa = '${model.placa}',
-                modelo = '${model.modelo}',
-                cor = '${model.cor}',
-                cpf = '${model.cpf}'
-                WHERE placa = '${model.placa}'`;
+                tratamento = '${model.tratamento}',
+                valor = ${model.valor}
+                WHERE id = ${model.id}`;
 }
 
 const excluir = (model) => {
-    return `DELETE FROM tratamentos WHERE placa='${model.placa}'`;
+    return `DELETE FROM tratamentos WHERE id= ${model.id}`;
 }
 
 module.exports = {
