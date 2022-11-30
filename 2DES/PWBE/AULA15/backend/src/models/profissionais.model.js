@@ -3,11 +3,10 @@ const read = () => {
 }
 
 const dadosTratamento = (id) => {
-    return `SELECT * FROM vw_dentista WHERE id = ${id}`;
+    return `SELECT * FROM vw_dentistas WHERE id = ${id}`;
 }
 
 module.exports = {
     read,
     dadosTratamento
-
 }

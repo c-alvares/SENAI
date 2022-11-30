@@ -7,14 +7,15 @@ const ler = () => {
 }
 
 const atualizar = (model) => {
-    return `UPDATE tratamentos SET 
+    return `UPDATE tratamentos SET
+                id_consulta = ${model.id_consulta}, 
                 tratamento = '${model.tratamento}',
                 valor = ${model.valor}
                 WHERE id = ${model.id}`;
 }
 
-const excluir = (model) => {
-    return `DELETE FROM tratamentos WHERE id= ${model.id}`;
+const excluir = (id) => {
+    return `DELETE FROM tratamentos WHERE id= ${id}`;
 }
 
 module.exports = {

@@ -1,7 +1,4 @@
-
-
--- https://github.com/wellifabio/senai2022/tree/master/2des/pwbe/aula15
--- https://www.w3schools.com/sql/sql_examples.aspDROP DATABASE IF EXISTS dentista;
+DROP DATABASE IF EXISTS dentista;
 CREATE DATABASE dentista CHARSET=UTF8 COLLATE UTF8_GENERAL_CI;
 USE dentista;
 
@@ -74,6 +71,7 @@ INSERT INTO tratamentos VALUES
 
 SELECT * FROM tratamentos;
 
+-- DQL
 CREATE VIEW vw_dentistas AS
 SELECT p.id, p.nome, p.especialidade, c.id as id_consulta, c.paciente, c.data, c.horario, t.id as id_tratamento, t.tratamento, t.valor
 FROM profissionais p INNER JOIN consultas c ON p.Id = c.id_profissional

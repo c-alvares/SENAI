@@ -37,7 +37,7 @@ const updateItem = (req, res) => {
 }
 
 const deleteItem = (req, res) => {
-    con.query(Tratamento.excluir(req.body), (err, result) => {
+    con.query(Tratamento.excluir(req.params.id), (err, result) => {
         if (err == null)
             if (result.affectedRows > 0)
                 res.json('Deletado com Sucesso').status(204).end();
