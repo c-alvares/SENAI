@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid */
+}
+
+table, th, td{
+    border: 1px solid;
+}
+
+.modalCriarChamado, .modalAlterarChamado {
+    border: 1px solid;
+    width: 30vw;
+    height: 40vh;
+}
+
+.modal0, .modal1, .modal2 {
+    display: none;
+    visibility: hidden;
+}

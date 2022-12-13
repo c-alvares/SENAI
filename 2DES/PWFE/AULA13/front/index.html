@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamados</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body onload="carregarChamados()">
+    <header>
+        <h1>CHAMADOS</h1>
+        <button>Criar</button>
+    </header>
+    <main>
+<!-- Estrutura para Listagem dos Chamados -->
+        <table>
+            <thead>
+                <th>id</th>
+                <th>tipo</th>
+                <th>severidade</th>
+                <th>descricao</th>
+                <th>data</th>
+                <th>hora</th>
+                <th>hora_inicio</th>
+                <th>hora_fim</th>
+                <th>destino</th>
+                <th>Ações</th>
+            </thead>
+            <tbody class="corpo">
+                <tr class="linhaChamado modal0">
+                    <td id="id0"></td>
+                    <td id="tipo0"></td>
+                    <td id="severidade0"></td>
+                    <td id="descricao0"></td>
+                    <td id="data0"></td>
+                    <td id="hora0"></td>
+                    <td id="hora_inicio0"></td>
+                    <td id="hora_fim0"></td>
+                    <td id="destino0"></td>
+                    <td id="buttons0"><button>*</button><button>-</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+<!-- Estrutura Modal para Criar Chamados -->
+    <div class="modalCriarChamado modal1">
+        <div> 
+            <h4>Criar Chamado</h4>
+            <img id="btFechar" src="./assets/fechar.png" alt="fechar.png">
+        </div>
+       
+        <input>
+            <h5>Tipo:</h5>
+            <input type="radio" name="incidente" id="btIncidente">Incidente
+            <input type="radio" name="Solicitação" id="btSolicitacao">Solicitação
+            <input type="radio" name="Mudança" id="btMudanca">Mudança
+            <div class="tipo">
+        </div>
+
+        <div>
+            <h5>Severidade:</h5>
+            <input type="radio" name="Normal" id="btNormal">3 - Normal
+            <input type="radio" name="Grave" id="btGrave">2 - Grave
+            <input type="radio" name="Urgente" id="btUrgente">1 - Urgente
+        </div>
+
+        <div>
+            <h5>Descrição</h5>
+            <input type="text" id="descricao">
+        </div>
+
+        <div>
+            <div>
+                <h5>Destino:</h5>
+                <input type="radio" name="" id="">Suporte
+                <input type="radio" name="" id="">Almoxarifado
+                <input type="radio" name="" id="">Financeiro
+            </div>
+
+            <button>Criar</button>
+        </div>
+    </div>
+
+<!-- Estrutura Modal para Alterar Chamados -->
+    <div class="modalAlterarChamado modal2">
+        <div> 
+            <h4>Alterar Chamado</h4>
+            <img id="btFechar" src="./assets/fechar.png" alt="fechar.png">
+        </div>
+       
+        <input>
+            <h5>Tipo:</h5>
+            <input type="radio" name="incidente" id="btIncidente">Incidente
+            <input type="radio" name="Solicitação" id="btSolicitacao">Solicitação
+            <input type="radio" name="Mudança" id="btMudanca">Mudança
+            <div class="tipo">
+        </div>
+
+
+        <div>
+            <h5>Severidade:</h5>
+            <input type="radio" name="Normal" id="btNormal">3 - Normal
+            <input type="radio" name="Grave" id="btGrave">2 - Grave
+            <input type="radio" name="Urgente" id="btUrgente">1 - Urgente
+        </div>
+
+        <div>
+            <h5>Descrição</h5>
+            <input type="text" id="descricao">
+        </div>
+
+        <div>
+            <div>
+                <h5>Hora:</h5><input type="text" id="hora">
+                <h5>Hora_inicio:</h5><input type="text" id="horaInicio">
+                <h5>Hora_fim:</h5><input type="text" id="horaFim">
+            </div>
+            <div>
+                <h5>Destino:</h5>
+                <input type="radio" name="" id="">Suporte
+                <input type="radio" name="" id="">Almoxarifado
+                <input type="radio" name="" id="">Financeiro
+            </div>
+            
+            <button>Alterar</button>
+        </div>
+    </div>
+</body>
+<script src="./scripts/chamadosScript.js"></script>
+</html>
+
