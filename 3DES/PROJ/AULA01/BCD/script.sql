@@ -50,4 +50,25 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 ROWS;
 
+
+-- Lista todos os pedidos
+DROP VIEW IF EXISTS View_ListarPedidos;
+CREATE VIEW View_ListarPedidos AS
 SELECT * FROM pedidos;
+
+SELECT * FROM View_ListarPedidos;
+
+-- Lista pedidos em execução
+DROP VIEW IF EXISTS View_PedidosEmExecucao;
+CREATE VIEW View_PedidosEmExecucao AS
+SELECT ID_Pedido, Cliente, Endereco, Produto, data, Hora_pedido FROM 
+pedidos WHERE Hora_entrega = '00:00:00' AND Hora_fim = '00:00:00';
+
+SELECT * FROM View_PedidosEmExecucao;
+
+
+-- Lista pedidos para entrega
+DROP VIEW IF EXISTS View_PedidosParaEntrega;
+CREATE VIEW View_PedidosParaEntrega AS
+SELECT  FROM 
+PEDIDOS WHERE Hora_fim = '00:00:00';
