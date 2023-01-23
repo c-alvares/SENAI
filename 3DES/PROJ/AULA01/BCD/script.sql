@@ -18,7 +18,7 @@ CREATE TABLE pedidos(
     Produto VARCHAR(50) NOT NULL,
     data DATE NOT NULL,
     Hora_pedido TIME NOT NULL,
-    Hora_entrega TIME NOT NULL,
+    Hora_entrega TIME NULL,
     Hora_fim TIME NULL,
     Entregador NUMERIC(4) NOT NULL,
     CONSTRAINT pk_pedido primary key (ID_Pedido),
@@ -27,6 +27,7 @@ CREATE TABLE pedidos(
 
 DESCRIBE entregadores;
 DESCRIBE pedidos;
+
 
 -- Importação dos dados com LOAD DATA de arquivos CSV
 
