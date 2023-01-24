@@ -2,7 +2,7 @@ const entregador = require('../models/Entregadores.model');
 const con = require('../DAO/irango.dao')
 
 
-const readAll = (req, res) => {
+const listarTodosEntregadores = (req, res) => {
     con.query(entregador.listarEntregadores(), (err, result) => {
         if (err == null)
             res.json(result).end();
@@ -11,7 +11,7 @@ const readAll = (req, res) => {
     });
 }
 
-const readOne = (req, res) => {
+const listarUmEntregador = (req, res) => {
     con.query(entregador.listarEntregador(req.body), (err, result) => {
         if (err == null)
             if (result.length > 0)
@@ -26,6 +26,6 @@ const readOne = (req, res) => {
 
 
 module.exports = {
-    readAll,
-    readOne
+    listarTodosEntregadores,
+    listarUmEntregador
 }
