@@ -3,7 +3,7 @@ CREATE DATABASE IRango CHARSET=utf8 COLLATE utf8_general_ci;
 USE IRango;
 
 CREATE TABLE entregadores(
-    ID_Entregador NUMERIC(4) NOT NULL,
+    ID_Entregador NUMERIC(4) NOT NULL AUTO_INCREMENT,
     Nome VARCHAR(50) NOT NULL,
     Email VARCHAR(50) NOT NULL,
     Senha VARCHAR(50) NOT NULL,
