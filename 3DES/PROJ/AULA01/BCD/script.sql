@@ -12,7 +12,7 @@ CREATE TABLE entregadores(
 );
 
 CREATE TABLE pedidos(
-    ID_Pedido NUMERIC(4) NOT NULL,
+    ID_Pedido NUMERIC(4) NOT NULL AUTO_INCREMENT,
     Cliente VARCHAR(50) NOT NULL,
     Endereco VARCHAR(50) NOT NULL,
     Produto VARCHAR(50) NOT NULL,
