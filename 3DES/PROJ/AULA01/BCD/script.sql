@@ -70,5 +70,7 @@ SELECT * FROM View_PedidosEmExecucao;
 -- Lista pedidos para entrega
 DROP VIEW IF EXISTS View_PedidosParaEntrega;
 CREATE VIEW View_PedidosParaEntrega AS
-SELECT  FROM 
-PEDIDOS WHERE Hora_fim = '00:00:00';
+SELECT * FROM
+pedidos WHERE Hora_fim = '00:00:00';
+
+SELECT * FROM View_PedidosParaEntrega;
