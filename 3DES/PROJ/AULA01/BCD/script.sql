@@ -31,8 +31,8 @@ DESCRIBE pedidos;
 
 -- Importação dos dados com LOAD DATA de arquivos CSV
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/3DES/PROJ/AULA01/DADOS/entregadores.csv'
 -- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/3DES/PROJ/AULA01/DADOS/entregadores.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/3DES/PROJ/AULA01/DADOS/entregadores.csv'
 INTO TABLE entregadores
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -42,8 +42,8 @@ IGNORE 1 ROWS;
 SELECT * FROM entregadores;
 
 
-LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/3DES/PROJ/AULA01/DADOS/pedidos.csv'
--- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/3DES/PROJ/AULA01/DADOS/entregadores.csv'
+-- LOAD DATA INFILE 'C:/Users/Desenvolvimento/Desktop/SENAI/3DES/PROJ/AULA01/DADOS/pedidos.csv'
+LOAD DATA INFILE 'C:/Users/oryc1/Desktop/SENAI/3DES/PROJ/AULA01/DADOS/pedidos.csv'
 INTO TABLE pedidos
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
