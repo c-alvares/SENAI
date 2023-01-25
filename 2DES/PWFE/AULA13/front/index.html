@@ -10,7 +10,7 @@
 <body onload="carregarChamados()">
     <header>
         <h1>CHAMADOS</h1>
-        <button>Criar</button>
+        <button id="btAbrirModal">Criar</button>
     </header>
     <main>
 <!-- Estrutura para Listagem dos Chamados -->
@@ -38,31 +38,31 @@
                     <td id="hora_inicio0"></td>
                     <td id="hora_fim0"></td>
                     <td id="destino0"></td>
-                    <td id="buttons0"><button>*</button><button>-</button></td>
+                    <td id="buttons0"><button id="btAlterar" >Alterar</button><button id="btDeletar" onclick="deletarChamado()">Deletar</button></td>
                 </tr>
             </tbody>
         </table>
     </main>
 <!-- Estrutura Modal para Criar Chamados -->
     <div class="modalCriarChamado modal1">
-        <div> 
+        <div id="cabecalho"> 
             <h4>Criar Chamado</h4>
-            <img id="btFechar" src="./assets/fechar.png" alt="fechar.png">
+            <img class="btFechar" src="./assets/fechar.png" alt="fechar.png">
         </div>
        
-        <input>
+        <div>
             <h5>Tipo:</h5>
-            <input type="radio" name="incidente" id="btIncidente">Incidente
-            <input type="radio" name="Solicitação" id="btSolicitacao">Solicitação
-            <input type="radio" name="Mudança" id="btMudanca">Mudança
+            <input type="radio" name="tipo" value="incidente">Incidente
+            <input type="radio" name="tipo" value="solicitacao">Solicitação
+            <input type="radio" name="tipo" value="mudanca">Mudança
             <div class="tipo">
         </div>
 
         <div>
             <h5>Severidade:</h5>
-            <input type="radio" name="Normal" id="btNormal">3 - Normal
-            <input type="radio" name="Grave" id="btGrave">2 - Grave
-            <input type="radio" name="Urgente" id="btUrgente">1 - Urgente
+            <input type="radio" name="severidade" value="3">3 - Normal
+            <input type="radio" name="severidade" value="2">2 - Grave
+            <input type="radio" name="severidade" value="1">1 - Urgente
         </div>
 
         <div>
@@ -73,12 +73,12 @@
         <div>
             <div>
                 <h5>Destino:</h5>
-                <input type="radio" name="" id="">Suporte
-                <input type="radio" name="" id="">Almoxarifado
-                <input type="radio" name="" id="">Financeiro
+                <input type="radio" name="destino" value="Suporte">Suporte
+                <input type="radio" name="destino" value="Almoxarifado">Almoxarifado
+                <input type="radio" name="destino" value="Financeiro">Financeiro
             </div>
 
-            <button>Criar</button>
+            <button id="btCriar">Criar</button>
         </div>
     </div>
 
@@ -86,28 +86,28 @@
     <div class="modalAlterarChamado modal2">
         <div> 
             <h4>Alterar Chamado</h4>
-            <img id="btFechar" src="./assets/fechar.png" alt="fechar.png">
+            <img id="btFecharAlterar" src="./assets/fechar.png" alt="fechar.png">
         </div>
        
-        <input>
+        <div>
             <h5>Tipo:</h5>
-            <input type="radio" name="incidente" id="btIncidente">Incidente
-            <input type="radio" name="Solicitação" id="btSolicitacao">Solicitação
-            <input type="radio" name="Mudança" id="btMudanca">Mudança
+            <input type="radio" name="tipo" value="incidente">Incidente
+            <input type="radio" name="tipo" value="solicitacao">Solicitação
+            <input type="radio" name="tipo" value="mudanca">Mudança
             <div class="tipo">
         </div>
 
 
         <div>
             <h5>Severidade:</h5>
-            <input type="radio" name="Normal" id="btNormal">3 - Normal
-            <input type="radio" name="Grave" id="btGrave">2 - Grave
-            <input type="radio" name="Urgente" id="btUrgente">1 - Urgente
+            <input type="radio" name="severidade" value="3">3 - Normal
+            <input type="radio" name="severidade" value="2">2 - Grave
+            <input type="radio" name="severidade" value="1">1 - Urgente
         </div>
 
         <div>
             <h5>Descrição</h5>
-            <input type="text" id="descricao">
+            <input type="text" id="descricaoAlterar">
         </div>
 
         <div>
@@ -118,9 +118,9 @@
             </div>
             <div>
                 <h5>Destino:</h5>
-                <input type="radio" name="" id="">Suporte
-                <input type="radio" name="" id="">Almoxarifado
-                <input type="radio" name="" id="">Financeiro
+                <input type="radio" name="destino" value="Suporte">Suporte
+                <input type="radio" name="destino" value="Almoxarifado">Almoxarifado
+                <input type="radio" name="destino" value="Financeiro">Financeiro
             </div>
             
             <button>Alterar</button>
@@ -129,4 +129,3 @@
 </body>
 <script src="./scripts/chamadosScript.js"></script>
 </html>
-

@@ -5,21 +5,77 @@
 }
 header {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     /* border: 1px solid */
+    background-color: antiquewhite;
+    height: 10vh;
+    padding: 1vh;
 }
 
-table, th, td{
-    border: 1px solid;
+header > h1 {
+    margin-right: 10vw;
+    color:brown;
+}
+
+#btAbrirModal {
+    height: 5vh;
+    width: 10vw;
+    color: antiquewhite;
+    background-color:  brown;
+    border: 0.1rem solid black;
+    border-radius: 2vw;
+    cursor: pointer;
+}
+
+#btAbrirModal:hover {
+    background-color: rgb(202, 98, 98);
+}
+
+table {
+    border-collapse: collapse;
+    
+}
+th, td{
+    border: 1px solid lightgray;
+    padding: 0.1rem;
+    text-align: center;
+}
+
+thead {
+    background-color: rgb(244, 238, 229);
+}
+
+td > button {
+    width: 100%;
+    cursor: pointer;
 }
 
 .modalCriarChamado, .modalAlterarChamado {
     border: 1px solid;
     width: 30vw;
     height: 40vh;
+    background-color:antiquewhite;
+    position: absolute;
+    top: 25vh;
+    left: 37.5vw;
+    padding: 1vw;
 }
 
-.modal0, .modal1, .modal2 {
+#cabecalho {
+    display: flex;
+    justify-content: space-between;
+}
+
+#descricao {
+    width: 27.9vw;
+    height: 8.5vh
+    
+}
+
+.modal0,
+.modal1,
+.modal2 {
     display: none;
     visibility: hidden;
 }
