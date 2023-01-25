@@ -34,6 +34,25 @@ const pedidoPorNome = (req, res) => {
     });
 }
 
+
+const PedidosAPreparar = (req, res) => {
+    con.query(pedidos.PedidosEmExecucao(), (err, result) => {
+        if (err == null)
+            res.json(result).end();
+        else
+            res.status(500).end()
+    });
+}
+
+const PedidosAEntregar = (req, res) => {
+    con.query(pedidos.PedidosParaEntrega(), (err, result) => {
+        if (err == null)
+            res.json(result).end();
+        else
+            res.status(500).end()
+    });
+}
+
 const atualizarPedidoPronto = (req, res) => {
     con.query(pedidos.atualizarPedidoPronto(req.body), (err, result) => {
         if (err == null)
@@ -74,6 +93,8 @@ module.exports = {
     criarPedido,
     todosOsPedidos,
     pedidoPorNome,
+    PedidosAPreparar,
+    PedidosAEntregar,
     atualizarPedidoPronto,
     atualizarPedidoEntregue,
     deletarPedido
