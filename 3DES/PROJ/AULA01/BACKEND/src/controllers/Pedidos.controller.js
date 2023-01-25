@@ -40,7 +40,7 @@ const atualizarPedidoPronto = (req, res) => {
             if (result.affectedRows > 0)
                 res.status(200).end();
             else
-                res.status(404).end();
+                res.status(404).json(result).end();
         else
             res.status(500).end();
     });
@@ -52,7 +52,7 @@ const atualizarPedidoEntregue = (req, res) => {
             if (result.affectedRows > 0)
                 res.status(200).end();
             else
-                res.status(404).end();
+                res.status(404).json(result).end();
         else
             res.status(500).end();
     });
@@ -64,7 +64,7 @@ const deletarPedido = (req, res) => {
             if (result.affectedRows > 0)
                 res.json('Deletado com Sucesso').status(204).end();
             else
-                res.json('Não encontrado').status(404).end();
+                res.json(result).status(404).end();
         else
             res.status(400).end();
     });
