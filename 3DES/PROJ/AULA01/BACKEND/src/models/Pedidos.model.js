@@ -33,8 +33,10 @@ const atualizarPedidoEntregue = (model) => {
 
 
 // Exclui um pedido
+// Necessária implementação de regra para assegurar que o pedido só pode ser excluído caso não tenha sido preparado
 const excluirPedido = (model) => {
-    return `DELETE FROM pedidos WHERE Cliente LIKE '%${model.Cliente}%' AND Hora_entrega = 'NULL'`;
+    return `DELETE FROM pedidos WHERE Cliente LIKE '%${model.Cliente}%'`; 
+    // AND Hora_entrega = 'NULL'`;
 }
 
 module.exports = {
