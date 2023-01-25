@@ -54,12 +54,12 @@
 53;Pedro da Silva de Oliveira;Rua das Rosas, Parque das Flores, Nova Odessa, SP;Refrigerante - Lata;2023-01-26;20:41;20:56;21:07;1
 54;Ana de Souza;Praça Antônio Silva Sobrinho, Jardim Brasil, Americana, SP;X-Bacon;2023-01-26;21:42;22:12;22:22;2
 55;Douglas de Oliveira;Rua do Mel, Jardim São Paulo, Campinas, SP;X-Burguer;2023-01-26;22:48;23:24;23:31;4
-56;Paula Mattos;Praça dos Trabalhadores, Centro, Jaguariúna, SP;X-Burguer;2023-01-26;23:10;23:47;;3
-57;Brito Neto;Rua das Flores, Jardim Brasil, Nova Odessa, SP;X-Tudo;2023-01-26;00:12;00:42;;4
-58;Naiara de Souza;Av. XV de Novembro, Jardim São Paulo, Jaguariúna, SP;X-Egg;2023-01-26;00:45;01:19;;1
-59;Carla Bispo Filho;Rua Brito de Souza, Jardim São Paulo, Amparo, SP;X-Bacon;2023-01-26;01:57;02:12;;3
-60;Hugo da Silva;Rua do Mel, Jardim Brasil, Campinas, SP;X-Frango;2023-01-26;02:30;02:48;;4
-61;Paula Teixeira;Rua Pedro Martim, Centro, Amparo, SP;X-Burguer;2023-01-26;03:52;04:35;;1
-62;Marcos Bispo;Rua das Flores, Parque das Flores, Nova Odessa, SP;X-Frango;2023-01-26;03:59;04:39;;4
-63;Eva da Silva Custódio;Rua Valter Souza, Centro, Campinas, SP;X-Tudo;2023-01-26;04:16;04:58;;2
-64;Gilberto Souza Matos;Paça Ivone Souza, Jardim Brasil, Amparo, SP;X-Egg;2023-01-26;05:43;06:01;;1
+56;Paula Mattos;Praça dos Trabalhadores, Centro, Jaguariúna, SP;X-Burguer;2023-01-26;23:10;23:47;NULL;3
+57;Brito Neto;Rua das Flores, Jardim Brasil, Nova Odessa, SP;X-Tudo;2023-01-26;00:12;00:42;NULL;4
+58;Naiara de Souza;Av. XV de Novembro, Jardim São Paulo, Jaguariúna, SP;X-Egg;2023-01-26;00:45;01:19;NULL;1
+59;Carla Bispo Filho;Rua Brito de Souza, Jardim São Paulo, Amparo, SP;X-Bacon;2023-01-26;01:57;02:12;NULL;3
+60;Hugo da Silva;Rua do Mel, Jardim Brasil, Campinas, SP;X-Frango;2023-01-26;02:30;02:48;NULL;4
+61;Paula Teixeira;Rua Pedro Martim, Centro, Amparo, SP;X-Burguer;2023-01-26;03:52;04:35;NULL;1
+62;Marcos Bispo;Rua das Flores, Parque das Flores, Nova Odessa, SP;X-Frango;2023-01-26;03:59;04:39;NULL;4
+63;Eva da Silva Custódio;Rua Valter Souza, Centro, Campinas, SP;X-Tudo;2023-01-26;04:16;04:58;NULL;2
+64;Gilberto Souza Matos;Paça Ivone Souza, Jardim Brasil, Amparo, SP;X-Egg;2023-01-26;05:43;06:01;NULL;1
