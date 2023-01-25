@@ -18,15 +18,17 @@ const mostrarPedidoPorCliente = (model) => {
 // Atualiza hora de término do pedido pelo nome do cliente
 const atualizarPedidoPronto = (model) => {
     return `UPDATE pedidos SET 
-                Hora_entrega = '${model.Hora_entrega}' 
-            WHERE Cliente LIKE '%${model.Cliente}%' AND Hora_entrega = 'NULL'`;
+                Hora_entrega = CURTIME() 
+            WHERE Cliente LIKE '%${model.Cliente}%'`; 
+            // AND Hora_entrega = 'NULL'`;
 }
 
 // Atualiza hora de entrega do pedido pelo nome do cliente
 const atualizarPedidoEntregue = (model) => {
     return `UPDATE pedidos SET 
-                Hora_fim = '${model.Hora_fim}' 
-            WHERE Cliente LIKE '%${model.Cliente}%' AND Hora_fim = 'NULL'`;
+                Hora_fim = CURTIME() 
+            WHERE Cliente LIKE '%${model.Cliente}%'`;
+            // AND Hora_fim = 'NULL'
 }
 
 
