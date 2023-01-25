@@ -56,8 +56,12 @@ SELECT * FROM View_ListarPedidos;
 -- Lista pedidos em execução
 DROP VIEW IF EXISTS View_PedidosEmExecucao;
 CREATE VIEW View_PedidosEmExecucao AS
-SELECT ID_Pedido, Cliente, Endereco, Produto, data, Hora_pedido FROM 
-pedidos WHERE Hora_entrega = '00:00:00' AND Hora_fim = '00:00:00';
+SELECT p.ID_Pedido, p.Cliente, p.Endereco, p.Produto, p.data, p.Hora_pedido, p.Hora_entrega, p.Hora_fim, e.nome 
+FROM pedidos p INNER JOIN entregadores e 
+ON p.Entregador = e.ID_Entregador
+WHERE p.Hora_entrega IS NULL AND p.Hora_fim IS NULL
+ORDER BY p.ID_Pedido;
+
 
 SELECT * FROM View_PedidosEmExecucao;
 
@@ -65,7 +69,10 @@ SELECT * FROM View_PedidosEmExecucao;
 -- Lista pedidos para entrega
 DROP VIEW IF EXISTS View_PedidosParaEntrega;
 CREATE VIEW View_PedidosParaEntrega AS
-SELECT * FROM
-pedidos WHERE Hora_fim = '00:00:00';
+SELECT p.ID_Pedido, p.Cliente, p.Endereco, p.Produto, p.data, p.Hora_pedido, p.Hora_entrega, p.Hora_fim, e.nome 
+FROM pedidos p INNER JOIN entregadores e 
+ON p.Entregador = e.ID_Entregador
+WHERE p.Hora_entrega IS NOT NULL AND p.Hora_fim IS NULL
+ORDER BY p.ID_Pedido;
 
 SELECT * FROM View_PedidosParaEntrega;

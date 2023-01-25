@@ -3,7 +3,7 @@ CREATE DATABASE IRango CHARSET=utf8 COLLATE utf8_general_ci;
 USE IRango;
 
 CREATE TABLE entregadores(
-    ID_Entregador NUMERIC(4) NOT NULL AUTO_INCREMENT,
+    ID_Entregador INT(4) NOT NULL AUTO_INCREMENT,
     Nome VARCHAR(50) NOT NULL,
     Email VARCHAR(50) NOT NULL,
     Senha VARCHAR(50) NOT NULL,
@@ -12,7 +12,7 @@ CREATE TABLE entregadores(
 );
 
 CREATE TABLE pedidos(
-    ID_Pedido NUMERIC(4) NOT NULL AUTO_INCREMENT,
+    ID_Pedido INT(4) NOT NULL AUTO_INCREMENT,
     Cliente VARCHAR(50) NOT NULL,
     Endereco VARCHAR(50) NOT NULL,
     Produto VARCHAR(50) NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE pedidos(
     Hora_pedido TIME NOT NULL,
     Hora_entrega TIME NULL,
     Hora_fim TIME NULL,
-    Entregador NUMERIC(4) NOT NULL,
+    Entregador INT(4) NOT NULL,
     CONSTRAINT pk_pedido primary key (ID_Pedido),
     FOREIGN KEY (Entregador) REFERENCES entregadores(ID_Entregador)
 );
@@ -56,8 +56,12 @@ SELECT * FROM View_ListarPedidos;
 -- Lista pedidos em execução
 DROP VIEW IF EXISTS View_PedidosEmExecucao;
 CREATE VIEW View_PedidosEmExecucao AS
-SELECT ID_Pedido, Cliente, Endereco, Produto, data, Hora_pedido FROM 
-pedidos WHERE Hora_entrega = '00:00:00' AND Hora_fim = '00:00:00';
+SELECT p.ID_Pedido, p.Cliente, p.Endereco, p.Produto, p.data, p.Hora_pedido, p.Hora_entrega, p.Hora_fim, e.nome 
+FROM pedidos p INNER JOIN entregadores e 
+ON p.Entregador = e.ID_Entregador
+WHERE p.Hora_entrega IS NULL AND p.Hora_fim IS NULL
+ORDER BY p.ID_Pedido;
+
 
 SELECT * FROM View_PedidosEmExecucao;
 
@@ -65,7 +69,10 @@ SELECT * FROM View_PedidosEmExecucao;
 -- Lista pedidos para entrega
 DROP VIEW IF EXISTS View_PedidosParaEntrega;
 CREATE VIEW View_PedidosParaEntrega AS
-SELECT * FROM
-pedidos WHERE Hora_fim = '00:00:00';
+SELECT p.ID_Pedido, p.Cliente, p.Endereco, p.Produto, p.data, p.Hora_pedido, p.Hora_entrega, p.Hora_fim, e.nome 
+FROM pedidos p INNER JOIN entregadores e 
+ON p.Entregador = e.ID_Entregador
+WHERE p.Hora_entrega IS NOT NULL AND p.Hora_fim IS NULL
+ORDER BY p.ID_Pedido;
 
 SELECT * FROM View_PedidosParaEntrega;
