@@ -6,12 +6,22 @@ const novoPedido = (model) => {
 
 // Lista todos os pedidos
 const mostrarPedidos = () => {
-    return `SELECT * FROM pedidos`;
+    return `SELECT * FROM View_ListarPedidos`;
 }
 
 // Lista um pedido pelo nome do cliente
 const mostrarPedidoPorCliente = (model) => {
     return `SELECT * FROM pedidos WHERE Cliente LIKE '%${model.Cliente}%'`;
+}
+
+// Lista pedidos em execução
+const PedidosEmExecucao = () => {
+    return `SELECT * FROM View_PedidosEmExecucao`;
+}
+
+// Lista pedidos PARA entrega
+const PedidosParaEntrega = () => {
+    return `SELECT * FROM View_PedidosParaEntrega`;
 }
 
 
@@ -43,6 +53,8 @@ module.exports = {
     novoPedido,
     mostrarPedidos,
     mostrarPedidoPorCliente,
+    PedidosEmExecucao,
+    PedidosParaEntrega,
     atualizarPedidoPronto,
     atualizarPedidoEntregue,
     excluirPedido
