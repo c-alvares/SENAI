@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+// App Cozinha
     container: {
         flex: 1,
         backgroundColor: '#E4DDB3',
@@ -14,13 +15,14 @@ export default StyleSheet.create({
     cabecalho: {
         fontSize: '30px',
         fontFamily: 'Verdana',
-        color: '#8FCFC1',
+        color: '#FFF',
         padding: '10px',
+        fontWeight: 'bold',
     },
     pedidoBox: {
         flexDirection: 'flex-start',
         padding: '15px',
-        margin: '30px',
+        margin: '20px',
         borderRadius: '10px',
         backgroundColor: '#FB8D13'
     },
@@ -30,4 +32,21 @@ export default StyleSheet.create({
         color: '#FFF',
         padding: '4px'
     },
+
+
+// Components    
+btn1: {
+    height: "50px",
+    borderRadius: "10px",
+    alignItems: "center",
+    justifyContent: "center",
+    margin: "15px",
+    backgroundColor: "#CB1E04"
+  },
+  textoBtn1: {
+    fontWeight: "bold",
+    fontSize: "17px",
+    color: "#FFF",
+    
+  },
 });
