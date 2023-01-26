@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
-// App Cozinha
+// General
     container: {
         flex: 1,
         backgroundColor: '#E4DDB3',
@@ -12,21 +12,21 @@ export default StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#911B04',
     },
-    cabecalho: {
+    headerText: {
         fontSize: '30px',
         fontFamily: 'Verdana',
         color: '#FFF',
         padding: '10px',
         fontWeight: 'bold',
     },
-    pedidoBox: {
+    boxOrder: {
         flexDirection: 'flex-start',
         padding: '15px',
         margin: '20px',
         borderRadius: '10px',
         backgroundColor: '#FB8D13'
     },
-    dados: {
+    orderData: {
         fontSize: '20px',
         fontFamily: 'Verdana',
         color: '#FFF',
@@ -43,7 +43,7 @@ btn1: {
     margin: "15px",
     backgroundColor: "#CB1E04"
   },
-  textoBtn1: {
+  textBtn1: {
     fontWeight: "bold",
     fontSize: "17px",
     color: "#FFF",

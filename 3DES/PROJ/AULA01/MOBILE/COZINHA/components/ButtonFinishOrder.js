@@ -2,12 +2,12 @@ import { TouchableOpacity, Text } from "react-native";
 
 import styles from '../styles/style';
 
-export default function ButtonPedidoPronto(props) {
+export default function ButtonFinishOrder(props) {
     const { value, onPress } = props;
     
     return (
         <TouchableOpacity style={styles.btn1} onPress={() => {onPress()}}>
-            <Text style={styles.textoBtn1}>{value}</Text>
+            <Text style={styles.textBtn1}>{value}</Text>
         </TouchableOpacity>
     )
 }

@@ -1,12 +1,13 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { View, Text, Image, TextInput } from "react-native";
+import { View, Text } from "react-native";
 
 import styles from "./styles/style";
 
-import ButtonPedidoPronto from "./components/buttonPedidoPronto";
+import ButtonFinishOrder from "./components/ButtonFinishOrder";
 
 export default function App() {
+
   // Consumo da API para importação dos pedidos a serem preparados
   const [order, setOrder] = useState([]);
 
@@ -17,46 +18,52 @@ export default function App() {
     .then((dados) => {
       setOrder(dados);
     });
-  // Fim do consumo da API
 
   // Função para finalizar pedido
-  const [concluir, setConcluir] = useState([]);
-  // jogar o valor do pedido.Cliente para o setConcluir e então fazer o fetch
+  const closeOrder = (clientOrder) => {
+    // console.log(clientOrder);
+    const data = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ Cliente: clientOrder }),
+    };
 
-  const finalizar = (concluir) => {
-    console.log();
-    
-    // fetch("http://localhost:3000/atualizarpedidopronto")
-    //   .then((resp) => {
-    //  ;   return resp.json();
-    //   })
-    //   .then((dados) => {
-    //     setConcluir(dados);
-    //   })
+    fetch("http://localhost:3000/atualizarpedidopronto", data)
+      .then((response) => response.status)
+      .then((resp) => {
+        if (resp == 200) {
+          window.location.reload();
+        }
+      });
   };
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.cabecalho}>Pedidos a Preparar</Text>
+        <Text style={styles.headerText}>Pedidos a Preparar</Text>
       </View>
 
       {order.map((pedido, index) => {
         return (
-          <View style={styles.pedidoBox} key={index}>
-            <Text style={styles.dados}>Pedido nº: {pedido.ID_Pedido}</Text>
-            <Text style={styles.dados}>Cliente: {pedido.Cliente}</Text>
-            <Text style={styles.dados}>Endereço: {pedido.Endereco}</Text>
-            <Text style={styles.dados}>Produto: {pedido.Produto}</Text>
-            <Text style={styles.dados}>Data: {pedido.data}</Text>
-            <Text style={styles.dados}>
+          <View style={styles.boxOrder} key={index}>
+            <Text style={styles.orderData}>Pedido nº: {pedido.ID_Pedido}</Text>
+            <Text style={styles.orderData}>Cliente: {pedido.Cliente}</Text>
+            <Text style={styles.orderData}>Endereço: {pedido.Endereco}</Text>
+            <Text style={styles.orderData}>Produto: {pedido.Produto}</Text>
+            <Text style={styles.orderData}>Data: {pedido.data}</Text>
+            <Text style={styles.orderData}>
               Hora do Pedido: {pedido.Hora_pedido}
             </Text>
-            {/* <Text style={styles.dados}>{pedido.Hora_entrega}</Text>
-            <Text style={styles.dados}>{pedido.Hora_fim}</Text> */}
-            <Text style={styles.dados}>Entregador: {pedido.nome}</Text>
-            
-            <ButtonPedidoPronto value="PEDIDO PRONTO PARA ENTREGA"onPress={finalizar(setConcluir)}></ButtonPedidoPronto>
+            {/* <Text style={styles.orderData}>{pedido.Hora_entrega}</Text>
+            <Text style={styles.orderData}>{pedido.Hora_fim}</Text> */}
+            <Text style={styles.orderData}>Entregador: {pedido.nome}</Text>
+
+            <ButtonFinishOrder
+              value="PEDIDO PRONTO PARA ENTREGA"
+              onPress={() => {
+                closeOrder(pedido.Cliente);
+              }}
+            ></ButtonFinishOrder>
           </View>
         );
       })}
