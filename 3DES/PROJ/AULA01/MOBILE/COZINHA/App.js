@@ -8,34 +8,45 @@ import ButtonFinishOrder from "./components/ButtonFinishOrder";
 
 export default function App() {
 
-  // Consumo da API para importação dos pedidos a serem preparados
+// Consumo da API para importação dos pedidos a serem preparados
   const [order, setOrder] = useState([]);
 
-  fetch("http://localhost:3000/pedidosapreparar")
-    .then((resp) => {
-      return resp.json();
-    })
-    .then((dados) => {
-      setOrder(dados);
-    });
+  useEffect(() => {
+    setInterval(() => {
+      console.log("Atualizar Lista")
+      listOrder();
+    }, 1500);
+  }, [])
 
-  // Função para finalizar pedido
+  const listOrder = () => {
+    fetch("http://localhost:3000/pedidosapreparar")
+    .then((response) => { return response.json() })
+    .then((data) => { 
+      setOrder(data);
+    })
+  } 
+
+
+// Função para finalizar pedido
   const closeOrder = (clientOrder) => {
     // console.log(clientOrder);
     const data = {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ Cliente: clientOrder }),
-    };
+    }
 
     fetch("http://localhost:3000/atualizarpedidopronto", data)
       .then((response) => response.status)
       .then((resp) => {
-        if (resp == 200) {
-          window.location.reload();
+        if (resp === 200) {
+          console.log("Pedido Enviado");
+          listOrder();
+        }else {
+          console.log(resp.status);
         }
-      });
-  };
+      })
+  }
 
   return (
     <View style={styles.container}>
