@@ -40,8 +40,14 @@ const update = async (req, res) => {
     res.status(200).json(funcionario).end();
 }
 
-const remove = (req, res) => {
-    res.status(200).send("Delete").end();
+const remove = async (req, res) => {
+    const funcionario = await prisma.funcionario.delete({
+        where: {
+            id: Number(req.params.id)
+        }
+    })
+
+    res.status(200).json(funcionario).end();
 }
 
 module.exports = {
