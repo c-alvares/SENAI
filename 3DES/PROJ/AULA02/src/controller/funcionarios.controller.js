@@ -20,6 +20,16 @@ const read = async (req, res) => {
     res.status(200).json(funcionarios).end();
 }
 
+const readFunc = async (req, res) => {
+    const funcionario = await prisma.funcionario.findUnique({
+        where: {
+            id: Number(req.params.id)
+        }
+    });
+
+    res.status(200).json(funcionario).end();
+}
+
 const update = (req, res) => {
     res.status(200).send("Update").end();
 }
@@ -31,6 +41,7 @@ const remove = (req, res) => {
 module.exports = {
     create,
     read,
+    readFunc,
     update,
     remove
 }
