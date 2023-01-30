@@ -14,8 +14,10 @@ const create = async (req, res) => {
     res.status(200).json(funcionario).end();
 }
 
-const read = (req, res) => {
-    res.status(200).send("Read").end();
+const read = async (req, res) => {
+    const funcionarios = await prisma.funcionario.findMany();
+
+    res.status(200).json(funcionarios).end();
 }
 
 const update = (req, res) => {
