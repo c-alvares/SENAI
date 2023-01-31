@@ -14,4 +14,4 @@ https://www.prisma.io/docs/getting-started/quickstart
 Link da documentação:
 https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#model-fields
 
-7) prisma migrate dev --name => comando para gerar o script
+7) prisma migrate dev --name init => comando para gerar o script
