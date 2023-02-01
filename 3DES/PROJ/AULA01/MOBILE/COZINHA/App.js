@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 
 import styles from "./styles/style";
 
@@ -51,7 +51,7 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Pedidos a Preparar</Text>
         <ButtonReloadScreen></ButtonReloadScreen>
@@ -81,6 +81,6 @@ export default function App() {
           </View>
         );
       })}
-    </View>
+    </ScrollView>
   );
 }
