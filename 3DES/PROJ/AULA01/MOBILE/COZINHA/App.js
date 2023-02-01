@@ -8,7 +8,7 @@ import ButtonFinishOrder from "./components/ButtonFinishOrder";
 
 export default function App() {
 
-// Renderiza a tela quando é carregada e atualiza a cada 3 minutos(180000ms)
+  // Renderiza a tela quando é carregada e atualiza a cada 3 minutos(180000ms)
   const [order, setOrder] = useState([]);
   useEffect(() => {
     listOrder();
@@ -16,20 +16,21 @@ export default function App() {
       console.log("Atualizar Lista")
       listOrder();
     }, 180000);
-    
+
   }, [])
 
-// Consumo da API para importação dos pedidos a serem preparados
+  // Consumo da API para importação dos pedidos a serem preparados
   const listOrder = () => {
     fetch("http://localhost:3000/pedidosapreparar")
-    .then((response) => { return response.json() })
-    .then((data) => { 
-      setOrder(data);
-    })
-  } 
+      .then((response) => { return response.json() })
+      .then((data) => {
+        setOrder(data);
+      })
+  }
 
 
-// Função para finalizar pedido
+
+  // Função para finalizar pedido
   const closeOrder = (clientOrder) => {
     // console.log(clientOrder);
     const data = {
@@ -44,7 +45,7 @@ export default function App() {
         if (resp === 200) {
           console.log("Pedido Enviado");
           listOrder();
-        }else {
+        } else {
           console.log(resp.status);
         }
       })
@@ -57,18 +58,17 @@ export default function App() {
       </View>
 
       {order.map((pedido, index) => {
+        // Formatação da data
+        var formatedDate = pedido.data.toLocaleString('pt-BR', { timeZone: 'UTC' }).split('T')[0]
+
         return (
           <View style={styles.boxOrder} key={index}>
             <Text style={styles.orderData}>Pedido nº: {pedido.ID_Pedido}</Text>
             <Text style={styles.orderData}>Cliente: {pedido.Cliente}</Text>
             <Text style={styles.orderData}>Endereço: {pedido.Endereco}</Text>
             <Text style={styles.orderData}>Produto: {pedido.Produto}</Text>
-            <Text style={styles.orderData}>Data: {pedido.data}</Text>
-            <Text style={styles.orderData}>
-              Hora do Pedido: {pedido.Hora_pedido}
-            </Text>
-            {/* <Text style={styles.orderData}>{pedido.Hora_entrega}</Text>
-            <Text style={styles.orderData}>{pedido.Hora_fim}</Text> */}
+            <Text style={styles.orderData}>Data: {formatedDate}</Text>
+            <Text style={styles.orderData}>Hora do Pedido: {pedido.Hora_pedido}</Text>
             <Text style={styles.orderData}>Entregador: {pedido.nome}</Text>
 
             <ButtonFinishOrder
