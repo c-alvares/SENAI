@@ -20,6 +20,11 @@ export default function App() {
 
   }, [])
 
+  // Atualiza tela manualmente
+  const reloadScreen = () => {
+    location.reload()
+  }
+
   // Consumo da API para importação dos pedidos a serem preparados
   const listOrder = () => {
     fetch("http://localhost:3000/pedidosapreparar")
@@ -54,8 +59,7 @@ export default function App() {
     <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Pedidos a Preparar</Text>
-        <ButtonReloadScreen></ButtonReloadScreen>
-        
+        <ButtonReloadScreen onPress={() => { reloadScreen() }} ></ButtonReloadScreen>
       </View>
 
       {order.map((pedido, index) => {
@@ -66,7 +70,6 @@ export default function App() {
           <View style={styles.boxOrder} key={index}>
             <Text style={styles.orderData}>Pedido nº: {pedido.ID_Pedido}</Text>
             <Text style={styles.orderData}>Cliente: {pedido.Cliente}</Text>
-            <Text style={styles.orderData}>Endereço: {pedido.Endereco}</Text>
             <Text style={styles.orderData}>Produto: {pedido.Produto}</Text>
             <Text style={styles.orderData}>Data: {formatedDate}</Text>
             <Text style={styles.orderData}>Hora do Pedido: {pedido.Hora_pedido}</Text>
