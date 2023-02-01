@@ -60,7 +60,7 @@ SELECT p.ID_Pedido, p.Cliente, p.Endereco, p.Produto, p.data, p.Hora_pedido, p.H
 FROM pedidos p INNER JOIN entregadores e 
 ON p.Entregador = e.ID_Entregador
 WHERE p.Hora_entrega IS NULL AND p.Hora_fim IS NULL
-ORDER BY p.ID_Pedido;
+ORDER BY p.ID_Pedido DESC;
 
 
 SELECT * FROM View_PedidosEmExecucao;
@@ -73,6 +73,6 @@ SELECT p.ID_Pedido, p.Cliente, p.Endereco, p.Produto, p.data, p.Hora_pedido, p.H
 FROM pedidos p INNER JOIN entregadores e 
 ON p.Entregador = e.ID_Entregador
 WHERE p.Hora_entrega IS NOT NULL AND p.Hora_fim IS NULL
-ORDER BY p.ID_Pedido;
+ORDER BY p.ID_Pedido DESC;
 
 SELECT * FROM View_PedidosParaEntrega;
