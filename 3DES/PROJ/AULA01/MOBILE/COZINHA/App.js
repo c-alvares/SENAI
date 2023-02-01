@@ -8,16 +8,18 @@ import ButtonFinishOrder from "./components/ButtonFinishOrder";
 
 export default function App() {
 
-// Consumo da API para importação dos pedidos a serem preparados
+// Renderiza a tela quando é carregada e atualiza a cada 3 minutos(180000ms)
   const [order, setOrder] = useState([]);
-
   useEffect(() => {
+    listOrder();
     setInterval(() => {
       console.log("Atualizar Lista")
       listOrder();
-    }, 1500);
+    }, 180000);
+    
   }, [])
 
+// Consumo da API para importação dos pedidos a serem preparados
   const listOrder = () => {
     fetch("http://localhost:3000/pedidosapreparar")
     .then((response) => { return response.json() })
