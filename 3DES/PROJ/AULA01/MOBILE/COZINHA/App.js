@@ -4,6 +4,7 @@ import { View, Text } from "react-native";
 
 import styles from "./styles/style";
 
+import ButtonReloadScreen from "./components/ButtonReloadScreen";
 import ButtonFinishOrder from "./components/ButtonFinishOrder";
 
 export default function App() {
@@ -27,8 +28,6 @@ export default function App() {
         setOrder(data);
       })
   }
-
-
 
   // Função para finalizar pedido
   const closeOrder = (clientOrder) => {
@@ -55,6 +54,8 @@ export default function App() {
     <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headerText}>Pedidos a Preparar</Text>
+        <ButtonReloadScreen></ButtonReloadScreen>
+        
       </View>
 
       {order.map((pedido, index) => {
