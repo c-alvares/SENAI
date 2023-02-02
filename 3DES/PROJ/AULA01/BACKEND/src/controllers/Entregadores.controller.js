@@ -24,6 +24,7 @@ const listarUmEntregador = (req, res) => {
 }
 
 const LoginDelivery = (req, res) => {
+    // console.log(req.body)
     con.query(entregador.logarEntregador(req.body), (err, result) => {
         if (err == null)
             if (result.length > 0)
