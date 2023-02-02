@@ -19,7 +19,7 @@ const readSailsmens = async (req, res) => {
 const readSailsman = async (req, res) => {
     let sailsman = await prisma.Vendedor.findUnique({
         where: {
-            id_vendedor: Number(req.params.id_vendedor)
+            id: Number(req.params.id)
         }
     })
 

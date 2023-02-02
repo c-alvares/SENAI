@@ -19,7 +19,7 @@ const readSectors = async (req, res) => {
 const readSector = async (req, res) => {
     let sector = await prisma.Setor.findUnique({
         where: {
-            id_setor: Number(req.params.id_setor)
+            id: Number(req.params.id)
         }
     })
 

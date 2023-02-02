@@ -11,7 +11,7 @@ datasource db {
 }
 
 model Setor {
-  id_setor Int @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   nome String
   comissao Float
   produto Produtos[]
@@ -19,17 +19,17 @@ model Setor {
 }
 
 model Produtos {
-  id_produtos Int @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   nome String 
   valor Float
-  id_setor Int
-  setor Setor @relation(fields: [id_setor], references: [id_setor])
+  setores Int
+  setor Setor @relation(fields: [setores], references: [id])
 }
 
 model Vendedor {
-  id_vendedor Int @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   nome String 
   salario Float
-  id_setor Int
-  setor Setor @relation(fields: [id_setor], references: [id_setor])
+  setores Int
+  setor Setor @relation(fields: [setores], references: [id])
 }

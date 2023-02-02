@@ -6,6 +6,6 @@ const Produto = require('../controllers/produtos.controller');
 
 router.post('/cadastrarproduto', Produto.createProduct);
 router.get('/buscarprodutos', Produto.readProducts);
-router.get('/buscarproduto/:id_produto', Produto.readProduct)
+router.get('/buscarproduto/:id', Produto.readProduct)
 
 module.exports = router;

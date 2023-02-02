@@ -19,7 +19,7 @@ const readProducts = async (req, res) => {
 const readProduct = async (req, res) => {
     let products = await prisma.Produtos.findUnique({
         where: {
-            id_produtos: Number(req.params.id_produtos)
+            id: Number(req.params.id)
         }
     })
 
