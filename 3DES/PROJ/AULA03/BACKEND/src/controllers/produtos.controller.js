@@ -3,11 +3,11 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const createProduct = async (req, res) => {
-    let product = await prisma.Produtos.create({
+    let products = await prisma.Produtos.create({
         data: req.body
     });
 
-    res.status(200).json(product).end();
+    res.status(200).json(products).end();
 }
 
 const readProducts = async (req, res) => {
@@ -17,7 +17,7 @@ const readProducts = async (req, res) => {
 }
 
 const readProduct = async (req, res) => {
-    let products = await prisma.Produto.findUnique({
+    let products = await prisma.Produtos.findUnique({
         where: {
             id_produtos: Number(req.params.id_produtos)
         }
