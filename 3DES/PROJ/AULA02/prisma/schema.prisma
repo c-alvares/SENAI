@@ -11,6 +11,7 @@ datasource db {
 }
 
 model funcionario {
+  // @id indica uma primary key
   id Int @id @default(autoincrement())
   nome String
   salario Float
