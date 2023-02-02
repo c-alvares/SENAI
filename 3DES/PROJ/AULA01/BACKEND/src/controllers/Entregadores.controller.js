@@ -23,9 +23,22 @@ const listarUmEntregador = (req, res) => {
     });
 }
 
+const LoginDelivery = (req, res) => {
+    con.query(entregador.logarEntregador(req.body), (err, result) => {
+        if (err == null)
+            if (result.length > 0)
+                res.json(result).end();
+            else
+                res.status(404).end()
+        else
+            res.status(500).end()
+    });
+}
+
 
 
 module.exports = {
     listarTodosEntregadores,
-    listarUmEntregador
+    listarUmEntregador,
+    LoginDelivery
 }
