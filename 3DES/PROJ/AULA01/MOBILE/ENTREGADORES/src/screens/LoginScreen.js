@@ -7,12 +7,31 @@ import styles from "../styles/style";
 
 export default function LoginScreen({ navigation }) {
     // Recebimento dos dados inseridos nos inputs para login
-    const [email, setEmail] = useState([]);
-    const [password, setPassword] = useState([]);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     // 
-    const logIn = () => {
-        navigation.navigate('Entregas')
+    const logIn = (value1, value2) => {
+        // console.log(value1, value2)
+        const data = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(
+                {
+                    Email: value1,
+                    Senha: value2
+                })
+        }
+        fetch("http://localhost:3000/login", data)
+            .then((response) => response.status)
+            .then((resp) => {
+                if (resp === 200) {
+                    console.log("Acesso liberado");
+                    // navigation.navigate('Entregas')
+                } else {
+                    console.log(resp.status)
+                }
+            })
     }
 
     return (
