@@ -6,6 +6,7 @@ const Setor = require('../controllers/setor.controller');
 
 router.post('/criarsetor', Setor.createSector);
 router.get('/buscarsetores', Setor.readSectors);
-router.get('/buscarsetor/:id', Setor.readSector)
+router.get('/buscarsetoreprodutos/:id', Setor.readSector);
+router.get('/buscarsetorevendedores/:id', Setor.readSectorSailsman);
 
 module.exports = router;
