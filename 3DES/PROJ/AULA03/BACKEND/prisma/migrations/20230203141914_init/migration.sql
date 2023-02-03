@@ -30,7 +30,7 @@ CREATE TABLE `Vendedor` (
 -- CreateTable
 CREATE TABLE `Vendas` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
-    `data` DATETIME(3) NOT NULL,
+    `data` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
     `id_vendedor` INTEGER NOT NULL,
 
     PRIMARY KEY (`id`)
