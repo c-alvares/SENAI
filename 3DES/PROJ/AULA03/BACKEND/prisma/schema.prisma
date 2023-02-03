@@ -22,14 +22,14 @@ model Produtos {
   id Int @id @default(autoincrement())
   nome String 
   valor Float
-  setores Int
-  setor Setor @relation(fields: [setores], references: [id])
+  setor Int
+  setores Setor @relation(fields: [setor], references: [id])
 }
 
 model Vendedor {
   id Int @id @default(autoincrement())
   nome String 
   salario Float
-  setores Int
-  setor Setor @relation(fields: [setores], references: [id])
+  setor Int
+  setores Setor @relation(fields: [setor], references: [id])
 }
