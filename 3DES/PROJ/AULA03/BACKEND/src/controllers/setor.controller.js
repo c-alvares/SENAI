@@ -10,6 +10,16 @@ const createSector = async (req, res) => {
   res.status(200).json(sector).end();
 };
 
+const createSectors = async (req, res) => {
+  let sector = await prisma.Setor.createMany({
+    data: req.body,
+    skipDuplicates: true,
+  });
+
+  res.status(200).json(sector).end();
+}
+
+
 const readSectors = async (req, res) => {
   let sector = await prisma.Setor.findMany();
 
@@ -50,6 +60,7 @@ const readSectorSailsman = async (req, res) => {
 
 module.exports = {
   createSector,
+  createSectors,
   readSectors,
   readSector,
   readSectorSailsman
