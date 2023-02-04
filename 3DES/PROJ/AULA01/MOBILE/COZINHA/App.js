@@ -2,10 +2,10 @@ import * as React from "react";
 import { useState, useEffect } from "react";
 import { View, Text, ScrollView } from "react-native";
 
-import styles from "./styles/style";
+import styles from "./src/styles/style";
 
-import ButtonReloadScreen from "./components/ButtonReloadScreen";
-import ButtonFinishOrder from "./components/ButtonFinishOrder";
+import ButtonReloadScreen from "./src/components/ButtonReloadScreen";
+import ButtonFinishOrder from "./src/components/ButtonFinishOrder";
 
 export default function App() {
 
