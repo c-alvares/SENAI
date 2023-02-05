@@ -36,6 +36,12 @@ export default function LoginScreen({ navigation }) {
             })
     }
 
+    const salvar = async (data) => {
+        await AsyncStorage.setItem('data', data);
+
+    }
+
+
     return (
         <View style={styles.container}>
             <Text>IRANGO DELIVERY</Text>
