@@ -3,6 +3,8 @@ import { StatusBar } from "expo-status-bar";
 import { useState } from "react";
 import { Text, View, TextInput, Button } from "react-native";
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import styles from "../styles/style";
 
 export default function LoginScreen({ navigation }) {
