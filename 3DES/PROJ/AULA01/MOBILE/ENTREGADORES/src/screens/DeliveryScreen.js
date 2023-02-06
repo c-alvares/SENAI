@@ -48,7 +48,7 @@ export default function DeliveryScreen({ navigation }) {
             .then((response) => response.status)
             .then((resp) => {
                 if (resp === 200) {
-                    console.log("Pedido Enviado");
+                    console.log("Pedido Entregue");
                     listOrder();
                 } else {
                     console.log(resp.status);
