@@ -5,7 +5,7 @@ import { Text, View, ScrollView } from "react-native";
 import styles from "../styles/style";
 
 // import ButtonReloadScreen from "../src/components/ButtonReloadScreen";
-// import ButtonFinishOrder from "../src/components/ButtonFinishOrder";
+import ButtonFinishOrder from "../components/ButtonFinishOrder";
 
 export default function DeliveryScreen({ navigation }) {
 
@@ -77,12 +77,12 @@ export default function DeliveryScreen({ navigation }) {
                         <Text style={styles.orderData}>Pedido finalizado: {pedido.Hora_entrega}</Text>
                         <Text style={styles.orderData}>Entregador: {pedido.nome}</Text>
 
-                        {/* <ButtonFinishOrder
-                            value="PEDIDO PRONTO PARA ENTREGA"
+                        <ButtonFinishOrder
+                            value="FINALIZAR ENTREGA"
                             onPress={() => {
                                 closeOrder(pedido.Cliente);
                             }}>
-                        </ButtonFinishOrder> */}
+                        </ButtonFinishOrder>
                     </View>
                 );
             })}
