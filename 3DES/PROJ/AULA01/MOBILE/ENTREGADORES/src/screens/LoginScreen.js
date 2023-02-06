@@ -12,7 +12,12 @@ export default function LoginScreen({ navigation }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    // 
+    const saveData = async (data) => {
+        await AsyncStorage.setItem('data', data);
+
+    }
+    // saveData(.id_entregador)
+ 
     const logIn = () => {
         console.log(email, password)
         const data = {
@@ -34,11 +39,6 @@ export default function LoginScreen({ navigation }) {
                     console.log(resp.status)
                 }
             })
-    }
-
-    const salvar = async (data) => {
-        await AsyncStorage.setItem('data', data);
-
     }
 
 
@@ -67,4 +67,3 @@ export default function LoginScreen({ navigation }) {
         </View>
     )
 }
-
