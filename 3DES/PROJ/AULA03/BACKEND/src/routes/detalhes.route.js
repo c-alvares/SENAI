@@ -4,7 +4,7 @@ const router = express.Router();
 
 const Detalhes = require('../controllers/detalhes.controller');
 
-// router.pot('/', Detalhes.);
+router.post('/', Detalhes.createDetails);
 // router.get('/', Detalhes.);
 // router.get('//:id', Detalhes.);
 // router.get('//:id', Detalhes.);

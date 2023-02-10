@@ -2,39 +2,24 @@ const { PrismaClient, Prisma } = require("@prisma/client");
 
 const prisma = new PrismaClient();
 
-// async function main() {
-//     let includeDetails: boolean = false
-//     let detail: Prisma.UserCreateInput
+const createSails = async (req, res) => {
+  let sails = await prisma.Vendas.create({
+    data: {
+      id: req.body.id
+    }
+  });
+  // console.log(sails)
+  let info = req.body.detalhe;
+  info.forEach(i => {
+    i.id = parseInt(sails.id)
+  });
 
-//     if (includeDetails) {
-//         details = {
-//             data: now(),
-//             id_vendedor: ,
-//             detalhe: {
-//                 create: {
-//                     id_produto: ,
-//                     quantidade: ,
-//                 },
-//             },
-//         }
-//     } else {
-//         details = {
-//             data: now(),
-//             id_vendedor: ,
-//         }
-//     }
-//     const createSail = await prisma.Vendas.create({ data: details })
-// }
+  let details = await prisma.detalhes.createMany({
+    data: info
+  });
+  res.status(201).json(details).end();
 
-// main()
-//     .then(async () => {
-//         await prisma.$disconnect()
-// })
-//     .catch(async (e) => {
-//         console.error(e)
-//         await prisma.$disconnect()
-//         process.exit(1)
-//     })
+}
 
 const readSails = async (req, res) => {
   let sails = await prisma.Vendas.findMany();
@@ -59,7 +44,7 @@ const detailedSail = async (req, res) => {
 };
 
 module.exports = {
-  // createSail,
+  createSails,
   readSails,
   detailedSail,
 };
