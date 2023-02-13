@@ -5,8 +5,7 @@ const router = express.Router();
 const Detalhes = require('../controllers/detalhes.controller');
 
 router.post('/', Detalhes.createDetails);
-// router.get('/', Detalhes.);
-// router.get('//:id', Detalhes.);
-// router.get('//:id', Detalhes.);
+router.get('/', Detalhes.readDetails);
+router.get('/:id', Detalhes.detailedSail);
 
 module.exports = router;
