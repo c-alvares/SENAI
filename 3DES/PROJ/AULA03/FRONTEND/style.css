@@ -1,7 +1,8 @@
 *{
     background-color: rgb(120, 119, 119);
-    margin: 0;
-    padding: 0;
+    margin: 05;
+    padding: 05;
     box-sizing: border-box;
+    border: 1px solid black;
 }
 
