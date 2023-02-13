@@ -16,7 +16,7 @@ const createSectors = async (req, res) => {
     skipDuplicates: true,
   });
 
-  res.status(200).json(sector).end();
+  res.status(201).json(sector).end();
 }
 
 
