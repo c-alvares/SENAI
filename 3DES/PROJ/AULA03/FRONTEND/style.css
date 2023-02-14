@@ -6,3 +6,11 @@
     border: 1px solid black;
 }
 
+#sector_structure, .sector_line, .cell  {
+    border: none;
+}
+
+.model {
+    visibility: hidden;
+    display: none;
+}

@@ -7,7 +7,7 @@
     <title>Casarenas</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="loadSectors();">
     <div class="card">
         <input id="input_name" type="text">
         <input id="input_comission" type="text">
@@ -15,15 +15,11 @@
     </div>
 
         <table id="sector_structure">
-            <tr id="sector_line1">
-                <td id="id_cell"></td>
-                <!-- <td id="name_cell"></td>
-                <td id="comission_cell"></td> -->
+            <tr class="sector_line model">
+                <td class="cell" id="id_cell"></td>
+                <td class="cell" id="name_cell"></td>
+                <td class="cell" id="comission_cell"></td>
             </tr>
-            <!-- <tr id="sector_line2">
-            </tr>
-            <tr id="sector_line3">
-            </tr> -->
         </table>
 
 </body>

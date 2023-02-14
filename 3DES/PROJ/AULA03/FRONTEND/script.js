@@ -37,11 +37,12 @@ function loadSectors() {
         .then(response => response.json())
         .then(response => {
             response.forEach(sector => {
-                let sector_line = document.querySelector('#sector_line1').cloneNode(true)
-
+                let sector_line = document.querySelector('.sector_line').cloneNode(true)
+                // console.log(sector)
+                sector_line.classList.remove('model')
                 sector_line.querySelector('#id_cell').innerHTML = sector.id
-                // sector_line.querySelector('#name_cell').innerHTML = sector.nome
-                // sector_line.querySelector('#comission_cell').innerHTML = sector.comissao
+                sector_line.querySelector('#name_cell').innerHTML = sector.nome
+                sector_line.querySelector('#comission_cell').innerHTML = sector.comissao
                 sector_structure.appendChild(sector_line)
             })
         })
