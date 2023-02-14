@@ -1,0 +1,19 @@
+*{
+    margin: 00;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(165, 165, 165);
+    margin: 10px;
+}
+
+#sector_structure, .sector_line, .cell  {
+    border: none;
+}
+
+.model {
+    visibility: hidden;
+    display: none;
+}

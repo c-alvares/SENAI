@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Little Store">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casarenas - Setores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadSectors();">
+    <div class="card">
+        <input id="input_name" type="text">
+        <input id="input_comission" type="text">
+        <button id="btn_register" type="submit" onclick="createSector()">registrar</button>
+    </div>
+
+        <table id="sector_structure">
+            <tr class="sector_line model">
+                <td class="cell" id="id_cell"></td>
+                <td class="cell" id="name_cell"></td>
+                <td class="cell" id="comission_cell"></td>
+            </tr>
+        </table>
+
+</body>
+<script src="./script.js"></script>
+</html>
+<!-- https://github.com/c-alvares/FORUM/blob/master/frontend/paginaHome/home.html linha 123-->
+<!-- https://github.com/c-alvares/FORUM/blob/master/frontend/paginaHome/script/homeScript.js linha 139 -->

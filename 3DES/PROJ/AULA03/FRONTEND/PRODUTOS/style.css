@@ -1,9 +1,12 @@
 *{
-    background-color: rgb(120, 119, 119);
-    margin: 05;
-    padding: 05;
+    margin: 00;
+    padding: 0;
     box-sizing: border-box;
-    border: 1px solid black;
+}
+
+body {
+    background-color: rgb(165, 165, 165);
+    margin: 10px;
 }
 
 #sector_structure, .sector_line, .cell  {

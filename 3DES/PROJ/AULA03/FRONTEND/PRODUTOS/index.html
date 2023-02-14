@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Little Store">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casarenas - Produtos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadProduct();">
+    <div class="card">
+        <input id="input_name" type="text">
+        <input id="input_price" type="text">
+        <input id="input_sector" type="text">
+        <button id="btn_register" type="submit" onclick="createProduct()">registrar</button>
+    </div>
+
+        <table id="product_structure">
+            <tr class="product_line model">
+                <td class="cell" id="name_cell"></td>
+                <td class="cell" id="price_cell"></td>
+                <td class="cell" id="sector_cell"></td>
+            </tr>
+        </table>
+
+</body>
+<script src="./script.js"></script>
+</html>
