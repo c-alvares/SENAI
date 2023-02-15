@@ -8,7 +8,7 @@ let sailsman_structure = document.querySelector('#sailsman_structure');
 const uri_create_sailsman = 'http://localhost:3000/cadastrarvendedor/';
 const uri_list_sailsman = 'http://localhost:3000/buscarvendedores';
 
-function createSailsman() {
+function createSail() {
     let create = {
         "nome": input_name.value,
         "salario": Number(input_salary.value),
@@ -34,7 +34,7 @@ function createSailsman() {
         .catch(err => console.error(err));
 }
 
-function loadSailsman() {
+function loadSail() {
     fetch(uri_list_sailsman)
         .then(response => response.json())
         .then(response => {
