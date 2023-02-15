@@ -7,7 +7,7 @@ const createSailsman = async (req, res) => {
     data: req.body,
   });
 
-  res.status(200).json(sailsman).end();
+  res.status(201).json(sailsman).end();
 };
 
 const readSailsmens = async (req, res) => {
