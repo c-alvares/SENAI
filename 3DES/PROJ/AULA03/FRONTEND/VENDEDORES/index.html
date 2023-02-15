@@ -7,18 +7,23 @@
     <title>Casarenas - Vendedores</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<a href="../SETORES/index.html">Setores</a>
+<a href="../PRODUTOS/index.html">Produtos</a>
+
 <body onload="loadSectors();">
     <div class="card">
-        <input id="input_name" type="text">
-        <input id="input_comission" type="text">
+        <input id="input_name" type="text" placeholder="Vendedor">
+        <input id="input_salary" type="text" placeholder="Salário">
+        <input id="input_sector" type="text" placeholder="Setor">
         <button id="btn_register" type="submit" onclick="createSector()">registrar</button>
     </div>
 
-        <table id="sector_structure">
-            <tr class="sector_line model">
+        <table id="sailsman_structure">
+            <tr class="sailsman_line model">
                 <td class="cell" id="id_cell"></td>
                 <td class="cell" id="name_cell"></td>
-                <td class="cell" id="comission_cell"></td>
+                <td class="cell" id="salary_cell"></td>
+                <td class="cell" id="sector_cell"></td>
             </tr>
         </table>
 

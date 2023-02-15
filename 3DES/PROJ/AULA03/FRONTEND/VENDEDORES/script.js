@@ -1,19 +1,21 @@
 let input_name = document.querySelector('#input_name');
-let input_comission = document.querySelector('#input_comission');
+let input_salary = document.querySelector('#input_salary');
+let input_sector = document.querySelector('#input_sector');
 let btn_register = document.querySelector('#btn_register');
 
-let sector_structure = document.querySelector('#sector_structure');
+let sailsman_structure = document.querySelector('#sailsman_structure');
 
-const uri_create_sector = 'http://localhost:3000/criarsetor/';
-const uri_list_sectores = 'http://localhost:3000/buscarsetores';
+const uri_create_sailsman = 'http://localhost:3000/cadastrarvendedor/';
+const uri_list_sailsman = 'http://localhost:3000/buscarvendedores';
 
 function createSector() {
     let create = {
         "nome": input_name.value,
-        "comissao": Number(input_comission.value)
+        "salario": Number(input_salary.value),
+        "setor": Number(input_sector.value)
     }
 
-    fetch(uri_create_sector, {
+    fetch(uri_create_sailsman, {
         'method': 'POST',
         'headers': {
             'Content-Type': 'application/json'
@@ -23,27 +25,29 @@ function createSector() {
         .then( response => response.status )
         .then( response => {
             if (response == 201) {
-                alert("Setor cadastrado com sucesso")
+                alert("Vendedor cadastrado com sucesso")
                 window.location.reload()
             }else {
-                alert('Falha ao cadastrar setor')
+                alert('Falha ao cadastrar vendedor')
             }
         })
         .catch(err => console.error(err));
 }
 
 function loadSectors() {
-    fetch(uri_list_sectores)
+    fetch(uri_list_sailsman)
         .then(response => response.json())
         .then(response => {
             response.forEach(sector => {
-                let sector_line = document.querySelector('.sector_line').cloneNode(true)
+                let sailsman_line = document.querySelector('.sailsman_line').cloneNode(true)
                 // console.log(sector)
-                sector_line.classList.remove('model')
-                sector_line.querySelector('#id_cell').innerHTML = sector.id
-                sector_line.querySelector('#name_cell').innerHTML = sector.nome
-                sector_line.querySelector('#comission_cell').innerHTML = sector.comissao
-                sector_structure.appendChild(sector_line)
+                sailsman_line.classList.remove('model')
+                sailsman_line.querySelector('#id_cell').innerHTML = sector.id
+                sailsman_line.querySelector('#name_cell').innerHTML = sector.nome
+                sailsman_line.querySelector('#salary_cell').innerHTML = sector.salario
+                sailsman_line.querySelector('#sector_cell').innerHTML = sector.setor
+                
+                sailsman_structure.appendChild(sailsman_line)
             })
         })
 }
