@@ -1,21 +1,26 @@
-let input_name = document.querySelector('#input_name');
-let input_salary = document.querySelector('#input_salary');
-let input_sector = document.querySelector('#input_sector');
+let input_sailsman_id = document.querySelector('#input_sailsman_id');
+let input_product_id = document.querySelector('#input_product_id');
+let input_quantity = document.querySelector('#input_quantity');
 let btn_register = document.querySelector('#btn_register');
 
 let sailsman_structure = document.querySelector('#sailsman_structure');
 
-const uri_create_sailsman = 'http://localhost:3000/cadastrarvendedor/';
-const uri_list_sailsman = 'http://localhost:3000/buscarvendedores';
+const uri_create_sails = 'http://localhost:3000/cadastrarvenda/';
+const uri_list_sails = 'http://localhost:3000/listarvendas';
 
 function createSail() {
     let create = {
-        "nome": input_name.value,
-        "salario": Number(input_salary.value),
-        "setor": Number(input_sector.value)
+        "id_vendedor": Number(input_sailsman_id.value),
+        "detalhe": [
+            {
+                "id_produto": Number(input_product_id.value),
+                "quantidade": Number(input_quantity.value)
+            }
+        ]
+
     }
 
-    fetch(uri_create_sailsman, {
+    fetch(uri_create_sails, {
         'method': 'POST',
         'headers': {
             'Content-Type': 'application/json'
@@ -25,29 +30,32 @@ function createSail() {
         .then( response => response.status )
         .then( response => {
             if (response == 201) {
-                alert("Vendedor cadastrado com sucesso")
+                alert("Venda cadastrada com sucesso")
                 window.location.reload()
             }else {
-                alert('Falha ao cadastrar vendedor')
+                alert('Falha ao cadastrar venda')
             }
         })
         .catch(err => console.error(err));
 }
 
 function loadSail() {
-    fetch(uri_list_sailsman)
+    fetch(uri_list_sails)
         .then(response => response.json())
         .then(response => {
-            response.forEach(sector => {
-                let sailsman_line = document.querySelector('.sailsman_line').cloneNode(true)
+            response.forEach(sail => {
+                let sails_line = document.querySelector('.sails_line').cloneNode(true)
                 // console.log(sector)
-                sailsman_line.classList.remove('model')
-                sailsman_line.querySelector('#id_cell').innerHTML = sector.id
-                sailsman_line.querySelector('#name_cell').innerHTML = sector.nome
-                sailsman_line.querySelector('#salary_cell').innerHTML = sector.salario
-                sailsman_line.querySelector('#sector_cell').innerHTML = sector.setor
+                sails_line.classList.remove('model')
+                sails_line.querySelector('#sails_id_cell').innerHTML = sail.id
+                sails_line.querySelector('#date_cell').innerHTML = sail.data
+                sails_line.querySelector('#sailsman_id_cell').innerHTML = sail.id_vendedor
+                sail.detalhe.forEach(sail_details => {
+                    sails_line.querySelector('#product_id_cell').innerHTML = sail_details.id_produto
+                    sails_line.querySelector('#quantity_cell').innerHTML = sail_details.quantidade
+                })
                 
-                sailsman_structure.appendChild(sailsman_line)
+                sails_structure.appendChild(sails_line)
             })
         })
 }

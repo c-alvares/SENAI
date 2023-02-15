@@ -14,18 +14,19 @@
 
 <body onload="loadSail();">
     <div class="card">
-        <input id="input_name" type="text" placeholder="Vendedor">
-        <input id="input_salary" type="text" placeholder="Salário">
-        <input id="input_sector" type="text" placeholder="Setor">
+        <input id="input_sailsman_id" type="text" placeholder="Id do Vendedor">
+        <input id="input_product_id" type="text" placeholder="Id do Produto">
+        <input id="input_quantity" type="text" placeholder="Quantidade">
         <button id="btn_register" type="submit" onclick="createSail()">registrar</button>
     </div>
 
-        <table id="sailsman_structure">
-            <tr class="sailsman_line model">
-                <td class="cell" id="id_cell"></td>
-                <td class="cell" id="name_cell"></td>
-                <td class="cell" id="salary_cell"></td>
-                <td class="cell" id="sector_cell"></td>
+        <table id="sails_structure">
+            <tr class="sails_line model">
+                <td class="cell" id="sails_id_cell"></td>
+                <td class="cell" id="date_cell"></td>
+                <td class="cell" id="sailsman_id_cell"></td>
+                <td class="cell" id="product_id_cell"></td>
+                <td class="cell" id="quantity_cell"></td>
             </tr>
         </table>
 
