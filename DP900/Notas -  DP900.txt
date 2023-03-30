@@ -1,0 +1,131 @@
+	O que são dados:
+		Não estruturado - Nada que não se aparenta com uma tabela.
+		Semi estruturado - EXCEL
+		Estruturado - Banco de dados.
+	
+	Como os bancos de dados são armazenados:
+		Em arquivos, em data.
+		
+	Transacional vs Analítico:
+		Qualquer dado transacional, tem um inicio e é concluido.
+		Dado analítico é um rela´torio que você gerou do dado.
+		
+	Por que o excel é software e visual studio code é plataforma como serviço?
+			Estou desenvolvendo uma plataforma? sim. Então é uma plataforma de serviço.
+			O Excel e o Visual Studio Code são diferentes em vários aspectos, incluindo sua finalidade e arquitetura.
+			O Excel é um software de planilha eletrônica, desenvolvido pela Microsoft. Ele é projetado para fornecer aos usuários uma plataforma para criar, editar e analisar dados em planilhas. O Excel é instalado no computador do usuário e é usado como um aplicativo local.
+			Já o Visual Studio Code é uma plataforma de desenvolvimento de software (IDE) desenvolvida pela Microsoft. Ele é usado principalmente para codificação, depuração e compilação de software. O Visual Studio Code é executado na nuvem e é acessado através do navegador da web, o que significa que não precisa ser instalado no computador do usuário. Como tal, o Visual Studio Code é considerado uma plataforma como serviço (PaaS).
+			Portanto, a principal diferença entre o Excel e o Visual Studio Code é que o primeiro é um software de aplicativo local, enquanto o último é uma plataforma como serviço que é acessada através do navegador.		
+
+
+	Não pode pausar um banco de dados. Para não gerra custo, é só não adicionar informações.
+	Não é necessário o piperline na transformação.
+	
+	
+**Dica**
+	Favoreceu a Microsoft, é verdadeiro.	
+
+
+Carregamento de dados em lote:	Numero de dados muito grande para ser armazenado.
+		Em transmissão: Tempo real.
+
+	Máquina virtual estamos falando de infraestutura.
+
+Data WAREHOUSE -> Armazena relatórios. Agrupa informações da menira como eu quero.
+latência é o tempo de respostas.
+processamento é lote.
+Os dados não são inseridos linhas por vez.
+Schema(Esquema): Estrutura do banco de dados.
+Impedir o acesso a um banco de dados SQL azure de outra rede: FIREWALL
+
+
+	23/03->{
+
+	Maquina virtual é infraestrutura como serviço.
+	Linguagem de programação é uma plataforma como serviço(PAAS).
+	
+Servidor -> servidortesteb
+usuario -> MarioAgrotech
+senha -> teste123@
+
+mysql -h servidortesteb.mysql.database.azure.com -u MarioAgrotech -p
+
+Bancos de dados gráficos: analise as relações entre entidades
+	DDL ->  (Data Definition Language) ->  Use essas instruções para criar, alterar ou descartar estruturas de dados em um banco de dados. Essas declarações incluem:
+ALTER
+Collations
+CREATE
+DROP
+DISABLE TRIGGER
+ENABLE TRIGGER
+RENAME
+UPDATE STATISTICS
+TRUNCATE TABLE
+
+
+	Uma view é uma tabela virtual cujo conteúdo é definido por uma consulta
+.
+	
+	DML -> Mnaipulação de dados: INSERT, UPDATE, SELECT, DELETE
+	heap? 	
+}
+
+	24-03
+	Armazenamneto: Indice clausterizado -> guarda na memoria, para se relacionar com uma tabela.
+	Banco de dados -> Plataforma como serviço(PaaS).
+	Azzure SQL Server Managament Studio semelhante ao PHP myadmin.
+
+	Azure Data Studio é semelhante ao Visual Studio Code.
+	Quando se usa calculos em uma consulta deve-se criar uma view.
+	Redundância de dados: A normalização reduz.
+	Conta sa npo mysql  é o mesmo nivel de acesso do root.
+	Pode usar o mysql workBench pode consultar qualquer banco de dado, desde que saiba a url, a senha e o usuario.
+	O azure está hospedado a outra rede, e perdi meu acesso ao banco de dados, a causa do problema é um firewall em nivel de banco de dados.
+	
+	Projetar e modelar projetos que suporte o desenvolvimento de banco de dados offline: Server Data Tools(SSDT)
+	Bloco de codigo que éxectado em um banco de dados: Procedimento armazenado.
+	INSTÂNCIA GERENCIADA vantagem: Suporte nativo para consultas e transações entre bancos.
+	Banco de dados relacional -> Alto volume de gravações transacionais. 
+	Modificar tabelas 'ALTER'
+	Anormalização melhora a qualidade dos dados? Talevz.
+	DDL -> DROP, CREATE, ALTERs
+	O banco de dados relacional deve ser usado quando for necessaria fortes garantias de consistência.
+	Suportam nativamente a analise de relacionamentos entre entidades: Armazenamnto de valor-chave. Ou banco de dados de gráfico.
+	
+	
+	27-03
+		Variaveis de ambiente priorizam a segurança, ou seja, localmente ela tem um valor, mas quando implantado, o receptor não saberá quais as informações essasvariaveis contêm.
+		ejs -> HTML com parâmetros.
+		
+		Relacional -> Transacional, possui normalização, estruturado e SGBD.
+		Não relacional -> Arquivo(imagem, não estruturado{word, excel}, semi estruturado{json, xml}), tabela(estruturada{csv}, semi-estruturada{json}), SGBD(mongo, cosmo), blob.
+		
+
+	
+	28-03
+		Gremlin -> Tela de grafo(relacionamento)
+		 nível do contêiner -> Taxa de transfêrencia e chave de partição.
+		redundância em uma região do Azure -> Zona de dispobilidade. Diferença entre redudância e backup(nquanto o backup tem como objetivo garantir a preservação dos dados em caso de falha em um sistema, a redundância busca evitar a falha em si, criando sistemas mais robustos e resilientes).
+		RBAC -> Hierárquia.
+		Recuperar dados fora da regiaão -> RA-GRS e GRS
+		Escolha a opção correta para completar a frase: Um armazenamento de dados de chave/valor é otimizado para pesquisas simples.
+		Para configurar uma conta de armazenamento do Azure para dar suporte à segurança no nível da pasta e à manipulação de diretório atômico habilite o namespace hierárquico.
+		
+		
+		Carga de trabalhos de análise no Azure
+		pipeline -> varios caminhos diferentes.
+		Site de uma lista de produtos csv -> https://raw.githubusercontent.com/MicrosoftLearning/DP-900T00A-Azure-Data-Fundamentals/master/Azure-Synapse/products.csv
+		
+		
+	
+	
+	
+	29-03
+		Não é possivel criar uma hierarquia com id. Pois a hirearquia é criada baseada na repetição.
+		Descritiva, para responder à pergunta: O que está acontecendo?
+		Diagnostic, para responder à pergunta: Por que está acontecendo?
+		Preditivo, para responder à pergunta: O que vai acontecer?
+		Prescritivo, para responder à pergunta: Que ações devemos tomar?
+		cognitivo -> uma análise que tenha algun tipo de calculo.
+		audio é um tipo de calculo cognitivo.
+		grafico de dispersao -> cheio de pontinhos.
