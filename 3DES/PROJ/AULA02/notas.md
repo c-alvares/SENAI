@@ -16,6 +16,7 @@ https://www.prisma.io/docs/getting-started/quickstart
 
 Link da documentação:
 https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference#model-fields
+https://www.prisma.io/docs/concepts/database-connectors/mysql
 
 08) Prisma/client é instalado somente no projeto
 09) Configurar os models
